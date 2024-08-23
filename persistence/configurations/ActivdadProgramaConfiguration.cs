@@ -25,7 +25,7 @@ namespace onboarding.persistence.configurations
                 entity.Property(e => e.ContratacionProgramaCodigo)
                     .HasComment("Código de la plantilla de programa de onboarding")
                     .HasColumnName("acp_codcpr");
-                entity.Property(e => e.CodempResponsable)
+                entity.Property(e => e.EmpleoResponsableCodigo)
                     .HasComment("Código de empleo responsable de la evaluación")
                     .HasColumnName("acp_codemp_responsable");
                 entity.Property(e => e.EtapaProgramaCodigo)

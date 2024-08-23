@@ -12,84 +12,84 @@ public partial class TipoResponsableActividad
     /// <summary>
     /// Código de Tipo de Resonsable de Actividad
     /// </summary>
-    public int TraCodigo { get; set; }
+    public int Codigo { get; set; }
 
     /// <summary>
     /// Código de Grupo Corporativo
     /// </summary>
-    public int TraCodgrc { get; set; }
+    public int GrupoCorporativoCodigo { get; set; }
 
     /// <summary>
     /// Nombre del Tipo de Resonsable de Actividad
     /// </summary>
-    public string TraNombre { get; set; } = null!;
+    public string Nombre { get; set; } = null!;
 
     /// <summary>
     /// Descripción del Tipo de Resonsable de Actividad
     /// </summary>
-    public string? TraDescripcion { get; set; }
+    public string? Descripcion { get; set; }
 
     /// <summary>
     /// ¿Requiere la selección de un empleado?
     /// </summary>
-    public bool TraRequiereEmpleo { get; set; }
+    public bool RequiereEmpleo { get; set; }
 
     /// <summary>
     /// Código de la lista de valores que permite seleccionar un empleo
     /// </summary>
-    public string? TraCodvliEmpleo { get; set; }
+    public string? EmpleoValueListCodigo { get; set; }
 
     /// <summary>
     /// ¿Corresponde con una institución externa?
     /// </summary>
-    public bool TraEsInstExterna { get; set; }
+    public bool EsInstExterna { get; set; }
 
     /// <summary>
     /// Nombre de una persona contacto, cuando es una institución externa
     /// </summary>
-    public string? TraContactoExterno { get; set; }
+    public string? ContactoExterno { get; set; }
 
     /// <summary>
     /// ¿Corresponde con una persona externa?
     /// </summary>
-    public bool TraEsPersonaExterna { get; set; }
+    public bool EsPersonaExterna { get; set; }
 
     /// <summary>
     /// Email de notificaciones si es una persona o institución externa
     /// </summary>
-    public string? TraEmailExterno { get; set; }
+    public string? EmailExterno { get; set; }
 
     /// <summary>
     /// Teléfono de contacto cuando es una persona o institución externa
     /// </summary>
-    public string? TraTelefonoExterno { get; set; }
+    public string? TelefonoExterno { get; set; }
 
     /// <summary>
     /// Data de los campos adicionales
     /// </summary>
-    public string? TraPropertyBagData { get; set; }
+    public string? PropertyBagData { get; set; }
 
     /// <summary>
     /// Usuario que creo el registro
     /// </summary>
-    public string? TraUsuarioGrabacion { get; set; }
+    public string? UsuarioGrabacion { get; set; }
 
     /// <summary>
     /// Fecha en que se creo el registro
     /// </summary>
-    public DateTime? TraFechaGrabacion { get; set; }
+    public DateTime? FechaGrabacion { get; set; }
 
     /// <summary>
     /// Usuario que modificó por última vez el registro
     /// </summary>
-    public string? TraUsuarioModificacion { get; set; }
+    public string? UsuarioModificacion { get; set; }
 
     /// <summary>
     /// Fecha de la última modificacion del registro
     /// </summary>
-    public DateTime? TraFechaModificacion { get; set; }
+    public DateTime? FechaModificacion { get; set; }
 
     public virtual ICollection<ActividadPrograma> ActividadesProgramas { get; set; } = new List<ActividadPrograma>();
 
-    public virtual ICollection<PacPlantActividade> PacPlantActividades { get; set; } = new List<PacPlantActividade>();
+    public virtual ICollection<PlantillaActividad> PlantillaActividades { get; set; } = new List<PlantillaActividad>();
 }

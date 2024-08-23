@@ -80,5 +80,5 @@ public partial class EtapaPrograma
 
     public virtual ICollection<ActividadPrograma> ActividadesProgramas { get; set; } = new List<ActividadPrograma>();
 
-    public virtual ICollection<PacPlantActividade> PacPlantActividades { get; set; } = new List<PacPlantActividade>();
+    public virtual ICollection<PlantillaActividad> PlantActividades { get; set; } = new List<PlantillaActividad>();
 }

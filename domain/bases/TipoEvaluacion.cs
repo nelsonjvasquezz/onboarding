@@ -11,59 +11,59 @@ public partial class TipoEvaluacion
     /// <summary>
     /// Código del tipo de evaluación
     /// </summary>
-    public int TevCodigo { get; set; }
+    public int Codigo { get; set; }
 
     /// <summary>
     /// Código del Grupo Corporativo
     /// </summary>
-    public int TevCodgrc { get; set; }
+    public int GrupoCorporativoCodigo { get; set; }
 
     /// <summary>
     /// Nombre del tipo de evaluación
     /// </summary>
-    public string TevNombre { get; set; } = null!;
+    public string Nombre { get; set; } = null!;
 
     /// <summary>
     /// Descripción del tipo de evaluación
     /// </summary>
-    public string? TevDescripcion { get; set; }
+    public string? Descripcion { get; set; }
 
     /// <summary>
     /// Determina si el tipo de evaluación utiliza un formulario dinámico
     /// </summary>
-    public bool TevUtilizaFdi { get; set; }
+    public bool UtilizaFormularioDinamico { get; set; }
 
     /// <summary>
     /// Código de formulario dinámico que se utiliza para evaluar una actividad cuando si se utiliza
     /// </summary>
-    public int? TevCodfdiEvaluacion { get; set; }
+    public int? FormularioDinamicoCodigo { get; set; }
 
     /// <summary>
     /// Data de los campos adicionales
     /// </summary>
-    public string? TevPropertyBagData { get; set; }
+    public string? PropertyBagData { get; set; }
 
     /// <summary>
     /// Usuario que creo el registro
     /// </summary>
-    public string? TevUsuarioGrabacion { get; set; }
+    public string? UsuarioGrabacion { get; set; }
 
     /// <summary>
     /// Fecha en que se creo el registro
     /// </summary>
-    public DateTime? TevFechaGrabacion { get; set; }
+    public DateTime? FechaGrabacion { get; set; }
 
     /// <summary>
     /// Usuario que modificó por última vez el registro
     /// </summary>
-    public string? TevUsuarioModificacion { get; set; }
+    public string? UsuarioModificacion { get; set; }
 
     /// <summary>
     /// Fecha de la última modificacion del registro
     /// </summary>
-    public DateTime? TevFechaModificacion { get; set; }
+    public DateTime? FechaModificacion { get; set; }
 
     public virtual ICollection<ActividadPrograma> ActividadesProgramas { get; set; } = new List<ActividadPrograma>();
 
-    public virtual ICollection<PacPlantActividade> PacPlantActividades { get; set; } = new List<PacPlantActividade>();
+    public virtual ICollection<PlantillaActividad> PlantillaActividades { get; set; } = new List<PlantillaActividad>();
 }

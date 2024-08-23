@@ -11,59 +11,59 @@ public partial class PrioridadActividad
     /// <summary>
     /// Código de la prioridad
     /// </summary>
-    public int PriCodigo { get; set; }
+    public int Codigo { get; set; }
 
     /// <summary>
     /// Código de Grupo Corporativo
     /// </summary>
-    public int PriCodgrc { get; set; }
+    public int GrupoCorporativoCodigo { get; set; }
 
     /// <summary>
     /// Nombre de la prioridad
     /// </summary>
-    public string PriNombre { get; set; } = null!;
+    public string Nombre { get; set; } = null!;
 
     /// <summary>
     /// Color con que se muestra la prioridad
     /// </summary>
-    public string PriColor { get; set; } = null!;
+    public string Color { get; set; } = null!;
 
     /// <summary>
     /// Ícono con que se muestra la prioridad
     /// </summary>
-    public string? PriIcono { get; set; }
+    public string? Icono { get; set; }
 
     /// <summary>
     /// Determina el orden las prioridades
     /// </summary>
-    public int PriOrden { get; set; }
+    public int Orden { get; set; }
 
     /// <summary>
     /// Data de los campos adicionales
     /// </summary>
-    public string? PriPropertyBagData { get; set; }
+    public string? PropertyBagData { get; set; }
 
     /// <summary>
     /// Usuario que creo el registro
     /// </summary>
-    public string? PriUsuarioGrabacion { get; set; }
+    public string? UsuarioGrabacion { get; set; }
 
     /// <summary>
     /// Fecha en que se creo el registro
     /// </summary>
-    public DateTime? PriFechaGrabacion { get; set; }
+    public DateTime? FechaGrabacion { get; set; }
 
     /// <summary>
     /// Usuario que modificó por última vez el registro
     /// </summary>
-    public string? PriUsuarioModificacion { get; set; }
+    public string? UsuarioModificacion { get; set; }
 
     /// <summary>
     /// Fecha de la última modificacion del registro
     /// </summary>
-    public DateTime? PriFechaModificacion { get; set; }
+    public DateTime? FechaModificacion { get; set; }
 
     public virtual ICollection<ActividadPrograma> ActividadesProgramas { get; set; } = new List<ActividadPrograma>();
 
-    public virtual ICollection<PacPlantActividade> PacPlantActividades { get; set; } = new List<PacPlantActividade>();
+    public virtual ICollection<PlantillaActividad> PlantillaActividades { get; set; } = new List<PlantillaActividad>();
 }

@@ -8,8 +8,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="domain\entities\**" />
     <Compile Remove="domain\partials\**" />
+    <EmbeddedResource Remove="domain\entities\**" />
     <EmbeddedResource Remove="domain\partials\**" />
+    <None Remove="domain\entities\**" />
     <None Remove="domain\partials\**" />
   </ItemGroup>
 
@@ -22,7 +25,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="domain\entities\" />
     <Folder Include="domain\partial\" />
   </ItemGroup>
 

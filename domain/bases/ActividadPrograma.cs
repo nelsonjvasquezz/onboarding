@@ -46,7 +46,7 @@ public partial class ActividadPrograma
     /// <summary>
     /// Código de empleo responsable de la evaluación
     /// </summary>
-    public int? CodempResponsable { get; set; }
+    public int? EmpleoResponsableCodigo { get; set; }
 
     /// <summary>
     /// Fecha calculada de inicio de la actividad

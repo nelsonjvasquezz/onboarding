@@ -6,52 +6,52 @@ namespace onboarding.data.bases;
 /// <summary>
 /// Tabla que almacena los evento que son notificables para el seguimiento de los programas de onboarding
 /// </summary>
-public partial class EnoEventosNotificable
+public partial class EventoNotificable
 {
     /// <summary>
     /// Código de evento notificable
     /// </summary>
-    public int EnoCodigo { get; set; }
+    public int Codigo { get; set; }
 
     /// <summary>
     /// Código de Grupo Corporativo
     /// </summary>
-    public int EnoCodgrc { get; set; }
+    public int GrupoCorporativoCodigo { get; set; }
 
     /// <summary>
     /// Nombre del Evento
     /// </summary>
-    public string EnoNombre { get; set; } = null!;
+    public string Nombre { get; set; } = null!;
 
     /// <summary>
     /// Descripción del Evento que se puede notificar
     /// </summary>
-    public string EnoDescripcion { get; set; } = null!;
+    public string Descripcion { get; set; } = null!;
 
     /// <summary>
     /// Data de los campos adicionales
     /// </summary>
-    public string? EnoPropertyBagData { get; set; }
+    public string? PropertyBagData { get; set; }
 
     /// <summary>
     /// Usuario que creo el registro
     /// </summary>
-    public string? EnoUsuarioGrabacion { get; set; }
+    public string? UsuarioGrabacion { get; set; }
 
     /// <summary>
     /// Fecha en que se creo el registro
     /// </summary>
-    public DateTime? EnoFechaGrabacion { get; set; }
+    public DateTime? FechaGrabacion { get; set; }
 
     /// <summary>
     /// Usuario que modificó por última vez el registro
     /// </summary>
-    public string? EnoUsuarioModificacion { get; set; }
+    public string? UsuarioModificacion { get; set; }
 
     /// <summary>
     /// Fecha de la última modificacion del registro
     /// </summary>
-    public DateTime? EnoFechaModificacion { get; set; }
+    public DateTime? FechaModificacion { get; set; }
 
-    public virtual ICollection<NapNotifActividadPrograma> NapNotifActividadProgramas { get; set; } = new List<NapNotifActividadPrograma>();
+    public virtual ICollection<NotificacionActividadPrograma> NotifActividadProgramas { get; set; } = new List<NotificacionActividadPrograma>();
 }

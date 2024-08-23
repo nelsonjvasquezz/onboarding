@@ -7,7 +7,7 @@ namespace onboarding.data;
 /// <summary>
 /// Tabla de Tipos de resposnables de las Actividades
 /// </summary>
-public partial class TraTiposResponActividad
+public partial class TipoResponsableActividad
 {
     /// <summary>
     /// Código de Tipo de Resonsable de Actividad
@@ -89,7 +89,7 @@ public partial class TraTiposResponActividad
     /// </summary>
     public DateTime? TraFechaModificacion { get; set; }
 
-    public virtual ICollection<ActividadesPrograma> ActividadesProgramas { get; set; } = new List<ActividadesPrograma>();
+    public virtual ICollection<ActividadPrograma> ActividadesProgramas { get; set; } = new List<ActividadPrograma>();
 
     public virtual ICollection<PacPlantActividade> PacPlantActividades { get; set; } = new List<PacPlantActividade>();
 }

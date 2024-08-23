@@ -1,99 +1,96 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace onboarding.data.bases;
+﻿namespace onboarding.data.bases;
 
 /// <summary>
 /// Tabla con el detalle de nuevas contrataciones que participan de un programa de onboarding
 /// </summary>
-public partial class CprContratacionesPrograma
+public partial class ContratacionPrograma
 {
     /// <summary>
     /// Código de registro de contratación de cada programa
     /// </summary>
-    public int CprCodigo { get; set; }
+    public int Codigo { get; set; }
 
     /// <summary>
     /// Código del programa de onboarding
     /// </summary>
-    public int CprCodpro { get; set; }
+    public int ProgramaCodigo { get; set; }
 
     /// <summary>
     /// Código del responsable en RRHH de la nueva contratación
     /// </summary>
-    public int CprCodempRespRrhh { get; set; }
+    public int EmpleoResponsableCodigo { get; set; }
 
     /// <summary>
     /// Código del puesto a donde será contratado el nuevo empleado
     /// </summary>
-    public int CprCodpue { get; set; }
+    public int PuestoCodigo { get; set; }
 
     /// <summary>
     /// Código de expediente de la nueva contratación
     /// </summary>
-    public int CprCodexp { get; set; }
+    public int ExpedienteCodigo { get; set; }
 
     /// <summary>
     /// Código de empleo, cuando la nueva contratación ya se realizó
     /// </summary>
-    public int? CprCodemp { get; set; }
+    public int? EmpleoCodigo { get; set; }
 
     /// <summary>
     /// Código del empleo del jefe inmeditato superior o supervisor responsable de la nueva contratación
     /// </summary>
-    public int CprCodempJefe { get; set; }
+    public int EmpleoJefeCodigo { get; set; }
 
     /// <summary>
     /// Código del centro de trabajo donde será ubicado el nuevo empleado
     /// </summary>
-    public int CprCodcdt { get; set; }
+    public int CentroTrabajoCodigo { get; set; }
 
     /// <summary>
     /// Código de la unidad organizativa donde será ubicado el nuevo empleado
     /// </summary>
-    public int CprCoduni { get; set; }
+    public int UnidadCodigo { get; set; }
 
     /// <summary>
     /// Fecha efectiva de contratación
     /// </summary>
-    public DateTime CprFechaContratacion { get; set; }
+    public DateTime FechaContratacion { get; set; }
 
     /// <summary>
     /// Fecha esperada de inicio del programa
     /// </summary>
-    public DateTime CprFechaInicio { get; set; }
+    public DateTime FechaInicio { get; set; }
 
     /// <summary>
     /// Fecha esperada de finalización del programa
     /// </summary>
-    public DateTime CprFechaFin { get; set; }
+    public DateTime FechaFin { get; set; }
 
     /// <summary>
     /// Data de los campos adicionales
     /// </summary>
-    public string? CprPropertyBagData { get; set; }
+    public string? PropertyBagData { get; set; }
 
     /// <summary>
     /// Usuario que creo el registro
     /// </summary>
-    public string? CprUsuarioGrabacion { get; set; }
+    public string? UsuarioGrabacion { get; set; }
 
     /// <summary>
     /// Fecha en que se creo el registro
     /// </summary>
-    public DateTime? CprFechaGrabacion { get; set; }
+    public DateTime? FechaGrabacion { get; set; }
 
     /// <summary>
     /// Usuario que modificó por última vez el registro
     /// </summary>
-    public string? CprUsuarioModificacion { get; set; }
+    public string? UsuarioModificacion { get; set; }
 
     /// <summary>
     /// Fecha de la última modificacion del registro
     /// </summary>
-    public DateTime? CprFechaModificacion { get; set; }
+    public DateTime? FechaModificacion { get; set; }
 
-    public virtual ICollection<ActividadesPrograma> ActividadesProgramas { get; set; } = new List<ActividadesPrograma>();
+    public virtual ICollection<ActividadPrograma> ActividadesProgramas { get; set; } = new List<ActividadPrograma>();
 
-    public virtual ProPrograma CprCodproNavigation { get; set; } = null!;
+    public virtual Programa Programa { get; set; } = null!;
 }

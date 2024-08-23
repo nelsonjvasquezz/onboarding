@@ -13,7 +13,7 @@ namespace onboarding.persistence.configurations
     {
         public void Configure(ModelBuilder builder)
         {
-            builder.Entity<ActividadesPrograma>(entity =>
+            builder.Entity<ActividadPrograma>(entity =>
             {
                 entity.HasKey(e => e.Codigo);
 
@@ -22,28 +22,28 @@ namespace onboarding.persistence.configurations
                 entity.Property(e => e.Codigo)
                     .HasComment("Código de registro de la actividad de la plantilla para programa de onboarding")
                     .HasColumnName("acp_codigo");
-                entity.Property(e => e.Codcpr)
+                entity.Property(e => e.ContratacionProgramaCodigo)
                     .HasComment("Código de la plantilla de programa de onboarding")
                     .HasColumnName("acp_codcpr");
                 entity.Property(e => e.CodempResponsable)
                     .HasComment("Código de empleo responsable de la evaluación")
                     .HasColumnName("acp_codemp_responsable");
-                entity.Property(e => e.Codetp)
+                entity.Property(e => e.EtapaProgramaCodigo)
                     .HasComment("Código de Etapa o Fase del programa")
                     .HasColumnName("acp_codetp");
-                entity.Property(e => e.Codfdd)
+                entity.Property(e => e.FormularioDinamicoDataCodigo)
                     .HasComment("Código de la data del formulario dinámico (cuando está definido según el tipo de evaluación)")
                     .HasColumnName("acp_codfdd");
-                entity.Property(e => e.Codpri)
+                entity.Property(e => e.PrioridadActividadCodigo)
                     .HasComment("Código de Prioridad de la actividad")
                     .HasColumnName("acp_codpri");
-                entity.Property(e => e.Codtac)
+                entity.Property(e => e.TipoActividadCodigo)
                     .HasComment("Código de Tipo de Actividad")
                     .HasColumnName("acp_codtac");
-                entity.Property(e => e.Codtev)
+                entity.Property(e => e.TipoEvaluacionCodigo)
                     .HasComment("Codigo de Tipo de Evaluación de la activdidad (NULL cuando no requiere evaluación)")
                     .HasColumnName("acp_codtev");
-                entity.Property(e => e.Codtra)
+                entity.Property(e => e.TipoResponsableActividadCodigo)
                     .HasComment("Código de Tipo de Responsable de la actividad")
                     .HasColumnName("acp_codtra");
                 entity.Property(e => e.ComentarioFinalizacion)
@@ -132,43 +132,43 @@ namespace onboarding.persistence.configurations
                     .HasComment("Usuario que modificó por última vez el registro")
                     .HasColumnName("acp_usuario_modificacion");
 
-                entity.HasOne(d => d.CodcprNavigation).WithMany(p => p.ActividadesProgramas)
-                    .HasForeignKey(d => d.Codcpr)
+                entity.HasOne(d => d.ContratacionPrograma).WithMany(p => p.ActividadesProgramas)
+                    .HasForeignKey(d => d.ContratacionProgramaCodigo)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_obdcpr_obdacp");
 
-                entity.HasOne(d => d.CodetpNavigation).WithMany(p => p.ActividadesProgramas)
-                    .HasForeignKey(d => d.Codetp)
+                entity.HasOne(d => d.EtapaPrograma).WithMany(p => p.ActividadesProgramas)
+                    .HasForeignKey(d => d.EtapaProgramaCodigo)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_obdetp_obdacp");
 
-                entity.HasOne(d => d.CodpriNavigation).WithMany(p => p.ActividadesProgramas)
-                    .HasForeignKey(d => d.Codpri)
+                entity.HasOne(d => d.PrioridadActividad).WithMany(p => p.ActividadesProgramas)
+                    .HasForeignKey(d => d.PrioridadActividadCodigo)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_obdpri_obdacp");
 
-                entity.HasOne(d => d.CodtacNavigation).WithMany(p => p.ActividadesProgramas)
-                    .HasForeignKey(d => d.Codtac)
+                entity.HasOne(d => d.TipoActividad).WithMany(p => p.ActividadesProgramas)
+                    .HasForeignKey(d => d.TipoActividadCodigo)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_obdtac_obdacp");
 
-                entity.HasOne(d => d.CodtevNavigation).WithMany(p => p.ActividadesProgramas)
-                    .HasForeignKey(d => d.Codtev)
+                entity.HasOne(d => d.TipoEvaluacion).WithMany(p => p.ActividadesProgramas)
+                    .HasForeignKey(d => d.TipoEvaluacionCodigo)
                     .HasConstraintName("FK_obdte_obdacp");
 
-                entity.HasOne(d => d.CodtraNavigation).WithMany(p => p.ActividadesProgramas)
-                    .HasForeignKey(d => d.Codtra)
+                entity.HasOne(d => d.TipoResponsableActividad).WithMany(p => p.ActividadesProgramas)
+                    .HasForeignKey(d => d.TipoResponsableActividadCodigo)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_obdtra_obdacp");
 
                 entity.HasMany(d => d.RapCodacpPrerequisitos).WithMany(p => p.RapCodpacs)
                     .UsingEntity<Dictionary<string, object>>(
                         "RapReqActividadesPrograma",
-                        r => r.HasOne<ActividadesPrograma>().WithMany()
+                        r => r.HasOne<ActividadPrograma>().WithMany()
                             .HasForeignKey("RapCodacpPrerequisito")
                             .OnDelete(DeleteBehavior.ClientSetNull)
                             .HasConstraintName("FK_obdacp_obdrap_prerequisito"),
-                        l => l.HasOne<ActividadesPrograma>().WithMany()
+                        l => l.HasOne<ActividadPrograma>().WithMany()
                             .HasForeignKey("RapCodpac")
                             .OnDelete(DeleteBehavior.ClientSetNull)
                             .HasConstraintName("FK_obdacp_obdrpa"),
@@ -187,11 +187,11 @@ namespace onboarding.persistence.configurations
                 entity.HasMany(d => d.RapCodpacs).WithMany(p => p.RapCodacpPrerequisitos)
                     .UsingEntity<Dictionary<string, object>>(
                         "RapReqActividadesPrograma",
-                        r => r.HasOne<ActividadesPrograma>().WithMany()
+                        r => r.HasOne<ActividadPrograma>().WithMany()
                             .HasForeignKey("RapCodpac")
                             .OnDelete(DeleteBehavior.ClientSetNull)
                             .HasConstraintName("FK_obdacp_obdrpa"),
-                        l => l.HasOne<ActividadesPrograma>().WithMany()
+                        l => l.HasOne<ActividadPrograma>().WithMany()
                             .HasForeignKey("RapCodacpPrerequisito")
                             .OnDelete(DeleteBehavior.ClientSetNull)
                             .HasConstraintName("FK_obdacp_obdrap_prerequisito"),

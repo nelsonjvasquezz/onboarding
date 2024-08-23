@@ -8,6 +8,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="domain\partials\**" />
+    <EmbeddedResource Remove="domain\partials\**" />
+    <None Remove="domain\partials\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.8">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
@@ -16,7 +22,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="domain\partials\" />
+    <Folder Include="domain\entities\" />
+    <Folder Include="domain\partial\" />
   </ItemGroup>
 
 </Project>

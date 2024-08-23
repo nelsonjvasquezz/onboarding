@@ -6,7 +6,7 @@ namespace onboarding.data.bases;
 /// <summary>
 /// Tabla que almacena las prioridades de las actividades del plan de onboarding
 /// </summary>
-public partial class PriPrioridade
+public partial class PrioridadActividad
 {
     /// <summary>
     /// Código de la prioridad
@@ -63,7 +63,7 @@ public partial class PriPrioridade
     /// </summary>
     public DateTime? PriFechaModificacion { get; set; }
 
-    public virtual ICollection<ActividadesPrograma> ActividadesProgramas { get; set; } = new List<ActividadesPrograma>();
+    public virtual ICollection<ActividadPrograma> ActividadesProgramas { get; set; } = new List<ActividadPrograma>();
 
     public virtual ICollection<PacPlantActividade> PacPlantActividades { get; set; } = new List<PacPlantActividade>();
 }

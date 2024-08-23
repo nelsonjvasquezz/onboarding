@@ -6,7 +6,7 @@ namespace onboarding.data.bases;
 /// <summary>
 /// Tabla que almacena los tipos de actividad para los programas de Onboarding
 /// </summary>
-public partial class TacTiposActividad
+public partial class TipoActividad
 {
     /// <summary>
     /// Código de tipo de actividad
@@ -88,7 +88,7 @@ public partial class TacTiposActividad
     /// </summary>
     public DateTime? TacFechaModificacion { get; set; }
 
-    public virtual ICollection<ActividadesPrograma> ActividadesProgramas { get; set; } = new List<ActividadesPrograma>();
+    public virtual ICollection<ActividadPrograma> ActividadesProgramas { get; set; } = new List<ActividadPrograma>();
 
     public virtual ICollection<PacPlantActividade> PacPlantActividades { get; set; } = new List<PacPlantActividade>();
 }

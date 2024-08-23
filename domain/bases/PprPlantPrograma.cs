@@ -77,5 +77,5 @@ public partial class PprPlantPrograma
 
     public virtual ICollection<PalPlantAlcance> PalPlantAlcances { get; set; } = new List<PalPlantAlcance>();
 
-    public virtual ICollection<ProPrograma> ProProgramas { get; set; } = new List<ProPrograma>();
+    public virtual ICollection<Programa> ProProgramas { get; set; } = new List<Programa>();
 }

@@ -6,7 +6,7 @@ namespace onboarding.data.bases;
 /// <summary>
 /// Tabla con las fases o etapas de los programas de Oboarding
 /// </summary>
-public partial class EtpEtapasPrograma
+public partial class EtapaPrograma
 {
     /// <summary>
     /// Código de la etapa del programa
@@ -78,7 +78,7 @@ public partial class EtpEtapasPrograma
     /// </summary>
     public DateTime? EtpFechaModificacion { get; set; }
 
-    public virtual ICollection<ActividadesPrograma> ActividadesProgramas { get; set; } = new List<ActividadesPrograma>();
+    public virtual ICollection<ActividadPrograma> ActividadesProgramas { get; set; } = new List<ActividadPrograma>();
 
     public virtual ICollection<PacPlantActividade> PacPlantActividades { get; set; } = new List<PacPlantActividade>();
 }

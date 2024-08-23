@@ -6,7 +6,7 @@ namespace onboarding.data.bases;
 /// <summary>
 /// Tabla que almacena los programas de onboarding
 /// </summary>
-public partial class ProPrograma
+public partial class Programa
 {
     /// <summary>
     /// Código de programa de onboarding
@@ -70,7 +70,7 @@ public partial class ProPrograma
     /// </summary>
     public DateTime? ProFechaModificacion { get; set; }
 
-    public virtual ICollection<CprContratacionesPrograma> CprContratacionesProgramas { get; set; } = new List<CprContratacionesPrograma>();
+    public virtual ICollection<ContratacionPrograma> ContratacionesProgramas { get; set; } = new List<ContratacionPrograma>();
 
     public virtual PprPlantPrograma ProCodpprNavigation { get; set; } = null!;
 }

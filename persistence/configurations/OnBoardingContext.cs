@@ -27,127 +27,127 @@ public partial class OnBoardingContext : DbContext
 
 
 
-        modelBuilder.Entity<CprContratacionesPrograma>(entity =>
+        modelBuilder.Entity<ContratacionPrograma>(entity =>
         {
-            entity.HasKey(e => e.CprCodigo);
+            entity.HasKey(e => e.Codigo);
 
             entity.ToTable("cpr_contrataciones_programa", "obd", tb => tb.HasComment("Tabla con el detalle de nuevas contrataciones que participan de un programa de onboarding"));
 
-            entity.Property(e => e.CprCodigo)
+            entity.Property(e => e.Codigo)
                 .HasComment("Código de registro de contratación de cada programa")
                 .HasColumnName("cpr_codigo");
-            entity.Property(e => e.CprCodcdt)
+            entity.Property(e => e.CentroTrabajoCodigo)
                 .HasComment("Código del centro de trabajo donde será ubicado el nuevo empleado")
                 .HasColumnName("cpr_codcdt");
-            entity.Property(e => e.CprCodemp)
+            entity.Property(e => e.EmpleoCodigo)
                 .HasComment("Código de empleo, cuando la nueva contratación ya se realizó")
                 .HasColumnName("cpr_codemp");
-            entity.Property(e => e.CprCodempJefe)
+            entity.Property(e => e.EmpleoJefeCodigo)
                 .HasComment("Código del empleo del jefe inmeditato superior o supervisor responsable de la nueva contratación")
                 .HasColumnName("cpr_codemp_jefe");
-            entity.Property(e => e.CprCodempRespRrhh)
+            entity.Property(e => e.EmpleoResponsableCodigo)
                 .HasComment("Código del responsable en RRHH de la nueva contratación")
                 .HasColumnName("cpr_codemp_resp_rrhh");
-            entity.Property(e => e.CprCodexp)
+            entity.Property(e => e.ExpedienteCodigo)
                 .HasComment("Código de expediente de la nueva contratación")
                 .HasColumnName("cpr_codexp");
-            entity.Property(e => e.CprCodpro)
+            entity.Property(e => e.ProgramaCodigo)
                 .HasComment("Código del programa de onboarding")
                 .HasColumnName("cpr_codpro");
-            entity.Property(e => e.CprCodpue)
+            entity.Property(e => e.PuestoCodigo)
                 .HasComment("Código del puesto a donde será contratado el nuevo empleado")
                 .HasColumnName("cpr_codpue");
-            entity.Property(e => e.CprCoduni)
+            entity.Property(e => e.UnidadCodigo)
                 .HasComment("Código de la unidad organizativa donde será ubicado el nuevo empleado")
                 .HasColumnName("cpr_coduni");
-            entity.Property(e => e.CprFechaContratacion)
+            entity.Property(e => e.FechaContratacion)
                 .HasComment("Fecha efectiva de contratación")
                 .HasColumnType("datetime")
                 .HasColumnName("cpr_fecha_contratacion");
-            entity.Property(e => e.CprFechaFin)
+            entity.Property(e => e.FechaFin)
                 .HasComment("Fecha esperada de finalización del programa")
                 .HasColumnType("datetime")
                 .HasColumnName("cpr_fecha_fin");
-            entity.Property(e => e.CprFechaGrabacion)
+            entity.Property(e => e.FechaGrabacion)
                 .HasComment("Fecha en que se creo el registro")
                 .HasColumnType("datetime")
                 .HasColumnName("cpr_fecha_grabacion");
-            entity.Property(e => e.CprFechaInicio)
+            entity.Property(e => e.FechaInicio)
                 .HasComment("Fecha esperada de inicio del programa")
                 .HasColumnType("datetime")
                 .HasColumnName("cpr_fecha_inicio");
-            entity.Property(e => e.CprFechaModificacion)
+            entity.Property(e => e.FechaModificacion)
                 .HasComment("Fecha de la última modificacion del registro")
                 .HasColumnType("datetime")
                 .HasColumnName("cpr_fecha_modificacion");
-            entity.Property(e => e.CprPropertyBagData)
+            entity.Property(e => e.PropertyBagData)
                 .HasComment("Data de los campos adicionales")
                 .HasColumnType("xml")
                 .HasColumnName("cpr_property_bag_data");
-            entity.Property(e => e.CprUsuarioGrabacion)
+            entity.Property(e => e.UsuarioGrabacion)
                 .HasMaxLength(50)
                 .IsUnicode(false)
                 .HasComment("Usuario que creo el registro")
                 .HasColumnName("cpr_usuario_grabacion");
-            entity.Property(e => e.CprUsuarioModificacion)
+            entity.Property(e => e.UsuarioModificacion)
                 .HasMaxLength(50)
                 .IsUnicode(false)
                 .HasComment("Usuario que modificó por última vez el registro")
                 .HasColumnName("cpr_usuario_modificacion");
 
-            entity.HasOne(d => d.CprCodproNavigation).WithMany(p => p.CprContratacionesProgramas)
-                .HasForeignKey(d => d.CprCodpro)
+            entity.HasOne(d => d.Programa).WithMany(p => p.ContratacionesProgramas)
+                .HasForeignKey(d => d.ProgramaCodigo)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_obdpro_obdcpr");
         });
 
-        modelBuilder.Entity<EnoEventosNotificable>(entity =>
+        modelBuilder.Entity<EventoNotificable>(entity =>
         {
-            entity.HasKey(e => e.EnoCodigo);
+            entity.HasKey(e => e.Codigo);
 
             entity.ToTable("eno_eventos_notificables", "obd", tb => tb.HasComment("Tabla que almacena los evento que son notificables para el seguimiento de los programas de onboarding"));
 
-            entity.Property(e => e.EnoCodigo)
+            entity.Property(e => e.Codigo)
                 .HasComment("Código de evento notificable")
                 .HasColumnName("eno_codigo");
-            entity.Property(e => e.EnoCodgrc)
+            entity.Property(e => e.GrupoCorporativoCodigo)
                 .HasComment("Código de Grupo Corporativo")
                 .HasColumnName("eno_codgrc");
-            entity.Property(e => e.EnoDescripcion)
+            entity.Property(e => e.Descripcion)
                 .HasMaxLength(500)
                 .IsUnicode(false)
                 .HasComment("Descripción del Evento que se puede notificar")
                 .HasColumnName("eno_descripcion");
-            entity.Property(e => e.EnoFechaGrabacion)
+            entity.Property(e => e.FechaGrabacion)
                 .HasComment("Fecha en que se creo el registro")
                 .HasColumnType("datetime")
                 .HasColumnName("eno_fecha_grabacion");
-            entity.Property(e => e.EnoFechaModificacion)
+            entity.Property(e => e.FechaModificacion)
                 .HasComment("Fecha de la última modificacion del registro")
                 .HasColumnType("datetime")
                 .HasColumnName("eno_fecha_modificacion");
-            entity.Property(e => e.EnoNombre)
+            entity.Property(e => e.Nombre)
                 .HasMaxLength(100)
                 .IsUnicode(false)
                 .HasComment("Nombre del Evento")
                 .HasColumnName("eno_nombre");
-            entity.Property(e => e.EnoPropertyBagData)
+            entity.Property(e => e.PropertyBagData)
                 .HasComment("Data de los campos adicionales")
                 .HasColumnType("xml")
                 .HasColumnName("eno_property_bag_data");
-            entity.Property(e => e.EnoUsuarioGrabacion)
+            entity.Property(e => e.UsuarioGrabacion)
                 .HasMaxLength(50)
                 .IsUnicode(false)
                 .HasComment("Usuario que creo el registro")
                 .HasColumnName("eno_usuario_grabacion");
-            entity.Property(e => e.EnoUsuarioModificacion)
+            entity.Property(e => e.UsuarioModificacion)
                 .HasMaxLength(50)
                 .IsUnicode(false)
                 .HasComment("Usuario que modificó por última vez el registro")
                 .HasColumnName("eno_usuario_modificacion");
         });
 
-        modelBuilder.Entity<EtpEtapasPrograma>(entity =>
+        modelBuilder.Entity<EtapaPrograma>(entity =>
         {
             entity.HasKey(e => e.EtpCodigo);
 
@@ -208,66 +208,66 @@ public partial class OnBoardingContext : DbContext
                 .HasColumnName("etp_usuario_modificacion");
         });
 
-        modelBuilder.Entity<NapNotifActividadPrograma>(entity =>
+        modelBuilder.Entity<NotificacionActividadPrograma>(entity =>
         {
-            entity.HasKey(e => e.NapCodigo);
+            entity.HasKey(e => e.Codigo);
 
             entity.ToTable("nap_notif_actividad_programa", "obd");
 
-            entity.Property(e => e.NapCodigo)
+            entity.Property(e => e.Codigo)
                 .HasComment("Código de registro de la configuración de notificaciones de la actividad del programa")
                 .HasColumnName("nap_codigo");
-            entity.Property(e => e.NapBody)
+            entity.Property(e => e.Body)
                 .HasMaxLength(4000)
                 .IsUnicode(false)
                 .HasComment("Cuerpo Markdown de la notificación")
                 .HasColumnName("nap_body");
-            entity.Property(e => e.NapCodacp)
+            entity.Property(e => e.ActividadProgramaCodigo)
                 .HasComment("Código de la Actividad")
                 .HasColumnName("nap_codacp");
-            entity.Property(e => e.NapCodeno)
+            entity.Property(e => e.EventoNotificableCodigo)
                 .HasComment("Tipo de Evento Notificable")
                 .HasColumnName("nap_codeno");
-            entity.Property(e => e.NapEstado)
+            entity.Property(e => e.Estado)
                 .HasMaxLength(10)
                 .IsUnicode(false)
                 .HasComment("Estado de la notificación (NULL | 'Pendiente' | 'Enviada' | 'Error')")
                 .HasColumnName("nap_estado");
-            entity.Property(e => e.NapFechaEvento)
+            entity.Property(e => e.FechaEvento)
                 .HasComment("Fecha en que sucedió el evento notificable (está null mientras no se ha dado)")
                 .HasColumnType("datetime")
                 .HasColumnName("nap_fecha_evento");
-            entity.Property(e => e.NapFechaNotificacion)
+            entity.Property(e => e.FechaNotificacion)
                 .HasComment("Fecha y hora de cuando se notificó")
                 .HasColumnType("datetime")
                 .HasColumnName("nap_fecha_notificacion");
-            entity.Property(e => e.NapMensajeError)
+            entity.Property(e => e.MensajeError)
                 .HasMaxLength(4000)
                 .IsUnicode(false)
                 .HasComment("Mensaje o excepción cuando el estado es 'Error'")
                 .HasColumnName("nap_mensaje_error");
-            entity.Property(e => e.NapOffsetDias)
+            entity.Property(e => e.OffsetDias)
                 .HasComment("Desplazamiento en días de la fecha en que ocurre el evento para el envio de la notificación")
                 .HasColumnName("nap_offset_dias");
-            entity.Property(e => e.NapSubject)
+            entity.Property(e => e.Subject)
                 .HasMaxLength(250)
                 .IsUnicode(false)
                 .HasComment("Asunto de la notificación")
                 .HasColumnName("nap_subject");
-            entity.Property(e => e.NapTipoDestinatario)
+            entity.Property(e => e.TipoDestinatario)
                 .HasMaxLength(25)
                 .IsUnicode(false)
                 .HasDefaultValue("Contratado")
                 .HasComment("Destinatario de la notificación: Contratado | JefeInmediato | ResponsableActividad | ResponsableRRHH")
                 .HasColumnName("nap_tipo_destinatario");
 
-            entity.HasOne(d => d.NapCodacpNavigation).WithMany(p => p.NapNotifActividadProgramas)
-                .HasForeignKey(d => d.NapCodacp)
+            entity.HasOne(d => d.ActividadPrograma).WithMany(p => p.NotifActividadProgramas)
+                .HasForeignKey(d => d.ActividadProgramaCodigo)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_obdacp_obdnap");
 
-            entity.HasOne(d => d.NapCodenoNavigation).WithMany(p => p.NapNotifActividadProgramas)
-                .HasForeignKey(d => d.NapCodeno)
+            entity.HasOne(d => d.EventoNotificable).WithMany(p => p.NotifActividadProgramas)
+                .HasForeignKey(d => d.EventoNotificableCodigo)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_obdeno_obdnap");
         });
@@ -630,7 +630,7 @@ public partial class OnBoardingContext : DbContext
                 .HasColumnName("ppr_usuario_modificacion");
         });
 
-        modelBuilder.Entity<PriPrioridade>(entity =>
+        modelBuilder.Entity<PrioridadActividad>(entity =>
         {
             entity.HasKey(e => e.PriCodigo);
 
@@ -685,7 +685,7 @@ public partial class OnBoardingContext : DbContext
                 .HasColumnName("pri_usuario_modificacion");
         });
 
-        modelBuilder.Entity<ProPrograma>(entity =>
+        modelBuilder.Entity<Programa>(entity =>
         {
             entity.HasKey(e => e.ProCodigo);
 
@@ -754,7 +754,7 @@ public partial class OnBoardingContext : DbContext
                 .HasConstraintName("FK_obdppr_obdpro");
         });
 
-        modelBuilder.Entity<TacTiposActividad>(entity =>
+        modelBuilder.Entity<TipoActividad>(entity =>
         {
             entity.HasKey(e => e.TacCodigo);
 
@@ -824,7 +824,7 @@ public partial class OnBoardingContext : DbContext
                 .HasColumnName("tac_usuario_modificacion");
         });
 
-        modelBuilder.Entity<TevTiposEvaluacion>(entity =>
+        modelBuilder.Entity<TipoEvaluacion>(entity =>
         {
             entity.HasKey(e => e.TevCodigo);
 
@@ -876,7 +876,7 @@ public partial class OnBoardingContext : DbContext
                 .HasColumnName("tev_utiliza_fdi");
         });
 
-        modelBuilder.Entity<TraTiposResponActividad>(entity =>
+        modelBuilder.Entity<TipoResponsableActividad>(entity =>
         {
             entity.HasKey(e => e.TraCodigo);
 

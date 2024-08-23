@@ -113,17 +113,17 @@ public partial class PacPlantActividade
     /// </summary>
     public DateTime? PacFechaModificacion { get; set; }
 
-    public virtual EtpEtapasPrograma PacCodetpNavigation { get; set; } = null!;
+    public virtual EtapaPrograma PacCodetpNavigation { get; set; } = null!;
 
     public virtual PprPlantPrograma PacCodpprNavigation { get; set; } = null!;
 
-    public virtual PriPrioridade PacCodpriNavigation { get; set; } = null!;
+    public virtual PrioridadActividad PacCodpriNavigation { get; set; } = null!;
 
-    public virtual TacTiposActividad PacCodtacNavigation { get; set; } = null!;
+    public virtual TipoActividad PacCodtacNavigation { get; set; } = null!;
 
-    public virtual TevTiposEvaluacion PacCodtevNavigation { get; set; } = null!;
+    public virtual TipoEvaluacion PacCodtevNavigation { get; set; } = null!;
 
-    public virtual TraTiposResponActividad PacCodtraNavigation { get; set; } = null!;
+    public virtual TipoResponsableActividad PacCodtraNavigation { get; set; } = null!;
 
     public virtual ICollection<PnaPlantNotificacionAct> PnaPlantNotificacionActs { get; set; } = new List<PnaPlantNotificacionAct>();
 

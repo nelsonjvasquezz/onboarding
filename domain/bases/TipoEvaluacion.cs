@@ -6,7 +6,7 @@ namespace onboarding.data.bases;
 /// <summary>
 /// Tabla con los tipos de evaluaciones que se aplican a las actividades de los planes de onboarding
 /// </summary>
-public partial class TevTiposEvaluacion
+public partial class TipoEvaluacion
 {
     /// <summary>
     /// Código del tipo de evaluación
@@ -63,7 +63,7 @@ public partial class TevTiposEvaluacion
     /// </summary>
     public DateTime? TevFechaModificacion { get; set; }
 
-    public virtual ICollection<ActividadesPrograma> ActividadesProgramas { get; set; } = new List<ActividadesPrograma>();
+    public virtual ICollection<ActividadPrograma> ActividadesProgramas { get; set; } = new List<ActividadPrograma>();
 
     public virtual ICollection<PacPlantActividade> PacPlantActividades { get; set; } = new List<PacPlantActividade>();
 }

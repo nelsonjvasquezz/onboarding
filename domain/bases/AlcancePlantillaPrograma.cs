@@ -26,7 +26,7 @@ public partial class AlcancePlantillaPrograma
     /// <summary>
     /// Código de Tipo de Puesto
     /// </summary>
-    public int? Codtpp { get; set; }
+    public int? TipoPuestoCodigo { get; set; }
 
     /// <summary>
     /// Código de Puesto

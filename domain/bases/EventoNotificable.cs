@@ -53,5 +53,5 @@ public partial class EventoNotificable
     /// </summary>
     public DateTime? FechaModificacion { get; set; }
 
-    public virtual ICollection<NotificacionActividadPrograma> NotifActividadProgramas { get; set; } = new List<NotificacionActividadPrograma>();
+    public virtual ICollection<NotificacionActividadPrograma> NotificacionActividadProgramas { get; set; } = new List<NotificacionActividadPrograma>();
 }

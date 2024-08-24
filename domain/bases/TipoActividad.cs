@@ -11,82 +11,82 @@ public partial class TipoActividad
     /// <summary>
     /// Código de tipo de actividad
     /// </summary>
-    public int TacCodigo { get; set; }
+    public int Codigo { get; set; }
 
     /// <summary>
     /// Código de grupo corporativo
     /// </summary>
-    public int TacCodgrc { get; set; }
+    public int GrupoCorporativoCodigo { get; set; }
 
     /// <summary>
     /// Nombre del tipo de actividad
     /// </summary>
-    public string TacNombre { get; set; } = null!;
+    public string Nombre { get; set; } = null!;
 
     /// <summary>
     /// Descripción del tipo de actividad
     /// </summary>
-    public string? TacDescripcion { get; set; }
+    public string? Descripcion { get; set; }
 
     /// <summary>
     /// ¿Requiere Notificación luego de que finalice? (contratado, jefe, RRHH y al responsable de la actividad si está definido)
     /// </summary>
-    public bool TacReqNotificacion { get; set; }
+    public bool RequiereNotificacion { get; set; }
 
     /// <summary>
     /// ¿Requiere Recordatorio previo a que se inicie? (contratado, jefe, RRHH y al responsable de la actividad si está definido)
     /// </summary>
-    public bool TacReqRecordatorio { get; set; }
+    public bool RequiereRecordatorio { get; set; }
 
     /// <summary>
     /// ¿Requiere Evaluación del responsable? (contratado, jefe, RRHH y al responsable de la actividad si está definido)
     /// </summary>
-    public bool TacReqEvaluacion { get; set; }
+    public bool RequiereEvaluacion { get; set; }
 
     /// <summary>
     /// ¿Requiere Adjuntar documentos?
     /// </summary>
-    public bool TacReqDocumentos { get; set; }
+    public bool RequiereDocumentos { get; set; }
 
     /// <summary>
     /// ¿Requiere un responsable asignado?
     /// </summary>
-    public bool TacReqResponsable { get; set; }
+    public bool RequiereResponsable { get; set; }
 
     /// <summary>
     /// Duración estimada de la actividad
     /// </summary>
-    public int TacDuracionEstimada { get; set; }
+    public int DuracionEstimada { get; set; }
 
     /// <summary>
     /// Unidad de medida para la duración estimada
     /// </summary>
-    public string TacUnidadDuracion { get; set; } = null!;
+    public string UnidadDuracion { get; set; } = null!;
 
     /// <summary>
     /// Data de los campos adicionales
     /// </summary>
-    public string? TacPropertyBagData { get; set; }
+    public string? PropertyBagData { get; set; }
 
     /// <summary>
     /// Usuario que creo el registro
     /// </summary>
-    public string? TacUsuarioGrabacion { get; set; }
+    public string? UsuarioGrabacion { get; set; }
 
     /// <summary>
     /// Fecha en que se creo el registro
     /// </summary>
-    public DateTime? TacFechaGrabacion { get; set; }
+    public DateTime? FechaGrabacion { get; set; }
 
     /// <summary>
     /// Usuario que modificó por última vez el registro
     /// </summary>
-    public string? TacUsuarioModificacion { get; set; }
+    public string? UsuarioModificacion { get; set; }
 
     /// <summary>
     /// Fecha de la última modificacion del registro
     /// </summary>
-    public DateTime? TacFechaModificacion { get; set; }
+    public DateTime? FechaModificacion { get; set; }
 
     public virtual ICollection<ActividadPrograma> ActividadesProgramas { get; set; } = new List<ActividadPrograma>();
 

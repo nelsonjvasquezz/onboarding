@@ -11,72 +11,72 @@ public partial class EtapaPrograma
     /// <summary>
     /// Código de la etapa del programa
     /// </summary>
-    public int EtpCodigo { get; set; }
+    public int Codigo { get; set; }
 
     /// <summary>
     /// Código de grupo corporativo
     /// </summary>
-    public int EtpCodgrc { get; set; }
+    public int GrupoCorporativoCodigo { get; set; }
 
     /// <summary>
     /// Nombre de la etapa del programa
     /// </summary>
-    public string EtpNombre { get; set; } = null!;
+    public string Nombre { get; set; } = null!;
 
     /// <summary>
     /// Descripción de la etapa del programa
     /// </summary>
-    public string? EtpDescripcion { get; set; }
+    public string? Descripcion { get; set; }
 
     /// <summary>
     /// Orden de esta etapa respecto de las demás
     /// </summary>
-    public int EtpOrden { get; set; }
+    public int Orden { get; set; }
 
     /// <summary>
     /// ¿Corresponde con actividades antes del primer día de trabajo?
     /// </summary>
-    public bool EtpAntesPrimerDia { get; set; }
+    public bool AntesPrimerDia { get; set; }
 
     /// <summary>
     /// ¿Corresponde con actividades durante el primer día de trabajo?
     /// </summary>
-    public bool EtpDurantePrimerDia { get; set; }
+    public bool DurantePrimerDia { get; set; }
 
     /// <summary>
     /// ¿Corresponde con actividades posteriores al primer día de trabajo?
     /// </summary>
-    public bool EtpPosteriorPrimerDia { get; set; }
+    public bool PosteriorPrimerDia { get; set; }
 
     /// <summary>
     /// Esta fase está contenida en el período de prueba
     /// </summary>
-    public bool EtpPeriodoPrueba { get; set; }
+    public bool PeriodoPrueba { get; set; }
 
     /// <summary>
     /// Data de los campos adicionales
     /// </summary>
-    public string? EtpPropertyBagData { get; set; }
+    public string? PropertyBagData { get; set; }
 
     /// <summary>
     /// Usuario que creo el registro
     /// </summary>
-    public string? EtpUsuarioGrabacion { get; set; }
+    public string? UsuarioGrabacion { get; set; }
 
     /// <summary>
     /// Fecha en que se creo el registro
     /// </summary>
-    public DateTime? EtpFechaGrabacion { get; set; }
+    public DateTime? FechaGrabacion { get; set; }
 
     /// <summary>
     /// Usuario que modificó por última vez el registro
     /// </summary>
-    public string? EtpUsuarioModificacion { get; set; }
+    public string? UsuarioModificacion { get; set; }
 
     /// <summary>
     /// Fecha de la última modificacion del registro
     /// </summary>
-    public DateTime? EtpFechaModificacion { get; set; }
+    public DateTime? FechaModificacion { get; set; }
 
     public virtual ICollection<ActividadPrograma> ActividadesProgramas { get; set; } = new List<ActividadPrograma>();
 

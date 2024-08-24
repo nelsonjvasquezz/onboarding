@@ -160,7 +160,7 @@ public partial class ActividadPrograma
 
     public virtual TipoResponsableActividad TipoResponsableActividad { get; set; } = null!;
 
-    public virtual ICollection<NotificacionActividadPrograma> NotifActividadProgramas { get; set; } = new List<NotificacionActividadPrograma>();
+    public virtual ICollection<NotificacionActividadPrograma> NotificacionActividadProgramas { get; set; } = new List<NotificacionActividadPrograma>();
 
     public virtual ICollection<ActividadPrograma> RapCodacpPrerequisitos { get; set; } = new List<ActividadPrograma>();
 

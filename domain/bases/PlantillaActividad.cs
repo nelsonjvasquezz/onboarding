@@ -16,7 +16,7 @@ public partial class PlantillaActividad
     /// <summary>
     /// Código de la plantilla de programa de onboarding
     /// </summary>
-    public int Codppr { get; set; }
+    public int PlantillaProgramaCodigo { get; set; }
 
     /// <summary>
     /// Nombre de la actividad
@@ -36,12 +36,12 @@ public partial class PlantillaActividad
     /// <summary>
     /// Código de Etapa o Fase del programa
     /// </summary>
-    public int Codetp { get; set; }
+    public int EtapaProgramaCodigo { get; set; }
 
     /// <summary>
     /// Código de Tipo de Actividad
     /// </summary>
-    public int Codtac { get; set; }
+    public int TipoActividadCodigo { get; set; }
 
     /// <summary>
     /// Desplazamiento de tiempo antes o despues de la contratación para determinar la fecha de inicio de la actividad
@@ -66,7 +66,7 @@ public partial class PlantillaActividad
     /// <summary>
     /// Código de Prioridad de la actividad
     /// </summary>
-    public int Codpri { get; set; }
+    public int PrioridadActividadCodigo { get; set; }
 
     /// <summary>
     /// Orden de esta actividad respecto de las mismas que tienen los mismos prerequisitos
@@ -113,13 +113,13 @@ public partial class PlantillaActividad
     /// </summary>
     public DateTime? FechaModificacion { get; set; }
 
-    public virtual EtapaPrograma CodetpNavigation { get; set; } = null!;
+    public virtual EtapaPrograma EtapaPrograma { get; set; } = null!;
 
-    public virtual PlantillaPrograma CodpprNavigation { get; set; } = null!;
+    public virtual PlantillaPrograma PlantillaPrograma { get; set; } = null!;
 
-    public virtual PrioridadActividad CodpriNavigation { get; set; } = null!;
+    public virtual PrioridadActividad PrioridadActividad { get; set; } = null!;
 
-    public virtual TipoActividad CodtacNavigation { get; set; } = null!;
+    public virtual TipoActividad TipoActividad { get; set; } = null!;
 
     public virtual TipoEvaluacion TipoEvaluacion { get; set; } = null!;
 

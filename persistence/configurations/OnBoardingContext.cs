@@ -149,59 +149,59 @@ public partial class OnBoardingContext : DbContext
 
         modelBuilder.Entity<EtapaPrograma>(entity =>
         {
-            entity.HasKey(e => e.EtpCodigo);
+            entity.HasKey(e => e.Codigo);
 
             entity.ToTable("etp_etapas_programa", "obd", tb => tb.HasComment("Tabla con las fases o etapas de los programas de Oboarding"));
 
-            entity.Property(e => e.EtpCodigo)
+            entity.Property(e => e.Codigo)
                 .HasComment("Código de la etapa del programa")
                 .HasColumnName("etp_codigo");
-            entity.Property(e => e.EtpAntesPrimerDia)
+            entity.Property(e => e.AntesPrimerDia)
                 .HasComment("¿Corresponde con actividades antes del primer día de trabajo?")
                 .HasColumnName("etp_antes_primer_dia");
-            entity.Property(e => e.EtpCodgrc)
+            entity.Property(e => e.GrupoCorporativoCodigo)
                 .HasComment("Código de grupo corporativo")
                 .HasColumnName("etp_codgrc");
-            entity.Property(e => e.EtpDescripcion)
+            entity.Property(e => e.Descripcion)
                 .HasMaxLength(500)
                 .IsUnicode(false)
                 .HasComment("Descripción de la etapa del programa")
                 .HasColumnName("etp_descripcion");
-            entity.Property(e => e.EtpAntesPrimerDia)
+            entity.Property(e => e.AntesPrimerDia)
                 .HasComment("¿Corresponde con actividades durante el primer día de trabajo?")
                 .HasColumnName("etp_durante_primer_dia");
-            entity.Property(e => e.EtpFechaGrabacion)
+            entity.Property(e => e.FechaGrabacion)
                 .HasComment("Fecha en que se creo el registro")
                 .HasColumnType("datetime")
                 .HasColumnName("etp_fecha_grabacion");
-            entity.Property(e => e.EtpFechaModificacion)
+            entity.Property(e => e.FechaModificacion)
                 .HasComment("Fecha de la última modificacion del registro")
                 .HasColumnType("datetime")
                 .HasColumnName("etp_fecha_modificacion");
-            entity.Property(e => e.EtpNombre)
+            entity.Property(e => e.Nombre)
                 .HasMaxLength(100)
                 .IsUnicode(false)
                 .HasComment("Nombre de la etapa del programa")
                 .HasColumnName("etp_nombre");
-            entity.Property(e => e.EtpOrden)
+            entity.Property(e => e.Orden)
                 .HasComment("Orden de esta etapa respecto de las demás")
                 .HasColumnName("etp_orden");
-            entity.Property(e => e.EtpPeriodoPrueba)
+            entity.Property(e => e.PeriodoPrueba)
                 .HasComment("Esta fase está contenida en el período de prueba")
                 .HasColumnName("etp_periodo_prueba");
-            entity.Property(e => e.EtpPosteriorPrimerDia)
+            entity.Property(e => e.PosteriorPrimerDia)
                 .HasComment("¿Corresponde con actividades posteriores al primer día de trabajo?")
                 .HasColumnName("etp_posterior_primer_dia");
-            entity.Property(e => e.EtpPropertyBagData)
+            entity.Property(e => e.PropertyBagData)
                 .HasComment("Data de los campos adicionales")
                 .HasColumnType("xml")
                 .HasColumnName("etp_property_bag_data");
-            entity.Property(e => e.EtpUsuarioGrabacion)
+            entity.Property(e => e.UsuarioGrabacion)
                 .HasMaxLength(50)
                 .IsUnicode(false)
                 .HasComment("Usuario que creo el registro")
                 .HasColumnName("etp_usuario_grabacion");
-            entity.Property(e => e.EtpUsuarioModificacion)
+            entity.Property(e => e.UsuarioModificacion)
                 .HasMaxLength(50)
                 .IsUnicode(false)
                 .HasComment("Usuario que modificó por última vez el registro")
@@ -261,12 +261,12 @@ public partial class OnBoardingContext : DbContext
                 .HasComment("Destinatario de la notificación: Contratado | JefeInmediato | ResponsableActividad | ResponsableRRHH")
                 .HasColumnName("nap_tipo_destinatario");
 
-            entity.HasOne(d => d.ActividadPrograma).WithMany(p => p.NotifActividadProgramas)
+            entity.HasOne(d => d.ActividadPrograma).WithMany(p => p.NotificacionActividadProgramas)
                 .HasForeignKey(d => d.ActividadProgramaCodigo)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_obdacp_obdnap");
 
-            entity.HasOne(d => d.EventoNotificable).WithMany(p => p.NotifActividadProgramas)
+            entity.HasOne(d => d.EventoNotificable).WithMany(p => p.NotificacionActividadProgramas)
                 .HasForeignKey(d => d.EventoNotificableCodigo)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_obdeno_obdnap");
@@ -281,16 +281,16 @@ public partial class OnBoardingContext : DbContext
             entity.Property(e => e.Codigo)
                 .HasComment("Código de registro de la actividad de la plantilla para programa de onboarding")
                 .HasColumnName("pac_codigo");
-            entity.Property(e => e.Codetp)
+            entity.Property(e => e.EtapaProgramaCodigo)
                 .HasComment("Código de Etapa o Fase del programa")
                 .HasColumnName("pac_codetp");
-            entity.Property(e => e.Codppr)
+            entity.Property(e => e.PlantillaProgramaCodigo)
                 .HasComment("Código de la plantilla de programa de onboarding")
                 .HasColumnName("pac_codppr");
-            entity.Property(e => e.Codpri)
+            entity.Property(e => e.PrioridadActividadCodigo)
                 .HasComment("Código de oridad de la actividad")
                 .HasColumnName("pac_codpri");
-            entity.Property(e => e.Codtac)
+            entity.Property(e => e.TipoActividadCodigo)
                 .HasComment("Código de Tipo de Actividad")
                 .HasColumnName("pac_codtac");
             entity.Property(e => e.TipoEvaluacionCodigo)
@@ -362,23 +362,23 @@ public partial class OnBoardingContext : DbContext
                 .HasComment("Usuario que modificó por última vez el registro")
                 .HasColumnName("pac_usuario_modificacion");
 
-            entity.HasOne(d => d.CodetpNavigation).WithMany(p => p.PlantActividades)
-                .HasForeignKey(d => d.Codetp)
+            entity.HasOne(d => d.EtapaPrograma).WithMany(p => p.PlantActividades)
+                .HasForeignKey(d => d.EtapaProgramaCodigo)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_obdetp_obdpac");
 
-            entity.HasOne(d => d.CodpprNavigation).WithMany(p => p.PlantillaActividades)
-                .HasForeignKey(d => d.Codppr)
+            entity.HasOne(d => d.PlantillaPrograma).WithMany(p => p.PlantillaActividades)
+                .HasForeignKey(d => d.PlantillaProgramaCodigo)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_obdppr_obdpac");
 
-            entity.HasOne(d => d.CodpriNavigation).WithMany(p => p.PlantillaActividades)
-                .HasForeignKey(d => d.Codpri)
+            entity.HasOne(d => d.PrioridadActividad).WithMany(p => p.PlantillaActividades)
+                .HasForeignKey(d => d.PrioridadActividadCodigo)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_obdpri_obdpac");
 
-            entity.HasOne(d => d.CodtacNavigation).WithMany(p => p.PlantillaActividades)
-                .HasForeignKey(d => d.Codtac)
+            entity.HasOne(d => d.TipoActividad).WithMany(p => p.PlantillaActividades)
+                .HasForeignKey(d => d.TipoActividadCodigo)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_obdtac_obdpac");
 
@@ -454,7 +454,7 @@ public partial class OnBoardingContext : DbContext
             entity.Property(e => e.PuestoCodigo)
                 .HasComment("Código de Puesto")
                 .HasColumnName("pal_codpue");
-            entity.Property(e => e.Codtpp)
+            entity.Property(e => e.TipoPuestoCodigo)
                 .HasComment("Código de Tipo de Puesto")
                 .HasColumnName("pal_codtpp");
             entity.Property(e => e.FechaGrabacion)
@@ -748,7 +748,7 @@ public partial class OnBoardingContext : DbContext
                 .HasComment("Usuario que modificó por última vez el registro") 
                 .HasColumnName("pro_usuario_modificacion");
 
-            entity.HasOne(d => d.PlantillaPrograma).WithMany(p => p.ProProgramas)
+            entity.HasOne(d => d.PlantillaPrograma).WithMany(p => p.Programa)
                 .HasForeignKey(d => d.PlantillaProgramaCodigo)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_obdppr_obdpro");
@@ -756,68 +756,68 @@ public partial class OnBoardingContext : DbContext
 
         modelBuilder.Entity<TipoActividad>(entity =>
         {
-            entity.HasKey(e => e.TacCodigo);
+            entity.HasKey(e => e.Codigo);
 
             entity.ToTable("tac_tipos_actividad", "obd", tb => tb.HasComment("Tabla que almacena los tipos de actividad para los programas de Onboarding"));
 
-            entity.Property(e => e.TacCodigo)
+            entity.Property(e => e.Codigo)
                 .HasComment("Código de tipo de actividad")
                 .HasColumnName("tac_codigo");
-            entity.Property(e => e.TacCodgrc)
+            entity.Property(e => e.GrupoCorporativoCodigo)
                 .HasComment("Código de grupo corporativo")
                 .HasColumnName("tac_codgrc");
-            entity.Property(e => e.TacDescripcion)
+            entity.Property(e => e.Descripcion)
                 .HasMaxLength(500)
                 .IsUnicode(false)
                 .HasComment("Descripción del tipo de actividad")
                 .HasColumnName("tac_descripcion");
-            entity.Property(e => e.TacDuracionEstimada)
+            entity.Property(e => e.DuracionEstimada)
                 .HasComment("Duración estimada de la actividad")
                 .HasColumnName("tac_duracion_estimada");
-            entity.Property(e => e.TacFechaGrabacion)
+            entity.Property(e => e.FechaGrabacion)
                 .HasComment("Fecha en que se creo el registro")
                 .HasColumnType("datetime")
                 .HasColumnName("tac_fecha_grabacion");
-            entity.Property(e => e.TacFechaModificacion)
+            entity.Property(e => e.FechaModificacion)
                 .HasComment("Fecha de la última modificacion del registro")
                 .HasColumnType("datetime")
                 .HasColumnName("tac_fecha_modificacion");
-            entity.Property(e => e.TacNombre)
+            entity.Property(e => e.Nombre)
                 .HasMaxLength(100)
                 .IsUnicode(false)
                 .HasComment("Nombre del tipo de actividad")
                 .HasColumnName("tac_nombre");
-            entity.Property(e => e.TacPropertyBagData)
+            entity.Property(e => e.PropertyBagData)
                 .HasComment("Data de los campos adicionales")
                 .HasColumnType("xml")
                 .HasColumnName("tac_property_bag_data");
-            entity.Property(e => e.TacReqDocumentos)
+            entity.Property(e => e.RequiereDocumentos)
                 .HasComment("¿Requiere Adjuntar documentos?")
                 .HasColumnName("tac_req_documentos");
-            entity.Property(e => e.TacReqEvaluacion)
+            entity.Property(e => e.RequiereEvaluacion)
                 .HasComment("¿Requiere Evaluación del responsable? (contratado, jefe, RRHH y al responsable de la actividad si está definido)")
                 .HasColumnName("tac_req_evaluacion");
-            entity.Property(e => e.TacReqNotificacion)
+            entity.Property(e => e.RequiereNotificacion)
                 .HasComment("¿Requiere Notificación luego de que finalice? (contratado, jefe, RRHH y al responsable de la actividad si está definido)")
                 .HasColumnName("tac_req_notificacion");
-            entity.Property(e => e.TacReqRecordatorio)
+            entity.Property(e => e.RequiereRecordatorio)
                 .HasComment("¿Requiere Recordatorio previo a que se inicie? (contratado, jefe, RRHH y al responsable de la actividad si está definido)")
                 .HasColumnName("tac_req_recordatorio");
-            entity.Property(e => e.TacReqResponsable)
+            entity.Property(e => e.RequiereResponsable)
                 .HasComment("¿Requiere un responsable asignado?")
                 .HasColumnName("tac_req_responsable");
-            entity.Property(e => e.TacUnidadDuracion)
+            entity.Property(e => e.UnidadDuracion)
                 .HasMaxLength(50)
                 .IsUnicode(false)
                 .HasDefaultValue("Días")
                 .HasComment("Unidad de medida para la duración estimada")
                 .HasColumnName("tac_unidad_duracion");
-            entity.Property(e => e.TacUsuarioGrabacion)
+            entity.Property(e => e.UsuarioGrabacion)
                 .HasMaxLength(50)
                 .IsUnicode(false)
                 .HasComment("Usuario que creo el registro")
                 .HasColumnName("tac_usuario_grabacion");
-            entity.Property(e => e.TacUsuarioModificacion)
+            entity.Property(e => e.UsuarioModificacion)
                 .HasMaxLength(50)
                 .IsUnicode(false)
                 .HasComment("Usuario que modificó por última vez el registro")

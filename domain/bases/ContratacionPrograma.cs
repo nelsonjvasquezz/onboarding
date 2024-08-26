@@ -93,5 +93,5 @@ public partial class ContratacionPrograma
 
     public virtual ICollection<ActividadPrograma> ActividadesProgramas { get; set; } = new List<ActividadPrograma>();
 
-    public virtual Programa Programa { get; set; };
+    public virtual Programa Programa { get; set; }
 }

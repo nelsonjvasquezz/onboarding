@@ -20,23 +20,22 @@ namespace onboarding.persistence.configurations
 
         public void Configure(EntityTypeBuilder<AlcancePlantillaPrograma> builder)
         {
-            builder.ToTable("app_alcance_plantilla_programa", _schema);
+            builder.ToTable("pal_plant_alcances", _schema);
             builder.HasKey(e => e.Codigo);
 
-            builder.Property(e => e.Codigo).HasColumnName("app_codigo");
-            builder.Property(e => e.Descripcion).HasColumnName("app_descripcion").HasMaxLength(500).IsUnicode(false);
-            builder.Property(e => e.Objetivo).HasColumnName("app_objetivo").HasMaxLength(500).IsUnicode(false);
-            builder.Property(e => e.FechaInicio).HasColumnName("app_fecha_inicio").HasColumnType("datetime");
-            builder.Property(e => e.FechaFin).HasColumnName("app_fecha_fin").HasColumnType("datetime");
-            builder.Property(e => e.FechaGrabacion).HasColumnName("app_fecha_grabacion").HasColumnType("datetime");
-            builder.Property(e => e.FechaModificacion).HasColumnName("app_fecha_modificacion").HasColumnType("datetime");
-            builder.Property(e => e.UsuarioGrabacion).HasColumnName("app_usuario_grabacion").HasMaxLength(50).IsUnicode(false);
-            builder.Property(e => e.UsuarioModificacion).HasColumnName("app_usuario_modificacion").HasMaxLength(50).IsUnicode(false);
+            builder.Property(e => e.Codigo).HasColumnName("pal_codigo");
+            builder.Property(e => e.PlantillaProgramaCodigo).HasColumnName("pal_codppr");
+            builder.Property(e => e.Tipo).HasColumnName("pal_tipo");
+            builder.Property(e => e.TipoPuestoCodigo).HasColumnName("pal_codtpp");
+            builder.Property(e => e.PuestoCodigo).HasColumnName("pal_codpue");
+            builder.Property(e => e.RawPropertyBagData).HasColumnName("pal_property_bag_data");
+            builder.Property(e => e.UsuarioGrabacion).HasColumnName("pal_usuario_grabacion").HasMaxLength(50).IsUnicode(false);
+            builder.Property(e => e.FechaGrabacion).HasColumnName("pal_fecha_grabacion");
+            builder.Property(e => e.UsuarioModificacion).HasColumnName("pal_usuario_modificacion").HasMaxLength(50).IsUnicode(false);
+            builder.Property(e => e.FechaModificacion).HasColumnName("pal_fecha_modificacion");
 
-            builder.HasOne(d => d.Programa).WithMany(p => p.AlcancesPlantilla)
-                .HasForeignKey(d => d.ProgramaCodigo)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK_obdprog_obdapp");
+            // Foreing keys
+            builder.HasRequired(d => d.PlantillaPrograma).WithMany(p => p.Alcances).HasForeignKey(d => d.PlantillaProgramaCodigo).WillCascadeOnDelete(false); // FK_obdppr_obdpap
         }
     }
 }

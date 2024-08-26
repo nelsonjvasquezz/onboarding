@@ -156,31 +156,37 @@ public partial class ActividadPrograma
     /// <summary>
     /// Parent ContratacionPrograma pointed by [acp_actividades_programa].([ContratacionProgramaCodigo]) (FK_obdcpr_obdacp)
     /// </summary>
+    [XmlIgnore, JsonIgnore]
     public virtual ContratacionPrograma ContratacionPrograma { get; set; } // FK_obdcpr_obdacp
 
     /// <summary>
     /// Parent EtapaPrograma pointed by [acp_actividades_programa].([EtapaProgramaCodigo]) (FK_obdetp_obdacp)
     /// </summary>
+    [XmlIgnore, JsonIgnore]
     public virtual EtapaPrograma EtapaPrograma { get; set; } // FK_obdetp_obdacp
 
     /// <summary>
     /// Parent PrioridadActividad pointed by [acp_actividades_programa].([PrioridadActividadCodigo]) (FK_obdpri_obdacp)
     /// </summary>
+    [XmlIgnore, JsonIgnore]
     public virtual PrioridadActividad PrioridadActividad { get; set; } // FK_obdpri_obdacp
 
     /// <summary>
     /// Parent TipoActividad pointed by [acp_actividades_programa].([TipoActividadCodigo]) (FK_obdtac_obdacp)
     /// </summary>
+    [XmlIgnore, JsonIgnore]
     public virtual TipoActividad TipoActividad { get; set; } // FK_obdtac_obdacp
 
     /// <summary>
     /// Parent TipoEvaluacion pointed by [acp_actividades_programa].([TipoEvaluacionCodigo]) (FK_obdtev_obdacp)
     /// </summary>
+    [XmlIgnore, JsonIgnore]
     public virtual TipoEvaluacion? TipoEvaluacion { get; set; } // FK_obdte_obdacp
 
     /// <summary>
     /// Parent TipoResponsableActividad pointed by [acp_actividades_programa].([TipoResponsableActividadCodigo]) (FK_obdtra_obdacp)
     /// </summary>
+    [XmlIgnore, JsonIgnore]
     public virtual TipoResponsableActividad TipoResponsableActividad { get; set; } // FK_obdtra_obdacp
 
     // Children collections
@@ -188,10 +194,12 @@ public partial class ActividadPrograma
     /// <summary>
     /// Child Notificaciones where [nap_notif_actividad_programa].[nap_codacp] point to this entity (FK_obdacp_obdnap)
     /// </summary>
+    [XmlIgnore, JsonIgnore]
     public virtual ICollection<NotificacionActividadPrograma> Notificaciones { get; set; } = new List<NotificacionActividadPrograma>();
 
     /// <summary>
     /// Child ActividadesPrerequisitos (Many-to-Many) mapped by table [rap_req_actividades_programa]
     /// </summary>
+    [XmlIgnore, JsonIgnore]
     public virtual ICollection<RequisitoActividadPrograma> ActividadesPrerequisitos { get; set; } = new List<RequisitoActividadPrograma>();
 }

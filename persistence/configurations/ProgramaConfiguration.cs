@@ -23,16 +23,16 @@ namespace onboarding.persistence.configurations
             builder.ToTable("pro_programa", _schema);
             builder.HasKey(e => e.Codigo);
 
-            builder.Property(e => e.Codigo).HasColumnName("pro_codigo").HasComment("Código de registro del programa de onboarding");
-            builder.Property(e => e.Nombre).HasColumnName("pro_nombre").HasMaxLength(250).IsUnicode(false).HasComment("Nombre del programa de onboarding");
-            builder.Property(e => e.Descripcion).HasColumnName("pro_descripcion").HasMaxLength(500).IsUnicode(false).HasComment("Descripción del programa de onboarding");
-            builder.Property(e => e.FechaInicio).HasColumnName("pro_fecha_inicio").HasColumnType("datetime").HasComment("Fecha de inicio del programa de onboarding");
-            builder.Property(e => e.FechaFin).HasColumnName("pro_fecha_fin").HasColumnType("datetime").HasComment("Fecha de finalización del programa de onboarding");
-            builder.Property(e => e.FechaGrabacion).HasColumnName("pro_fecha_grabacion").HasColumnType("datetime").HasComment("Fecha en que se creó el registro");
-            builder.Property(e => e.FechaModificacion).HasColumnName("pro_fecha_modificacion").HasColumnType("datetime").HasComment("Fecha de la última modificación del registro");
-            builder.Property(e => e.RawPropertyBagData).HasColumnName("pro_property_bag_data").HasColumnType("xml").HasComment("Data de los campos adicionales");
-            builder.Property(e => e.UsuarioGrabacion).HasColumnName("pro_usuario_grabacion").HasMaxLength(50).IsUnicode(false).HasComment("Usuario que creó el registro");
-            builder.Property(e => e.UsuarioModificacion).HasColumnName("pro_usuario_modificacion").HasMaxLength(50).IsUnicode(false).HasComment("Usuario que modificó por última vez el registro");
+            builder.Property(e => e.Codigo).HasColumnName("pro_codigo");
+            builder.Property(e => e.Nombre).HasColumnName("pro_nombre").HasMaxLength(250).IsUnicode(false);
+            builder.Property(e => e.Descripcion).HasColumnName("pro_descripcion").HasMaxLength(500).IsUnicode(false);
+            builder.Property(e => e.FechaInicio).HasColumnName("pro_fecha_inicio").HasColumnType("datetime");
+            builder.Property(e => e.FechaFin).HasColumnName("pro_fecha_fin").HasColumnType("datetime");
+            builder.Property(e => e.FechaGrabacion).HasColumnName("pro_fecha_grabacion").HasColumnType("datetime");
+            builder.Property(e => e.FechaModificacion).HasColumnName("pro_fecha_modificacion").HasColumnType("datetime");
+            builder.Property(e => e.RawPropertyBagData).HasColumnName("pro_property_bag_data").HasColumnType("xml");
+            builder.Property(e => e.UsuarioGrabacion).HasColumnName("pro_usuario_grabacion").HasMaxLength(50).IsUnicode(false);
+            builder.Property(e => e.UsuarioModificacion).HasColumnName("pro_usuario_modificacion").HasMaxLength(50).IsUnicode(false);
 
             builder.HasMany(d => d.ActividadesProgramas)
                 .WithOne(p => p.Programa)

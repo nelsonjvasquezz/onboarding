@@ -53,7 +53,7 @@ namespace onboarding.persistence.configurations
             builder.Property(e => e.FechaModificacion).HasColumnName("acp_fecha_modificacion");
 
             // Foreign keys
-            builder.HasRequired(d => d.ContratacionPrograma).WithMany(p => p.ActividadesProgramas).HasForeignKey(d => d.ContratacionProgramaCodigo).WillCascadeOnDelete(false); // FK_obdcpr_obdacp
+            builder.HasRequired(d => d.ContratacionPrograma).WithMany(p => p.Actividades).HasForeignKey(d => d.ContratacionProgramaCodigo).WillCascadeOnDelete(false); // FK_obdcpr_obdacp
             builder.HasRequired(d => d.EtapaPrograma).WithMany(p => p.ActividadesProgramas).HasForeignKey(d => d.EtapaProgramaCodigo).WillCascadeOnDelete(false); // FK_obdetp_obdacp
             builder.HasRequired(d => d.PrioridadActividad).WithMany(p => p.ActividadesProgramas).HasForeignKey(d => d.PrioridadActividadCodigo).WillCascadeOnDelete(false); // FK_obdpri_obdacp
             builder.HasRequired(d => d.TipoActividad).WithMany(p => p.ActividadesProgramas).HasForeignKey(d => d.TipoActividadCodigo).WillCascadeOnDelete(false); // FK_obdtac_obdacp

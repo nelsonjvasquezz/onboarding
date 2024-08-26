@@ -80,7 +80,7 @@ public partial class OnBoardingContext : DbContext
                 .HasComment("Fecha de la última modificacion del registro")
                 .HasColumnType("datetime")
                 .HasColumnName("cpr_fecha_modificacion");
-            entity.Property(e => e.PropertyBagData)
+            entity.Property(e => e.RawPropertyBagData)
                 .HasComment("Data de los campos adicionales")
                 .HasColumnType("xml")
                 .HasColumnName("cpr_property_bag_data");
@@ -131,7 +131,7 @@ public partial class OnBoardingContext : DbContext
                 .IsUnicode(false)
                 .HasComment("Nombre del Evento")
                 .HasColumnName("eno_nombre");
-            entity.Property(e => e.PropertyBagData)
+            entity.Property(e => e.RawPropertyBagData)
                 .HasComment("Data de los campos adicionales")
                 .HasColumnType("xml")
                 .HasColumnName("eno_property_bag_data");
@@ -192,7 +192,7 @@ public partial class OnBoardingContext : DbContext
             entity.Property(e => e.PosteriorPrimerDia)
                 .HasComment("¿Corresponde con actividades posteriores al primer día de trabajo?")
                 .HasColumnName("etp_posterior_primer_dia");
-            entity.Property(e => e.PropertyBagData)
+            entity.Property(e => e.RawPropertyBagData)
                 .HasComment("Data de los campos adicionales")
                 .HasColumnType("xml")
                 .HasColumnName("etp_property_bag_data");
@@ -335,7 +335,7 @@ public partial class OnBoardingContext : DbContext
             entity.Property(e => e.Orden)
                 .HasComment("Orden de esta actividad respecto de las mismas que tienen los mismos prerequisitos")
                 .HasColumnName("pac_orden");
-            entity.Property(e => e.PropertyBagData)
+            entity.Property(e => e.RawPropertyBagData)
                 .HasComment("Data de los campos adicionales")
                 .HasColumnType("xml")
                 .HasColumnName("pac_property_bag_data");
@@ -465,7 +465,7 @@ public partial class OnBoardingContext : DbContext
                 .HasComment("Fecha de la última modificacion del registro")
                 .HasColumnType("datetime")
                 .HasColumnName("pal_fecha_modificacion");
-            entity.Property(e => e.PropertyBagData)
+            entity.Property(e => e.RawPropertyBagData)
                 .HasComment("Data de los campos adicionales")
                 .HasColumnType("xml")
                 .HasColumnName("pal_property_bag_data");
@@ -535,7 +535,7 @@ public partial class OnBoardingContext : DbContext
             entity.Property(e => e.OffsetInicio)
                 .HasComment("Desplamiento en dias antes o despues de la fecha de inicio ")
                 .HasColumnName("pna_offset_inicio");
-            entity.Property(e => e.PropertyBagData)
+            entity.Property(e => e.RawPropertyBagData)
                 .HasComment("Data de los campos adicionales")
                 .HasColumnType("xml")
                 .HasColumnName("pna_property_bag_data");
@@ -608,7 +608,7 @@ public partial class OnBoardingContext : DbContext
                 .IsUnicode(false)
                 .HasComment("Objetivos del programa de onboarding")
                 .HasColumnName("ppr_objetivo");
-            entity.Property(e => e.PropertyBagData)
+            entity.Property(e => e.RawPropertyBagData)
                 .HasComment("Data de los campos adicionales")
                 .HasColumnType("xml")
                 .HasColumnName("ppr_property_bag_data");
@@ -669,7 +669,7 @@ public partial class OnBoardingContext : DbContext
             entity.Property(e => e.Orden)
                 .HasComment("Determina el orden las prioridades")
                 .HasColumnName("pri_orden");
-            entity.Property(e => e.PropertyBagData)
+            entity.Property(e => e.RawPropertyBagData)
                 .HasComment("Data de los campos adicionales")
                 .HasColumnType("xml")
                 .HasColumnName("pri_property_bag_data");
@@ -727,7 +727,7 @@ public partial class OnBoardingContext : DbContext
                 .IsUnicode(false)
                 .HasComment("Objetivos del programa de onboarding")
                 .HasColumnName("pro_objetivo");
-            entity.Property(e => e.PropertyBagData)
+            entity.Property(e => e.RawPropertyBagData)
                 .HasComment("Data de los campos adicionales")
                 .HasColumnType("xml")
                 .HasColumnName("pro_property_bag_data");
@@ -787,7 +787,7 @@ public partial class OnBoardingContext : DbContext
                 .IsUnicode(false)
                 .HasComment("Nombre del tipo de actividad")
                 .HasColumnName("tac_nombre");
-            entity.Property(e => e.PropertyBagData)
+            entity.Property(e => e.RawPropertyBagData)
                 .HasComment("Data de los campos adicionales")
                 .HasColumnType("xml")
                 .HasColumnName("tac_property_bag_data");
@@ -857,7 +857,7 @@ public partial class OnBoardingContext : DbContext
                 .IsUnicode(false)
                 .HasComment("Nombre del tipo de evaluación")
                 .HasColumnName("tev_nombre");
-            entity.Property(e => e.PropertyBagData)
+            entity.Property(e => e.RawPropertyBagData)
                 .HasComment("Data de los campos adicionales")
                 .HasColumnType("xml")
                 .HasColumnName("tev_property_bag_data");
@@ -927,7 +927,7 @@ public partial class OnBoardingContext : DbContext
                 .IsUnicode(false)
                 .HasComment("Nombre del Tipo de Resonsable de Actividad")
                 .HasColumnName("tra_nombre");
-            entity.Property(e => e.PropertyBagData)
+            entity.Property(e => e.RawPropertyBagData)
                 .HasComment("Data de los campos adicionales")
                 .HasColumnType("xml")
                 .HasColumnName("tra_property_bag_data");

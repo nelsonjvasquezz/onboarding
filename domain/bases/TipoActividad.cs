@@ -5,6 +5,7 @@ namespace onboarding.data.bases;
 
 /// <summary>
 /// Tabla que almacena los tipos de actividad para los programas de Onboarding
+/// obd.tac_tipos_actividad
 /// </summary>
 public partial class TipoActividad
 {
@@ -21,12 +22,12 @@ public partial class TipoActividad
     /// <summary>
     /// Nombre del tipo de actividad
     /// </summary>
-    public string Nombre { get; set; } = null!;
+    public string Nombre { get; set; }
 
     /// <summary>
     /// Descripción del tipo de actividad
     /// </summary>
-    public string? Descripcion { get; set; }
+    public string Descripcion { get; set; }
 
     /// <summary>
     /// ¿Requiere Notificación luego de que finalice? (contratado, jefe, RRHH y al responsable de la actividad si está definido)
@@ -61,17 +62,17 @@ public partial class TipoActividad
     /// <summary>
     /// Unidad de medida para la duración estimada
     /// </summary>
-    public string UnidadDuracion { get; set; } = null!;
+    public string UnidadDuracion { get; set; }
 
     /// <summary>
     /// Data de los campos adicionales
     /// </summary>
-    public string? PropertyBagData { get; set; }
+    public string RawPropertyBagData { get; set; }
 
     /// <summary>
     /// Usuario que creo el registro
     /// </summary>
-    public string? UsuarioGrabacion { get; set; }
+    public string UsuarioGrabacion { get; set; }
 
     /// <summary>
     /// Fecha en que se creo el registro
@@ -81,7 +82,7 @@ public partial class TipoActividad
     /// <summary>
     /// Usuario que modificó por última vez el registro
     /// </summary>
-    public string? UsuarioModificacion { get; set; }
+    public string UsuarioModificacion { get; set; }
 
     /// <summary>
     /// Fecha de la última modificacion del registro

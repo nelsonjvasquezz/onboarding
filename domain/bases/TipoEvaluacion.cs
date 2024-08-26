@@ -5,6 +5,7 @@ namespace onboarding.data.bases;
 
 /// <summary>
 /// Tabla con los tipos de evaluaciones que se aplican a las actividades de los planes de onboarding
+/// obd.tev_tipos_evaluacion
 /// </summary>
 public partial class TipoEvaluacion
 {
@@ -21,12 +22,12 @@ public partial class TipoEvaluacion
     /// <summary>
     /// Nombre del tipo de evaluación
     /// </summary>
-    public string Nombre { get; set; } = null!;
+    public string Nombre { get; set; }
 
     /// <summary>
     /// Descripción del tipo de evaluación
     /// </summary>
-    public string? Descripcion { get; set; }
+    public string Descripcion { get; set; }
 
     /// <summary>
     /// Determina si el tipo de evaluación utiliza un formulario dinámico
@@ -41,12 +42,12 @@ public partial class TipoEvaluacion
     /// <summary>
     /// Data de los campos adicionales
     /// </summary>
-    public string? PropertyBagData { get; set; }
+    public string RawPropertyBagData { get; set; }
 
     /// <summary>
     /// Usuario que creo el registro
     /// </summary>
-    public string? UsuarioGrabacion { get; set; }
+    public string UsuarioGrabacion { get; set; }
 
     /// <summary>
     /// Fecha en que se creo el registro
@@ -56,7 +57,7 @@ public partial class TipoEvaluacion
     /// <summary>
     /// Usuario que modificó por última vez el registro
     /// </summary>
-    public string? UsuarioModificacion { get; set; }
+    public string UsuarioModificacion { get; set; }
 
     /// <summary>
     /// Fecha de la última modificacion del registro

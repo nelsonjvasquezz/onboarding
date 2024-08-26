@@ -106,7 +106,7 @@ namespace onboarding.persistence.configurations
                 entity.Property(e => e.Orden)
                     .HasComment("Orden de esta actividad respecto de las mismas que tienen los mismos prerequisitos")
                     .HasColumnName("acp_orden");
-                entity.Property(e => e.PropertyBagData)
+                entity.Property(e => e.RawPropertyBagData)
                     .HasComment("Data de los campos adicionales")
                     .HasColumnType("xml")
                     .HasColumnName("acp_property_bag_data");

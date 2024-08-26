@@ -5,6 +5,7 @@ namespace onboarding.data.bases;
 
 /// <summary>
 /// Tabla que almacena los evento que son notificables para el seguimiento de los programas de onboarding
+/// obd.eno_eventos_notificables
 /// </summary>
 public partial class EventoNotificable
 {
@@ -21,22 +22,22 @@ public partial class EventoNotificable
     /// <summary>
     /// Nombre del Evento
     /// </summary>
-    public string Nombre { get; set; } = null!;
+    public string Nombre { get; set; } = null;
 
     /// <summary>
     /// Descripción del Evento que se puede notificar
     /// </summary>
-    public string Descripcion { get; set; } = null!;
+    public string Descripcion { get; set; } = null;
 
     /// <summary>
     /// Data de los campos adicionales
     /// </summary>
-    public string? PropertyBagData { get; set; }
+    public string RawPropertyBagData { get; set; }
 
     /// <summary>
     /// Usuario que creo el registro
     /// </summary>
-    public string? UsuarioGrabacion { get; set; }
+    public string UsuarioGrabacion { get; set; }
 
     /// <summary>
     /// Fecha en que se creo el registro
@@ -46,7 +47,7 @@ public partial class EventoNotificable
     /// <summary>
     /// Usuario que modificó por última vez el registro
     /// </summary>
-    public string? UsuarioModificacion { get; set; }
+    public string UsuarioModificacion { get; set; }
 
     /// <summary>
     /// Fecha de la última modificacion del registro

@@ -5,6 +5,7 @@ namespace onboarding.data.bases;
 
 /// <summary>
 /// Tabla que almacena los registros de la notificación de la actividad de la plantilla
+/// obd.pna_plant_notificacion_act
 /// </summary>
 public partial class PlantillaNotificacionActividad
 {
@@ -36,12 +37,12 @@ public partial class PlantillaNotificacionActividad
     /// <summary>
     /// Asunto de la notificación
     /// </summary>
-    public string Subject { get; set; } = null!;
+    public string Subject { get; set; } = null;
 
     /// <summary>
     /// Cuerpo Markdown de la notificación
     /// </summary>
-    public string Body { get; set; } = null!;
+    public string Body { get; set; } = null;
 
     /// <summary>
     /// Determina si la notificación se envía al empleado contratado
@@ -61,12 +62,12 @@ public partial class PlantillaNotificacionActividad
     /// <summary>
     /// Data de los campos adicionales
     /// </summary>
-    public string? PropertyBagData { get; set; }
+    public string RawPropertyBagData { get; set; }
 
     /// <summary>
     /// Usuario que creo el registro
     /// </summary>
-    public string? UsuarioGrabacion { get; set; }
+    public string UsuarioGrabacion { get; set; }
 
     /// <summary>
     /// Fecha en que se creo el registro
@@ -76,12 +77,12 @@ public partial class PlantillaNotificacionActividad
     /// <summary>
     /// Usuario que modificó por última vez el registro
     /// </summary>
-    public string? UsuarioModificacion { get; set; }
+    public string UsuarioModificacion { get; set; }
 
     /// <summary>
     /// Fecha de la última modificacion del registro
     /// </summary>
     public DateTime? FechaModificacion { get; set; }
 
-    public virtual PlantillaActividad PlantillaActividad { get; set; } = null!;
+    public virtual PlantillaActividad PlantillaActividad { get; set; }
 }

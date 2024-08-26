@@ -5,6 +5,7 @@ namespace onboarding.data.bases;
 
 /// <summary>
 /// Tabla que almacena las prioridades de las actividades del plan de onboarding
+/// obd.pri_prioridades
 /// </summary>
 public partial class PrioridadActividad
 {
@@ -21,17 +22,17 @@ public partial class PrioridadActividad
     /// <summary>
     /// Nombre de la prioridad
     /// </summary>
-    public string Nombre { get; set; } = null!;
+    public string Nombre { get; set; }
 
     /// <summary>
     /// Color con que se muestra la prioridad
     /// </summary>
-    public string Color { get; set; } = null!;
+    public string Color { get; set; }
 
     /// <summary>
     /// Ícono con que se muestra la prioridad
     /// </summary>
-    public string? Icono { get; set; }
+    public string Icono { get; set; }
 
     /// <summary>
     /// Determina el orden las prioridades
@@ -41,12 +42,12 @@ public partial class PrioridadActividad
     /// <summary>
     /// Data de los campos adicionales
     /// </summary>
-    public string? PropertyBagData { get; set; }
+    public string RawPropertyBagData { get; set; }
 
     /// <summary>
     /// Usuario que creo el registro
     /// </summary>
-    public string? UsuarioGrabacion { get; set; }
+    public string UsuarioGrabacion { get; set; }
 
     /// <summary>
     /// Fecha en que se creo el registro
@@ -56,7 +57,7 @@ public partial class PrioridadActividad
     /// <summary>
     /// Usuario que modificó por última vez el registro
     /// </summary>
-    public string? UsuarioModificacion { get; set; }
+    public string UsuarioModificacion { get; set; }
 
     /// <summary>
     /// Fecha de la última modificacion del registro

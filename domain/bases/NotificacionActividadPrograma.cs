@@ -5,6 +5,7 @@ namespace onboarding.data.bases;
 
 /// <summary>
 /// Tabla que almacena las configuraciones de las notificaciones de la actividad del programa
+/// obd.nap_notif_actividad_programa
 /// </summary>
 public partial class NotificacionActividadPrograma
 {
@@ -31,17 +32,17 @@ public partial class NotificacionActividadPrograma
     /// <summary>
     /// Destinatario de la notificación: Contratado | JefeInmediato | ResponsableActividad | ResponsableRRHH
     /// </summary>
-    public string TipoDestinatario { get; set; } = null!;
+    public string TipoDestinatario { get; set; } = null;
 
     /// <summary>
     /// Asunto de la notificación
     /// </summary>
-    public string? Subject { get; set; }
+    public string Subject { get; set; }
 
     /// <summary>
     /// Cuerpo Markdown de la notificación
     /// </summary>
-    public string? Body { get; set; }
+    public string Body { get; set; }
 
     /// <summary>
     /// Fecha en que sucedió el evento notificable (está null mientras no se ha dado)
@@ -56,14 +57,14 @@ public partial class NotificacionActividadPrograma
     /// <summary>
     /// Estado de la notificación (NULL | &apos;Pendiente&apos; | &apos;Enviada&apos; | &apos;Error&apos;)
     /// </summary>
-    public string? Estado { get; set; }
+    public string Estado { get; set; }
 
     /// <summary>
     /// Mensaje o excepción cuando el estado es &apos;Error&apos;
     /// </summary>
-    public string? MensajeError { get; set; }
+    public string MensajeError { get; set; }
 
-    public virtual ActividadPrograma ActividadPrograma { get; set; } = null!;
+    public virtual ActividadPrograma ActividadPrograma { get; set; }
 
-    public virtual EventoNotificable EventoNotificable { get; set; } = null!;
+    public virtual EventoNotificable EventoNotificable { get; set; }
 }

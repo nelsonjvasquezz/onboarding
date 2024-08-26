@@ -5,6 +5,7 @@ namespace onboarding.data.bases;
 
 /// <summary>
 /// Tabla que almacena las actividades de la plantilla del programa de onboarding
+/// obd.acp_actividades_programa
 /// </summary>
 public partial class ActividadPrograma
 {
@@ -21,17 +22,17 @@ public partial class ActividadPrograma
     /// <summary>
     /// Nombre de la actividad
     /// </summary>
-    public string Nombre { get; set; } = null!;
+    public string Nombre { get; set; }
 
     /// <summary>
     /// Descripción de la actividad
     /// </summary>
-    public string? Descripcion { get; set; }
+    public string Descripcion { get; set; }
 
     /// <summary>
     /// Objetivo de la actividad
     /// </summary>
-    public string? Objetivo { get; set; }
+    public string Objetivo { get; set; }
 
     /// <summary>
     /// Código de Etapa o Fase del programa
@@ -66,7 +67,7 @@ public partial class ActividadPrograma
     /// <summary>
     /// Unidad de medida de la duración de la actividad
     /// </summary>
-    public string UnidadDuracion { get; set; } = null!;
+    public string UnidadDuracion { get; set; }
 
     /// <summary>
     /// Código de Prioridad de la actividad
@@ -101,7 +102,7 @@ public partial class ActividadPrograma
     /// <summary>
     /// Determina si la evaluación fue aprobada o no
     /// </summary>
-    public string? ResultadoEvaluacion { get; set; }
+    public string ResultadoEvaluacion { get; set; }
 
     /// <summary>
     /// Código de la data del formulario dinámico (cuando está definido según el tipo de evaluación)
@@ -111,7 +112,7 @@ public partial class ActividadPrograma
     /// <summary>
     /// Estado de la actividad (Pendiente, En Proceso, Finalizada)
     /// </summary>
-    public string Estado { get; set; } = null!;
+    public string Estado { get; set; }
 
     /// <summary>
     /// Fecha de finalización de la actividad (fecha en el estado cambio a finalizada)
@@ -121,17 +122,17 @@ public partial class ActividadPrograma
     /// <summary>
     /// Comentarios de evaluador o quien finaliza la actividad
     /// </summary>
-    public string? ComentarioFinalizacion { get; set; }
+    public string ComentarioFinalizacion { get; set; }
 
     /// <summary>
     /// Data de los campos adicionales
     /// </summary>
-    public string? PropertyBagData { get; set; }
+    public string RawPropertyBagData { get; set; }
 
     /// <summary>
     /// Usuario que creo el registro
     /// </summary>
-    public string? UsuarioGrabacion { get; set; }
+    public string UsuarioGrabacion { get; set; }
 
     /// <summary>
     /// Fecha en que se creo el registro
@@ -141,24 +142,24 @@ public partial class ActividadPrograma
     /// <summary>
     /// Usuario que modificó por última vez el registro
     /// </summary>
-    public string? UsuarioModificacion { get; set; }
+    public string UsuarioModificacion { get; set; }
 
     /// <summary>
     /// Fecha de la última modificacion del registro
     /// </summary>
     public DateTime? FechaModificacion { get; set; }
 
-    public virtual ContratacionPrograma ContratacionPrograma { get; set; } = null!;
+    public virtual ContratacionPrograma ContratacionPrograma { get; set; }
 
-    public virtual EtapaPrograma EtapaPrograma { get; set; } = null!;
+    public virtual EtapaPrograma EtapaPrograma { get; set; }
 
-    public virtual PrioridadActividad PrioridadActividad { get; set; } = null!;
+    public virtual PrioridadActividad PrioridadActividad { get; set; }
 
-    public virtual TipoActividad TipoActividad { get; set; } = null!;
+    public virtual TipoActividad TipoActividad { get; set; }
 
     public virtual TipoEvaluacion? TipoEvaluacion { get; set; }
 
-    public virtual TipoResponsableActividad TipoResponsableActividad { get; set; } = null!;
+    public virtual TipoResponsableActividad TipoResponsableActividad { get; set; }
 
     public virtual ICollection<NotificacionActividadPrograma> NotificacionActividadProgramas { get; set; } = new List<NotificacionActividadPrograma>();
 

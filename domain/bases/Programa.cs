@@ -5,6 +5,7 @@ namespace onboarding.data.bases;
 
 /// <summary>
 /// Tabla que almacena los programas de onboarding
+/// obd.pro_programas
 /// </summary>
 public partial class Programa
 {
@@ -21,22 +22,22 @@ public partial class Programa
     /// <summary>
     /// Nombre del programa de onboarding
     /// </summary>
-    public string Nombre { get; set; } = null!;
+    public string Nombre { get; set; }
 
     /// <summary>
     /// Descripción del programa de onboarding
     /// </summary>
-    public string? Descripcion { get; set; }
+    public string Descripcion { get; set; }
 
     /// <summary>
     /// Objetivos del programa de onboarding
     /// </summary>
-    public string? Objetivo { get; set; }
+    public string Objetivo { get; set; }
 
     /// <summary>
     /// Estado del programa &apos;Planificado&apos; o &apos;En Ejecución&apos; o &apos;Finalizado&apos;
     /// </summary>
-    public string Estado { get; set; } = null!;
+    public string Estado { get; set; }
 
     /// <summary>
     /// Duración estimada del programa
@@ -46,17 +47,17 @@ public partial class Programa
     /// <summary>
     /// Unidad de medida de la duración estimada del programa
     /// </summary>
-    public string UnidadDuracion { get; set; } = null!;
+    public string UnidadDuracion { get; set; }
 
     /// <summary>
     /// Data de los campos adicionales
     /// </summary>
-    public string? PropertyBagData { get; set; }
+    public string RawPropertyBagData { get; set; }
 
     /// <summary>
     /// Usuario que creo el registro
     /// </summary>
-    public string? UsuarioGrabacion { get; set; }
+    public string UsuarioGrabacion { get; set; }
 
     /// <summary>
     /// Fecha en que se creo el registro
@@ -66,7 +67,7 @@ public partial class Programa
     /// <summary>
     /// Usuario que modificó por última vez el registro
     /// </summary>
-    public string? UsuarioModificacion { get; set; }
+    public string UsuarioModificacion { get; set; }
 
     /// <summary>
     /// Fecha de la última modificacion del registro
@@ -75,5 +76,5 @@ public partial class Programa
 
     public virtual ICollection<ContratacionPrograma> ContratacionesProgramas { get; set; } = new List<ContratacionPrograma>();
 
-    public virtual PlantillaPrograma PlantillaPrograma { get; set; } = null!;
+    public virtual PlantillaPrograma PlantillaPrograma { get; set; }
 }

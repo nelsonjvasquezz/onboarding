@@ -6,6 +6,7 @@ namespace onboarding.data;
 
 /// <summary>
 /// Tabla de Tipos de resposnables de las Actividades
+/// obd.tra_tipos_respon_actividad
 /// </summary>
 public partial class TipoResponsableActividad
 {
@@ -22,12 +23,12 @@ public partial class TipoResponsableActividad
     /// <summary>
     /// Nombre del Tipo de Resonsable de Actividad
     /// </summary>
-    public string Nombre { get; set; } = null!;
+    public string Nombre { get; set; }
 
     /// <summary>
     /// Descripción del Tipo de Resonsable de Actividad
     /// </summary>
-    public string? Descripcion { get; set; }
+    public string Descripcion { get; set; }
 
     /// <summary>
     /// ¿Requiere la selección de un empleado?
@@ -37,7 +38,7 @@ public partial class TipoResponsableActividad
     /// <summary>
     /// Código de la lista de valores que permite seleccionar un empleo
     /// </summary>
-    public string? EmpleoValueListCodigo { get; set; }
+    public string EmpleoValueListCodigo { get; set; }
 
     /// <summary>
     /// ¿Corresponde con una institución externa?
@@ -47,7 +48,7 @@ public partial class TipoResponsableActividad
     /// <summary>
     /// Nombre de una persona contacto, cuando es una institución externa
     /// </summary>
-    public string? ContactoExterno { get; set; }
+    public string ContactoExterno { get; set; }
 
     /// <summary>
     /// ¿Corresponde con una persona externa?
@@ -57,22 +58,22 @@ public partial class TipoResponsableActividad
     /// <summary>
     /// Email de notificaciones si es una persona o institución externa
     /// </summary>
-    public string? EmailExterno { get; set; }
+    public string EmailExterno { get; set; }
 
     /// <summary>
     /// Teléfono de contacto cuando es una persona o institución externa
     /// </summary>
-    public string? TelefonoExterno { get; set; }
+    public string TelefonoExterno { get; set; }
 
     /// <summary>
     /// Data de los campos adicionales
     /// </summary>
-    public string? PropertyBagData { get; set; }
+    public string RawPropertyBagData { get; set; }
 
     /// <summary>
     /// Usuario que creo el registro
     /// </summary>
-    public string? UsuarioGrabacion { get; set; }
+    public string UsuarioGrabacion { get; set; }
 
     /// <summary>
     /// Fecha en que se creo el registro
@@ -82,7 +83,7 @@ public partial class TipoResponsableActividad
     /// <summary>
     /// Usuario que modificó por última vez el registro
     /// </summary>
-    public string? UsuarioModificacion { get; set; }
+    public string UsuarioModificacion { get; set; }
 
     /// <summary>
     /// Fecha de la última modificacion del registro

@@ -5,6 +5,7 @@ namespace onboarding.data.bases;
 
 /// <summary>
 /// Tabla con las fases o etapas de los programas de Oboarding
+/// obd.etp_etapas_programa
 /// </summary>
 public partial class EtapaPrograma
 {
@@ -21,12 +22,12 @@ public partial class EtapaPrograma
     /// <summary>
     /// Nombre de la etapa del programa
     /// </summary>
-    public string Nombre { get; set; } = null!;
+    public string Nombre { get; set; } = null;
 
     /// <summary>
     /// Descripción de la etapa del programa
     /// </summary>
-    public string? Descripcion { get; set; }
+    public string Descripcion { get; set; }
 
     /// <summary>
     /// Orden de esta etapa respecto de las demás
@@ -56,12 +57,12 @@ public partial class EtapaPrograma
     /// <summary>
     /// Data de los campos adicionales
     /// </summary>
-    public string? PropertyBagData { get; set; }
+    public string RawPropertyBagData { get; set; }
 
     /// <summary>
     /// Usuario que creo el registro
     /// </summary>
-    public string? UsuarioGrabacion { get; set; }
+    public string UsuarioGrabacion { get; set; }
 
     /// <summary>
     /// Fecha en que se creo el registro
@@ -71,7 +72,7 @@ public partial class EtapaPrograma
     /// <summary>
     /// Usuario que modificó por última vez el registro
     /// </summary>
-    public string? UsuarioModificacion { get; set; }
+    public string UsuarioModificacion { get; set; }
 
     /// <summary>
     /// Fecha de la última modificacion del registro

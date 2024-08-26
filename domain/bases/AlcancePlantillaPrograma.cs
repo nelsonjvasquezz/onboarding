@@ -5,6 +5,7 @@ namespace onboarding.data.bases;
 
 /// <summary>
 /// Tabla que almacena el alcance para la Platilla del programa
+/// obd.pal_plant_alcances
 /// </summary>
 public partial class AlcancePlantillaPrograma
 {
@@ -21,7 +22,7 @@ public partial class AlcancePlantillaPrograma
     /// <summary>
     /// Tipo de Alcance
     /// </summary>
-    public string Tipo { get; set; } = null!;
+    public string Tipo { get; set; } = null;
 
     /// <summary>
     /// Código de Tipo de Puesto
@@ -36,12 +37,12 @@ public partial class AlcancePlantillaPrograma
     /// <summary>
     /// Data de los campos adicionales
     /// </summary>
-    public string? PropertyBagData { get; set; }
+    public string RawPropertyBagData { get; set; }
 
     /// <summary>
     /// Usuario que creo el registro
     /// </summary>
-    public string? UsuarioGrabacion { get; set; }
+    public string UsuarioGrabacion { get; set; }
 
     /// <summary>
     /// Fecha en que se creo el registro
@@ -51,12 +52,12 @@ public partial class AlcancePlantillaPrograma
     /// <summary>
     /// Usuario que modificó por última vez el registro
     /// </summary>
-    public string? UsuarioModificacion { get; set; }
+    public string UsuarioModificacion { get; set; }
 
     /// <summary>
     /// Fecha de la última modificacion del registro
     /// </summary>
     public DateTime? FechaModificacion { get; set; }
 
-    public virtual PlantillaPrograma PlantillaPrograma { get; set; } = null!;
+    public virtual PlantillaPrograma PlantillaPrograma { get; set; }
 }

@@ -5,6 +5,7 @@ namespace onboarding.data.bases;
 
 /// <summary>
 /// Tabla que almacena las actividades de la plantilla del programa de onboarding
+/// obd.pac_plant_actividades
 /// </summary>
 public partial class PlantillaActividad
 {
@@ -21,17 +22,17 @@ public partial class PlantillaActividad
     /// <summary>
     /// Nombre de la actividad
     /// </summary>
-    public string Nombre { get; set; } = null!;
+    public string Nombre { get; set; }
 
     /// <summary>
     /// Descripción de la actividad
     /// </summary>
-    public string? Descripcion { get; set; }
+    public string Descripcion { get; set; }
 
     /// <summary>
     /// Objetivo de la actividad
     /// </summary>
-    public string? Objetivo { get; set; }
+    public string Objetivo { get; set; }
 
     /// <summary>
     /// Código de Etapa o Fase del programa
@@ -51,7 +52,7 @@ public partial class PlantillaActividad
     /// <summary>
     /// Unidad de medida del desplazamiento
     /// </summary>
-    public string UnidadOffsetInicio { get; set; } = null!;
+    public string UnidadOffsetInicio { get; set; }
 
     /// <summary>
     /// Duración estimada de la actividad
@@ -61,7 +62,7 @@ public partial class PlantillaActividad
     /// <summary>
     /// Unidad de medida de la duracióon estimada de la actividad
     /// </summary>
-    public string UnidadDuracion { get; set; } = null!;
+    public string UnidadDuracion { get; set; }
 
     /// <summary>
     /// Código de Prioridad de la actividad
@@ -91,12 +92,12 @@ public partial class PlantillaActividad
     /// <summary>
     /// Data de los campos adicionales
     /// </summary>
-    public string? PropertyBagData { get; set; }
+    public string RawPropertyBagData { get; set; }
 
     /// <summary>
     /// Usuario que creo el registro
     /// </summary>
-    public string? UsuarioGrabacion { get; set; }
+    public string UsuarioGrabacion { get; set; }
 
     /// <summary>
     /// Fecha en que se creo el registro
@@ -106,24 +107,24 @@ public partial class PlantillaActividad
     /// <summary>
     /// Usuario que modificó por última vez el registro
     /// </summary>
-    public string? UsuarioModificacion { get; set; }
+    public string UsuarioModificacion { get; set; }
 
     /// <summary>
     /// Fecha de la última modificacion del registro
     /// </summary>
     public DateTime? FechaModificacion { get; set; }
 
-    public virtual EtapaPrograma EtapaPrograma { get; set; } = null!;
+    public virtual EtapaPrograma EtapaPrograma { get; set; }
 
-    public virtual PlantillaPrograma PlantillaPrograma { get; set; } = null!;
+    public virtual PlantillaPrograma PlantillaPrograma { get; set; }
 
-    public virtual PrioridadActividad PrioridadActividad { get; set; } = null!;
+    public virtual PrioridadActividad PrioridadActividad { get; set; }
 
-    public virtual TipoActividad TipoActividad { get; set; } = null!;
+    public virtual TipoActividad TipoActividad { get; set; }
 
-    public virtual TipoEvaluacion TipoEvaluacion { get; set; } = null!;
+    public virtual TipoEvaluacion TipoEvaluacion { get; set; }
 
-    public virtual TipoResponsableActividad TipoResponsableActividad { get; set; } = null!;
+    public virtual TipoResponsableActividad TipoResponsableActividad { get; set; }
 
     public virtual ICollection<PlantillaNotificacionActividad> PlantillasNotificacionActividad { get; set; } = new List<PlantillaNotificacionActividad>();
 

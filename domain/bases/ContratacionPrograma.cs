@@ -2,6 +2,7 @@
 
 /// <summary>
 /// Tabla con el detalle de nuevas contrataciones que participan de un programa de onboarding
+/// obd.cpr_contrataciones_programa
 /// </summary>
 public partial class ContratacionPrograma
 {
@@ -68,12 +69,12 @@ public partial class ContratacionPrograma
     /// <summary>
     /// Data de los campos adicionales
     /// </summary>
-    public string? PropertyBagData { get; set; }
+    public string RawPropertyBagData { get; set; }
 
     /// <summary>
     /// Usuario que creo el registro
     /// </summary>
-    public string? UsuarioGrabacion { get; set; }
+    public string UsuarioGrabacion { get; set; }
 
     /// <summary>
     /// Fecha en que se creo el registro
@@ -83,7 +84,7 @@ public partial class ContratacionPrograma
     /// <summary>
     /// Usuario que modificó por última vez el registro
     /// </summary>
-    public string? UsuarioModificacion { get; set; }
+    public string UsuarioModificacion { get; set; }
 
     /// <summary>
     /// Fecha de la última modificacion del registro
@@ -92,5 +93,5 @@ public partial class ContratacionPrograma
 
     public virtual ICollection<ActividadPrograma> ActividadesProgramas { get; set; } = new List<ActividadPrograma>();
 
-    public virtual Programa Programa { get; set; } = null!;
+    public virtual Programa Programa { get; set; };
 }

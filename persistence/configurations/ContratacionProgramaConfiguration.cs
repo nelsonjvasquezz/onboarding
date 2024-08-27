@@ -42,7 +42,7 @@ namespace onboarding.persistence.configurations
             builder.Property(e => e.FechaModificacion).HasColumnName("cpr_fecha_modificacion");
 
             // Foreign keys
-            builder.HasRequired(d => d.Programa).WithMany(p => p.Contrataciones).HasForeignKey(d => d.ProgramaCodigo).WillCascadeOnDelete(false); // FK_obdpro_obdcpr
+            builder.HasOne(d => d.Programa).WithMany(p => p.ContratacionesProgramas).HasForeignKey(d => d.ProgramaCodigo).OnDelete(DeleteBehavior.NoAction); // FK_obdpro_obdcpr
         }
     }
 }

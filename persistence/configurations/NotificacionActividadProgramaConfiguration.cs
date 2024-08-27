@@ -35,12 +35,12 @@ namespace onboarding.persistence.configurations
             builder.Property(e => e.Subject).HasColumnName("nap_subject").HasMaxLength(250).IsUnicode(false);
             builder.Property(e => e.TipoDestinatario).HasColumnName("nap_tipo_destinatario").HasMaxLength(25).IsUnicode(false).HasDefaultValue("Contratado");
 
-            builder.HasOne(d => d.ActividadPrograma).WithMany(p => p.NotificacionActividadProgramas)
+            builder.HasOne(d => d.ActividadPrograma).WithMany(p => p.Notificaciones)
                 .HasForeignKey(d => d.ActividadProgramaCodigo)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_obdacp_obdnap");
 
-            builder.HasOne(d => d.EventoNotificable).WithMany(p => p.NotificacionActividadProgramas)
+            builder.HasOne(d => d.EventoNotificable).WithMany(p => p.NotificacionesDeActividades)
                 .HasForeignKey(d => d.EventoNotificableCodigo)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_obdeno_obdnap");

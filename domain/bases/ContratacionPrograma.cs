@@ -1,4 +1,9 @@
-﻿namespace onboarding.data.bases;
+﻿using System;
+using System.Collections.Generic;
+using System.Text.Json.Serialization;
+using System.Xml.Serialization;
+
+namespace onboarding.data.bases;
 
 /// <summary>
 /// Tabla con el detalle de nuevas contrataciones que participan de un programa de onboarding

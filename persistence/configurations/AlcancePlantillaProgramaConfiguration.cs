@@ -35,7 +35,7 @@ namespace onboarding.persistence.configurations
             builder.Property(e => e.FechaModificacion).HasColumnName("pal_fecha_modificacion");
 
             // Foreing keys
-            builder.HasRequired(d => d.PlantillaPrograma).WithMany(p => p.Alcances).HasForeignKey(d => d.PlantillaProgramaCodigo).WillCascadeOnDelete(false); // FK_obdppr_obdpap
+            builder.HasOne(d => d.PlantillaPrograma).WithMany(p => p.Alcances).HasForeignKey(d => d.PlantillaProgramaCodigo).WillCascadeOnDelete(false); // FK_obdppr_obdpap
         }
     }
 }

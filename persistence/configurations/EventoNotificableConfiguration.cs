@@ -25,13 +25,13 @@ namespace onboarding.persistence.configurations
 
             builder.Property(e => e.Codigo).HasColumnName("eno_codigo");
             builder.Property(e => e.GrupoCorporativoCodigo).HasColumnName("eno_codgrc");
-            builder.Property(e => e.Descripcion).HasColumnName("eno_descripcion").HasMaxLength(500).IsUnicode(false);
-            builder.Property(e => e.FechaGrabacion).HasColumnName("eno_fecha_grabacion").HasColumnType("datetime");
-            builder.Property(e => e.FechaModificacion).HasColumnName("eno_fecha_modificacion").HasColumnType("datetime");
             builder.Property(e => e.Nombre).HasColumnName("eno_nombre").HasMaxLength(100).IsUnicode(false);
+            builder.Property(e => e.Descripcion).HasColumnName("eno_descripcion").HasMaxLength(500).IsUnicode(false);
             builder.Property(e => e.RawPropertyBagData).HasColumnName("eno_property_bag_data").HasColumnType("xml");
             builder.Property(e => e.UsuarioGrabacion).HasColumnName("eno_usuario_grabacion").HasMaxLength(50).IsUnicode(false);
+            builder.Property(e => e.FechaGrabacion).HasColumnName("eno_fecha_grabacion");
             builder.Property(e => e.UsuarioModificacion).HasColumnName("eno_usuario_modificacion").HasMaxLength(50).IsUnicode(false);
+            builder.Property(e => e.FechaModificacion).HasColumnName("eno_fecha_modificacion");
         }
     }
 }

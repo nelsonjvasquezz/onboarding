@@ -21,22 +21,14 @@ namespace onboarding.persistence.configurations
         public void Configure(EntityTypeBuilder<RequisitoActividadPrograma> builder)
         {
             builder.ToTable("rap_req_actividades_programa", _schema);
-            builder.HasKey(e => new { e.RapCodpac, e.RapCodacpPrerequisito });
+            builder.HasKey(e => new { e.ActividadCodigo, e.ActividadPrerequisitoCodigo });
 
-            builder.Property(e => e.RapCodpac).HasColumnName("rap_codpac");
-            builder.Property(e => e.RapCodacpPrerequisito).HasColumnName("rap_codacp_prerequisito");
+            builder.Property(e => e.ActividadCodigo).HasColumnName("rap_codpac");
+            builder.Property(e => e.ActividadPrerequisitoCodigo).HasColumnName("rap_codacp_prerequisito");
 
-            builder.HasOne(d => d.ActividadPrograma)
-                .WithMany(p => p.RapCodpacs)
-                .HasForeignKey(d => d.RapCodpac)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK_obdacp_obdrpa");
-
-            builder.HasOne(d => d.ActividadPrerequisito)
-                .WithMany(p => p.RapCodacpPrerequisitos)
-                .HasForeignKey(d => d.RapCodacpPrerequisito)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK_obdacp_obdrap_prerequisito");
+            // Foreign keys
+            builder.HasOne(d => d.ActividadPrograma).WithMany(p => p.ActividadesPrerequisitos).HasForeignKey(d => d.ActividadCodigo).OnDelete(DeleteBehavior.NoAction); // FK_obdacp_obdrpa
+            builder.HasOne(d => d.ActividadPrerequisito).WithMany(p => p.ActividadesPrerequisitos).HasForeignKey(d => d.ActividadPrerequisitoCodigo).OnDelete(DeleteBehavior.NoAction); // FK_obdacp_obdrap_prerequisito
         }
     }
 }

@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using onboarding.data;
+using onboarding.data.bases;
 
 namespace onboarding.persistence.configurations
 {

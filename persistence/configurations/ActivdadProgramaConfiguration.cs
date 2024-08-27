@@ -46,19 +46,19 @@ namespace onboarding.persistence.configurations
             builder.Property(e => e.Estado).HasColumnName("acp_estado").HasMaxLength(50).IsUnicode(false);
             builder.Property(e => e.FechaFinalizacion).HasColumnName("acp_fecha_finalizacion");
             builder.Property(e => e.ComentarioFinalizacion).HasColumnName("acp_comentario_finalizacion").HasMaxLength(500).IsUnicode(false);
-            builder.Property(e => e.RawPropertyBagData).HasColumnName("acp_property_bag_data").HasColumnType("xml");
+            builder.Property(e => e.RawPropertyBagData).HasColumnName("acp_property_bag_data");
             builder.Property(e => e.UsuarioGrabacion).HasColumnName("acp_usuario_grabacion").HasMaxLength(50).IsUnicode(false);
             builder.Property(e => e.FechaGrabacion).HasColumnName("acp_fecha_grabacion");
             builder.Property(e => e.UsuarioModificacion).HasColumnName("acp_usuario_modificacion").HasMaxLength(50).IsUnicode(false);
             builder.Property(e => e.FechaModificacion).HasColumnName("acp_fecha_modificacion");
 
             // Foreign keys
-            builder.HasOne(d => d.ContratacionPrograma).WithMany(p => p.Actividades).HasForeignKey(d => d.ContratacionProgramaCodigo).WillCascadeOnDelete(false); // FK_obdcpr_obdacp
-            builder.HasOne(d => d.EtapaPrograma).WithMany(p => p.Actividades).HasForeignKey(d => d.EtapaProgramaCodigo).WillCascadeOnDelete(false); // FK_obdetp_obdacp
-            builder.HasOne(d => d.PrioridadActividad).WithMany(p => p.ActividadesProgramas).HasForeignKey(d => d.PrioridadActividadCodigo).WillCascadeOnDelete(false); // FK_obdpri_obdacp
-            builder.HasOne(d => d.TipoActividad).WithMany(p => p.ActividadesProgramas).HasForeignKey(d => d.TipoActividadCodigo).WillCascadeOnDelete(false); // FK_obdtac_obdacp
-            builder.HasOne(d => d.TipoEvaluacion).WithMany(p => p.ActividadesProgramas).HasForeignKey(d => d.TipoEvaluacionCodigo).WillCascadeOnDelete(false); // FK_obdtev_obdacp
-            builder.HasOne(d => d.TipoResponsableActividad).WithMany(p => p.ActividadesProgramas).HasForeignKey(d => d.TipoResponsableActividadCodigo).WillCascadeOnDelete(false); // FK_obdtra_obdacp
+            builder.HasOne(d => d.ContratacionPrograma).WithMany(p => p.Actividades).HasForeignKey(d => d.ContratacionProgramaCodigo).OnDelete(DeleteBehavior.NoAction); // FK_obdcpr_obdacp
+            builder.HasOne(d => d.EtapaPrograma).WithMany(p => p.Actividades).HasForeignKey(d => d.EtapaProgramaCodigo).OnDelete(DeleteBehavior.NoAction); // FK_obdetp_obdacp
+            builder.HasOne(d => d.PrioridadActividad).WithMany(p => p.Actividades).HasForeignKey(d => d.PrioridadActividadCodigo).OnDelete(DeleteBehavior.NoAction); // FK_obdpri_obdacp
+            builder.HasOne(d => d.TipoActividad).WithMany(p => p.Actividades).HasForeignKey(d => d.TipoActividadCodigo).OnDelete(DeleteBehavior.NoAction); // FK_obdtac_obdacp
+            builder.HasOne(d => d.TipoEvaluacion).WithMany(p => p.Actividades).HasForeignKey(d => d.TipoEvaluacionCodigo).OnDelete(DeleteBehavior.NoAction); // FK_obdtev_obdacp
+            builder.HasOne(d => d.TipoResponsableActividad).WithMany(p => p.Actividades).HasForeignKey(d => d.TipoResponsableActividadCodigo).OnDelete(DeleteBehavior.NoAction); // FK_obdtra_obdacp
         }
     }
 }

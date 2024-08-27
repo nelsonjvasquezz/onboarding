@@ -183,7 +183,7 @@ public partial class ActividadPrograma
     /// Parent TipoEvaluacion pointed by [acp_actividades_programa].([TipoEvaluacionCodigo]) (FK_obdtev_obdacp)
     /// </summary>
     [XmlIgnore, JsonIgnore]
-    public virtual TipoEvaluacion? TipoEvaluacion { get; set; } // FK_obdte_obdacp
+    public virtual TipoEvaluacion TipoEvaluacion { get; set; } // FK_obdte_obdacp
 
     /// <summary>
     /// Parent TipoResponsableActividad pointed by [acp_actividades_programa].([TipoResponsableActividadCodigo]) (FK_obdtra_obdacp)

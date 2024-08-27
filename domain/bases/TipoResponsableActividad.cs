@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text.Json.Serialization;
+using System.Xml.Serialization;
 
-namespace onboarding.data;
+namespace onboarding.data.bases;
 
 /// <summary>
 /// Tabla de Tipos de resposnables de las Actividades

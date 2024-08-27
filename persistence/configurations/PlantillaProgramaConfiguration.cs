@@ -24,25 +24,18 @@ namespace onboarding.persistence.configurations
             builder.HasKey(e => e.Codigo);
 
             builder.Property(e => e.Codigo).HasColumnName("ppr_codigo");
+            builder.Property(e => e.GrupoCorporativoCodigo).HasColumnName("ppr_codgrc");
             builder.Property(e => e.Nombre).HasColumnName("ppr_nombre").HasMaxLength(250).IsUnicode(false);
             builder.Property(e => e.Descripcion).HasColumnName("ppr_descripcion").HasMaxLength(500).IsUnicode(false);
-            builder.Property(e => e.FechaGrabacion).HasColumnName("ppr_fecha_grabacion").HasColumnType("datetime");
-            builder.Property(e => e.FechaModificacion).HasColumnName("ppr_fecha_modificacion").HasColumnType("datetime");
-            builder.Property(e => e.RawPropertyBagData).HasColumnName("ppr_property_bag_data").HasColumnType("xml");
+            builder.Property(e => e.Objetivo).HasColumnName("ppr_objetivo").HasMaxLength(4000).IsUnicode(false);
+            builder.Property(e => e.Estado).HasColumnName("ppr_estado").HasMaxLength(10).IsUnicode(false);
+            builder.Property(e => e.DuracionEstimada).HasColumnName("ppr_duracion_estimada");
+            builder.Property(e => e.UnidadDuracion).HasColumnName("ppr_unidad_duracion").HasMaxLength(50).IsUnicode(false);
+            builder.Property(e => e.RawPropertyBagData).HasColumnName("ppr_property_bag_data");
             builder.Property(e => e.UsuarioGrabacion).HasColumnName("ppr_usuario_grabacion").HasMaxLength(50).IsUnicode(false);
+            builder.Property(e => e.FechaGrabacion).HasColumnName("ppr_fecha_grabacion");
             builder.Property(e => e.UsuarioModificacion).HasColumnName("ppr_usuario_modificacion").HasMaxLength(50).IsUnicode(false);
-
-            builder.HasMany(d => d.AlcancesPlantillaProgramas)
-                .WithOne(p => p.PlantillaPrograma)
-                .HasForeignKey(d => d.PlantillaProgramaCodigo)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK_obdppr_obdapp");
-
-            builder.HasMany(d => d.PlantillaActividades)
-                .WithOne(p => p.PlantillaPrograma)
-                .HasForeignKey(d => d.PlantillaProgramaCodigo)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK_obdppr_obdpac");
+            builder.Property(e => e.FechaModificacion).HasColumnName("ppr_fecha_modificacion");
         }
     }
 }

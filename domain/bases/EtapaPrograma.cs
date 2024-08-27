@@ -93,5 +93,5 @@ public partial class EtapaPrograma
     /// Child PlantillasActividades where [pac_plant_actividades].[pac_codetp] point to this entity (FK_obdetp_obdpac)
     /// </summary>
     [XmlIgnore, JsonIgnore]
-    public virtual ICollection<PlantillaActividad> PlantillasActividades { get; set; } = new List<PlantillaActividad>(); // FK_obdetp_obdpac
+    public virtual ICollection<PlantillaActividad> PlantillasDeActividades { get; set; } = new List<PlantillaActividad>(); // FK_obdetp_obdpac
 }

@@ -74,7 +74,7 @@ public partial class PlantillaPrograma
     /// </summary>
     public DateTime? FechaModificacion { get; set; }
 
-    public virtual ICollection<PlantillaActividad> PlantillaActividades { get; set; } = new List<PlantillaActividad>();
+    public virtual ICollection<PlantillaActividad> PlantillasDeActividades { get; set; } = new List<PlantillaActividad>();
 
     public virtual ICollection<AlcancePlantillaPrograma> Alcances { get; set; } = new List<AlcancePlantillaPrograma>();
 

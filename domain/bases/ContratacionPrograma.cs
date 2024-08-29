@@ -89,12 +89,12 @@ public partial class ContratacionPrograma
     /// <summary>
     /// Usuario que modificó por última vez el registro
     /// </summary>
-    public string UsuarioModificacion { get; set; } // cpr_usuario_modificacion
+    public string UsuarioUltimaModificacion { get; set; } // cpr_usuario_modificacion
 
     /// <summary>
     /// Fecha de la última modificacion del registro
     /// </summary>
-    public DateTime? FechaModificacion { get; set; } // cpr_fecha_modificacion
+    public DateTime? FechaUltimaModificacion { get; set; } // cpr_fecha_modificacion
 
     // Foreing keys
 

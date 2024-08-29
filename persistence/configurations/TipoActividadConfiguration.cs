@@ -37,8 +37,8 @@ namespace onboarding.persistence.configurations
             builder.Property(e => e.RawPropertyBagData).HasColumnName("tac_property_bag_data");
             builder.Property(e => e.UsuarioGrabacion).HasColumnName("tac_usuario_grabacion").HasMaxLength(50).IsUnicode(false);
             builder.Property(e => e.FechaGrabacion).HasColumnName("tac_fecha_grabacion");
-            builder.Property(e => e.UsuarioModificacion).HasColumnName("tac_usuario_modificacion").HasMaxLength(50).IsUnicode(false);
-            builder.Property(e => e.FechaModificacion).HasColumnName("tac_fecha_modificacion");
+            builder.Property(e => e.UsuarioUltimaModificacion).HasColumnName("tac_usuario_modificacion").HasMaxLength(50).IsUnicode(false);
+            builder.Property(e => e.FechaUltimaModificacion).HasColumnName("tac_fecha_modificacion");
         }
     }
 }

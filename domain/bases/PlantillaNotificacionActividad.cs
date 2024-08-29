@@ -77,12 +77,12 @@ public partial class PlantillaNotificacionActividad
     /// <summary>
     /// Usuario que modificó por última vez el registro
     /// </summary>
-    public string UsuarioModificacion { get; set; }
+    public string UsuarioUltimaModificacion { get; set; }
 
     /// <summary>
     /// Fecha de la última modificacion del registro
     /// </summary>
-    public DateTime? FechaModificacion { get; set; }
+    public DateTime? FechaUltimaModificacion { get; set; }
 
     public virtual PlantillaActividad PlantillaActividad { get; set; }
 }

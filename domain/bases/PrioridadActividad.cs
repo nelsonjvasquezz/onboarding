@@ -59,12 +59,12 @@ public partial class PrioridadActividad
     /// <summary>
     /// Usuario que modificó por última vez el registro
     /// </summary>
-    public string UsuarioModificacion { get; set; } // pri_usuario_modificacion
+    public string UsuarioUltimaModificacion { get; set; } // pri_usuario_modificacion
 
     /// <summary>
     /// Fecha de la última modificacion del registro
     /// </summary>
-    public DateTime? FechaModificacion { get; set; } // pri_fecha_modificacion
+    public DateTime? FechaUltimaModificacion { get; set; } // pri_fecha_modificacion
 
     // Children collections
 

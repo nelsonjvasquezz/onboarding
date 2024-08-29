@@ -109,12 +109,12 @@ public partial class PlantillaActividad
     /// <summary>
     /// Usuario que modificó por última vez el registro
     /// </summary>
-    public string UsuarioModificacion { get; set; } // pac_usuario_modificacion
+    public string UsuarioUltimaModificacion { get; set; } // pac_usuario_modificacion
 
     /// <summary>
     /// Fecha de la última modificacion del registro
     /// </summary>
-    public DateTime? FechaModificacion { get; set; } // pac_fecha_modificacion
+    public DateTime? FechaUltimaModificacion { get; set; } // pac_fecha_modificacion
 
     // Foreign keys
 

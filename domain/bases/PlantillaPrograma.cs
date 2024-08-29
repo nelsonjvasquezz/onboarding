@@ -69,12 +69,12 @@ public partial class PlantillaPrograma
     /// <summary>
     /// Usuario que modificó por última vez el registro
     /// </summary>
-    public string UsuarioModificacion { get; set; } // ppr_usuario_modificacion
+    public string UsuarioUltimaModificacion { get; set; } // ppr_usuario_modificacion
 
     /// <summary>
     /// Fecha de la última modificacion del registro
     /// </summary>
-    public DateTime? FechaModificacion { get; set; } // ppr_fecha_modificacion
+    public DateTime? FechaUltimaModificacion { get; set; } // ppr_fecha_modificacion
 
     // Children collections
 

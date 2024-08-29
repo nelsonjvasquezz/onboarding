@@ -38,8 +38,8 @@ namespace onboarding.persistence.configurations
             builder.Property(e => e.RawPropertyBagData).HasColumnName("cpr_property_bag_data");
             builder.Property(e => e.UsuarioGrabacion).HasColumnName("cpr_usuario_grabacion").HasMaxLength(50).IsUnicode(false);
             builder.Property(e => e.FechaGrabacion).HasColumnName("cpr_fecha_grabacion");
-            builder.Property(e => e.UsuarioModificacion).HasColumnName("cpr_usuario_modificacion").HasMaxLength(50).IsUnicode(false);
-            builder.Property(e => e.FechaModificacion).HasColumnName("cpr_fecha_modificacion");
+            builder.Property(e => e.UsuarioUltimaModificacion).HasColumnName("cpr_usuario_modificacion").HasMaxLength(50).IsUnicode(false);
+            builder.Property(e => e.FechaUltimaModificacion).HasColumnName("cpr_fecha_modificacion");
 
             // Foreign keys
             builder.HasOne(d => d.Programa).WithMany(p => p.Contrataciones).HasForeignKey(d => d.ProgramaCodigo).OnDelete(DeleteBehavior.NoAction); // FK_obdpro_obdcpr

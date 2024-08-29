@@ -28,10 +28,10 @@ namespace onboarding.persistence.configurations
             builder.Property(e => e.Subject).HasColumnName("pna_subject").HasMaxLength(250).IsUnicode(false);
             builder.Property(e => e.Body).HasColumnName("pna_body").HasMaxLength(4000).IsUnicode(false);
             builder.Property(e => e.FechaGrabacion).HasColumnName("pna_fecha_grabacion");
-            builder.Property(e => e.FechaModificacion).HasColumnName("pna_fecha_modificacion");
+            builder.Property(e => e.FechaUltimaModificacion).HasColumnName("pna_fecha_modificacion");
             builder.Property(e => e.RawPropertyBagData).HasColumnName("pna_property_bag_data");
             builder.Property(e => e.UsuarioGrabacion).HasColumnName("pna_usuario_grabacion").HasMaxLength(50).IsUnicode(false);
-            builder.Property(e => e.UsuarioModificacion).HasColumnName("pna_usuario_modificacion").HasMaxLength(50).IsUnicode(false);
+            builder.Property(e => e.UsuarioUltimaModificacion).HasColumnName("pna_usuario_modificacion").HasMaxLength(50).IsUnicode(false);
 
             builder.HasOne(d => d.PlantillaActividad).WithMany(p => p.PlantillasDeNotificacion).HasForeignKey(d => d.PlantillaActividadCodigo).OnDelete(DeleteBehavior.NoAction); // FK_obdpna_obdpna
 

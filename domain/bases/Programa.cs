@@ -69,12 +69,12 @@ public partial class Programa
     /// <summary>
     /// Usuario que modificó por última vez el registro
     /// </summary>
-    public string UsuarioModificacion { get; set; } // pro_usuario_modificacion
+    public string UsuarioUltimaModificacion { get; set; } // pro_usuario_modificacion
 
     /// <summary>
     /// Fecha de la última modificacion del registro
     /// </summary>
-    public DateTime? FechaModificacion { get; set; } // pro_fecha_modificacion
+    public DateTime? FechaUltimaModificacion { get; set; } // pro_fecha_modificacion
 
     // Foreign keys
 

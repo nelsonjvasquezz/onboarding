@@ -84,12 +84,12 @@ public partial class TipoResponsableActividad
     /// <summary>
     /// Usuario que modificó por última vez el registro
     /// </summary>
-    public string UsuarioModificacion { get; set; } // tra_usuario_modificacion
+    public string UsuarioUltimaModificacion { get; set; } // tra_usuario_modificacion
 
     /// <summary>
     /// Fecha de la última modificacion del registro
     /// </summary>
-    public DateTime? FechaModificacion { get; set; } // tra_fecha_modificacion
+    public DateTime? FechaUltimaModificacion { get; set; } // tra_fecha_modificacion
 
     // Children collections
 

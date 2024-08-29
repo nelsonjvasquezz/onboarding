@@ -31,8 +31,8 @@ namespace onboarding.persistence.configurations
             builder.Property(e => e.RawPropertyBagData).HasColumnName("pal_property_bag_data");
             builder.Property(e => e.UsuarioGrabacion).HasColumnName("pal_usuario_grabacion").HasMaxLength(50).IsUnicode(false);
             builder.Property(e => e.FechaGrabacion).HasColumnName("pal_fecha_grabacion");
-            builder.Property(e => e.UsuarioModificacion).HasColumnName("pal_usuario_modificacion").HasMaxLength(50).IsUnicode(false);
-            builder.Property(e => e.FechaModificacion).HasColumnName("pal_fecha_modificacion");
+            builder.Property(e => e.UsuarioUltimaModificacion).HasColumnName("pal_usuario_modificacion").HasMaxLength(50).IsUnicode(false);
+            builder.Property(e => e.FechaUltimaModificacion).HasColumnName("pal_fecha_modificacion");
 
             // Foreing keys
             builder.HasOne(d => d.PlantillaPrograma).WithMany(p => p.Alcances).HasForeignKey(d => d.PlantillaProgramaCodigo).OnDelete(DeleteBehavior.NoAction); // FK_obdppr_obdpap

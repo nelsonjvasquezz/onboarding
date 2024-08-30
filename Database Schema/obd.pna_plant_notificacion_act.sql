@@ -17,7 +17,7 @@
     [pna_fecha_modificacion] DATETIME NULL,
 
     CONSTRAINT [PK_pna_plant_notificacion_act] PRIMARY KEY CLUSTERED ([pna_codigo] ASC),
-    CONSTRAINT [FK_obdpna_obdpna] FOREIGN KEY ([pna_codpac]) REFERENCES [obd].[pac_plant_actividades] ([pac_codigo]),
+    CONSTRAINT [FK_obdpac_obdpna] FOREIGN KEY ([pna_codpac]) REFERENCES [obd].[pac_plant_actividades] ([pac_codigo]),
 
 
 )

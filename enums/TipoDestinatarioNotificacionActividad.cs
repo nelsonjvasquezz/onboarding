@@ -8,7 +8,7 @@
         /// <summary>
         /// Al empleado contratado
         /// </summary>
-        Contratado,
+        Participante,
 
         /// <summary>
         /// Al jefe inmediato superior del empleado

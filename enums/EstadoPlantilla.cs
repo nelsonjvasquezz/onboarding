@@ -3,7 +3,7 @@
     /// <summary>
     /// Estados de las plantillas de los programas
     /// </summary>
-    public enum EstadoPlantillaPrograma
+    public enum EstadoPlantilla
     {
         /// <summary>
         /// Plantilla del programa activa

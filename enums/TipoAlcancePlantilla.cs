@@ -3,7 +3,7 @@
     /// <summary>
     /// Tipo de alcance de la plantilla del programa
     /// </summary>
-    public enum TipoAlcancePlantillaPrograma
+    public enum TipoAlcancePlantilla
     {
         /// <summary>
         /// Alcance por Tipo de Puesto

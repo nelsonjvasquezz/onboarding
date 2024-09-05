@@ -17,11 +17,6 @@ public partial class EventoNotificable
     public int Codigo { get; set; } // eno_codigo
 
     /// <summary>
-    /// Código de Grupo Corporativo
-    /// </summary>
-    public int GrupoCorporativoCodigo { get; set; } // eno_codgrc
-
-    /// <summary>
     /// Nombre del Evento
     /// </summary>
     public string Nombre { get; set; } // eno_nombre
@@ -29,38 +24,19 @@ public partial class EventoNotificable
     /// <summary>
     /// Descripción del Evento que se puede notificar
     /// </summary>
-    public string Descripcion { get; set; } // eno_descripcion
-
-    /// <summary>
-    /// Data de los campos adicionales
-    /// </summary>
-    public string RawPropertyBagData { get; set; } // eno_property_bag_data
-
-    /// <summary>
-    /// Usuario que creo el registro
-    /// </summary>
-    public string UsuarioGrabacion { get; set; } // eno_usuario_grabacion
-
-    /// <summary>
-    /// Fecha en que se creo el registro
-    /// </summary>
-    public DateTime? FechaGrabacion { get; set; } // eno_fecha_grabacion
-
-    /// <summary>
-    /// Usuario que modificó por última vez el registro
-    /// </summary>
-    public string UsuarioUltimaModificacion { get; set; } // eno_usuario_modificacion
-
-    /// <summary>
-    /// Fecha de la última modificacion del registro
-    /// </summary>
-    public DateTime? FechaUltimaModificacion { get; set; } // eno_fecha_modificacion
+    public string DescripcionLocalizationKey { get; set; } // eno_descripcion
 
     // Children collections
 
     /// <summary>
-    /// Child NotificacionesDeActividades where [nap_notif_actividad_programa].[nap_codeno] point to this entity (FK_obdeno_obdnap)
+    /// Child Notificaciones where [nap_notif_actividad_programa].[nap_codeno] point to this entity (FK_obdeno_obdnap)
     /// </summary>
     [XmlIgnore, JsonIgnore]
-    public virtual ICollection<NotificacionActividadPrograma> NotificacionesDeActividades { get; set; } = new List<NotificacionActividadPrograma>(); // FK_obdeno_obdnap
+    public virtual ICollection<NotificacionActividad> Notificaciones { get; set; } = new List<NotificacionActividad>(); // FK_obdeno_obdnap
+
+    /// <summary>
+    /// Child NotificacionesPlantilla where [pna_plant_notificacion_act.[pna_codeno] point to this entity (FK_obdeno_obdpna)
+    /// </summary>
+    [XmlIgnore, JsonIgnore]
+    public virtual ICollection<NotificacionActividadPlantilla> NotificacionesPlantilla { get; set; } = new List<NotificacionActividadPlantilla>(); // FK_obdeno_obdpna
 }

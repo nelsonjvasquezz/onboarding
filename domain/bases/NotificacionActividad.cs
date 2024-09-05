@@ -5,10 +5,10 @@ using System.Xml.Serialization;
 namespace onboarding.data.bases;
 
 /// <summary>
-/// Tabla que almacena las configuraciones de las notificaciones de la actividad del programa
+/// Tabla que almacena los registros de las notificaciones generadas de la actividad del programa
 /// obd.nap_notif_actividad_programa
 /// </summary>
-public partial class NotificacionActividadPrograma
+public partial class NotificacionActividad
 {
     /// <summary>
     /// Código de registro de la configuración de notificaciones de la actividad del programa
@@ -34,6 +34,26 @@ public partial class NotificacionActividadPrograma
     /// Destinatario de la notificación: Contratado | JefeInmediato | ResponsableActividad | ResponsableRRHH
     /// </summary>
     public string TipoDestinatario { get; set; } = null; // nap_tipo_destinatario
+
+    /// <summary>
+    /// Código del empleo del destinatario, puede ser NULL cuando el empleado nuevo no ha sido contratado
+    /// </summary>
+    public int? EmpleoDestinatarioCodigo {get; set;} // nap_codemp_destinatario
+
+    /// <summary>
+    /// Código del expediente del destinatario
+    /// </summary>
+    public int ExpedienteDestinatarioCodigo {get; set;} // nap_codexp_destinatario
+
+    /// <summary>
+    /// Lista de correos electrónicos separadas por comas
+    /// </summary>
+    public string EmailsDestinatario {get; set;} // nap_emails_destinatario
+
+    /// <summary>
+    /// Lista de ids de onesignal separadas por comas
+    /// </summary>
+    public string OneSignalIdsDestinatario {get; set;} // nap_onesignal_ids_destinatario
 
     /// <summary>
     /// Asunto de la notificación
@@ -68,10 +88,10 @@ public partial class NotificacionActividadPrograma
     // Foreign keys
 
     /// <summary>
-    /// Parent ActividadPrograma pointed by [nap_notif_actividad_programa].[(ActividadProgramaCodigo)] (FK_obdacp_obdnap)
+    /// Parent Actividad pointed by [nap_notif_actividad_programa].[(ActividadProgramaCodigo)] (FK_obdacp_obdnap)
     /// </summary>
     [XmlIgnore, JsonIgnore]
-    public virtual ActividadPrograma ActividadPrograma { get; set; } // FK_obdacp_obdnap
+    public virtual ActividadPrograma Actividad { get; set; } // FK_obdacp_obdnap
 
     /// <summary>
     /// Parent EventoNotificable pointed by [nap_notif_actividad_programa].[(EventoNotificableCodigo)] (FK_obdeno_obdnap)

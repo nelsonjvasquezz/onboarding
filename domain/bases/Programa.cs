@@ -79,17 +79,17 @@ public partial class Programa
     // Foreign keys
 
     /// <summary>
-    /// Parent PlantillaPrograma pointed by [pro_programas].([pro_codppr]) (FK_obdppr_obdpro)
+    /// Parent Plantilla pointed by [pro_programas].([pro_codppr]) (FK_obdppr_obdpro)
     /// </summary>
     [XmlIgnore, JsonIgnore]
-    public virtual PlantillaPrograma PlantillaPrograma { get; set; } // FK_obdppr_obdpro
+    public virtual PlantillaPrograma Plantilla { get; set; } // FK_obdppr_obdpro
 
     // Children collections
 
     /// <summary>
-    /// Child Contrataciones where [cpr_contrataciones_programa].[cpr_codpro] point to this entity (FK_obdpro_obdcpr)
+    /// Child Participantes where [pap_participantes_programa].[pap_codpro] point to this entity (FK_obdpro_obdpap)
     /// </summary>
     [XmlIgnore, JsonIgnore]
-    public virtual ICollection<ContratacionPrograma> Contrataciones { get; set; } = new List<ContratacionPrograma>(); // FK_obdpro_obdcpr
+    public virtual ICollection<ParticipantePrograma> Participantes { get; set; } = new List<ParticipantePrograma>(); // FK_obdpro_obdpap
 
 }

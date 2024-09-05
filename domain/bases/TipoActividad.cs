@@ -100,8 +100,8 @@ public partial class TipoActividad
     public virtual ICollection<ActividadPrograma> Actividades { get; set; } = new List<ActividadPrograma>();
 
     /// <summary>
-    /// Child PlantillaActividades where [pac_plant_actividades].[pac_codtac] point to this entity (FK_obdtac_obdpac)
+    /// Child ActividadesPlantilla where [pac_plant_actividades].[pac_codtac] point to this entity (FK_obdtac_obdpac)
     /// </summary>
     [XmlIgnore, JsonIgnore]
-    public virtual ICollection<PlantillaActividad> PlantillasDeActividades { get; set; } = new List<PlantillaActividad>();
+    public virtual ICollection<ActividadPlantilla> ActividadesPlantilla { get; set; } = new List<ActividadPlantilla>();
 }

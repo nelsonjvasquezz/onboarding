@@ -4,21 +4,21 @@ using onboarding.data.bases;
 
 namespace onboarding.persistence.configurations
 {
-    public class EtapaProgramaConfiguration : IEntityTypeConfiguration<EtapaPrograma>
+    public class EtapaActividadConfiguration : IEntityTypeConfiguration<EtapaActividad>
     {
         private readonly string _schema;
 
-        public EtapaProgramaConfiguration()
+        public EtapaActividadConfiguration()
             : this("obd")
         {
         }
 
-        public EtapaProgramaConfiguration(string schema)
+        public EtapaActividadConfiguration(string schema)
         {
             _schema = schema;
         }
 
-        public void Configure(EntityTypeBuilder<EtapaPrograma> builder)
+        public void Configure(EntityTypeBuilder<EtapaActividad> builder)
         {
             builder.ToTable("etp_etapas_programa", _schema);
             builder.HasKey(e => e.Codigo);

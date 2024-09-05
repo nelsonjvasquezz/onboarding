@@ -24,13 +24,13 @@ namespace onboarding.persistence.configurations
             builder.HasKey(e => e.Codigo);
 
             builder.Property(e => e.Codigo).HasColumnName("acp_codigo");
-            builder.Property(e => e.ContratacionProgramaCodigo).HasColumnName("acp_codcpr");
+            builder.Property(e => e.ParticipanteProgramaCodigo).HasColumnName("acp_codpap");
             builder.Property(e => e.Nombre).HasColumnName("acp_nombre").HasMaxLength(250).IsUnicode(false);
-            builder.Property(e => e.Descripcion).HasColumnName("acp_descripcion").HasMaxLength(500).IsUnicode(false);
-            builder.Property(e => e.Objetivo).HasColumnName("acp_objetivo").HasMaxLength(500).IsUnicode(false);
+            builder.Property(e => e.Descripcion).HasColumnName("acp_descripcion").HasMaxLength(4000).IsUnicode(false);
+            builder.Property(e => e.Objetivo).HasColumnName("acp_objetivo").HasMaxLength(4000).IsUnicode(false);
             builder.Property(e => e.EtapaProgramaCodigo).HasColumnName("acp_codetp");
             builder.Property(e => e.TipoActividadCodigo).HasColumnName("acp_codtac");
-            builder.Property(e => e.EmpleoResponsableCodigo).HasColumnName("acp_codemp_resp");
+            builder.Property(e => e.EmpleoResponsableCodigo).HasColumnName("acp_codemp_responsable");
             builder.Property(e => e.FechaInicio).HasColumnName("acp_fecha_inicio");
             builder.Property(e => e.FechaFin).HasColumnName("acp_fecha_fin");
             builder.Property(e => e.Duracion).HasColumnName("acp_duracion");
@@ -41,11 +41,11 @@ namespace onboarding.persistence.configurations
             builder.Property(e => e.TipoEvaluacionCodigo).HasColumnName("acp_codtev");
             builder.Property(e => e.FechaEvaluacion).HasColumnName("acp_fecha_evaluacion");
             builder.Property(e => e.NotaEvaluacion).HasColumnName("acp_nota_evaluacion").HasPrecision(19, 4);
-            builder.Property(e => e.ResultadoEvaluacion).HasColumnName("acp_resultado_evaluacion").HasMaxLength(50).IsUnicode(false);
+            builder.Property(e => e.ResultadoEvaluacion).HasColumnName("acp_resultado_evaluacion").HasMaxLength(100).IsUnicode(false);
             builder.Property(e => e.FormularioDinamicoDataCodigo).HasColumnName("acp_codfdd");
-            builder.Property(e => e.Estado).HasColumnName("acp_estado").HasMaxLength(50).IsUnicode(false);
+            builder.Property(e => e.Estado).HasColumnName("acp_estado").HasMaxLength(10).IsUnicode(false);
             builder.Property(e => e.FechaFinalizacion).HasColumnName("acp_fecha_finalizacion");
-            builder.Property(e => e.ComentarioFinalizacion).HasColumnName("acp_comentario_finalizacion").HasMaxLength(500).IsUnicode(false);
+            builder.Property(e => e.ComentarioFinalizacion).HasColumnName("acp_comentario_finalizacion").HasMaxLength(4000).IsUnicode(false);
             builder.Property(e => e.RawPropertyBagData).HasColumnName("acp_property_bag_data");
             builder.Property(e => e.UsuarioGrabacion).HasColumnName("acp_usuario_grabacion").HasMaxLength(50).IsUnicode(false);
             builder.Property(e => e.FechaGrabacion).HasColumnName("acp_fecha_grabacion");
@@ -53,12 +53,12 @@ namespace onboarding.persistence.configurations
             builder.Property(e => e.FechaUltimaModificacion).HasColumnName("acp_fecha_modificacion");
 
             // Foreign keys
-            builder.HasOne(d => d.ContratacionPrograma).WithMany(p => p.Actividades).HasForeignKey(d => d.ContratacionProgramaCodigo).OnDelete(DeleteBehavior.NoAction); // FK_obdcpr_obdacp
-            builder.HasOne(d => d.EtapaPrograma).WithMany(p => p.Actividades).HasForeignKey(d => d.EtapaProgramaCodigo).OnDelete(DeleteBehavior.NoAction); // FK_obdetp_obdacp
-            builder.HasOne(d => d.PrioridadActividad).WithMany(p => p.Actividades).HasForeignKey(d => d.PrioridadActividadCodigo).OnDelete(DeleteBehavior.NoAction); // FK_obdpri_obdacp
-            builder.HasOne(d => d.TipoActividad).WithMany(p => p.Actividades).HasForeignKey(d => d.TipoActividadCodigo).OnDelete(DeleteBehavior.NoAction); // FK_obdtac_obdacp
+            builder.HasOne(d => d.Participante).WithMany(p => p.Actividades).HasForeignKey(d => d.ParticipanteProgramaCodigo).OnDelete(DeleteBehavior.NoAction); // FK_obdpap_obdacp
+            builder.HasOne(d => d.Etapa).WithMany(p => p.Actividades).HasForeignKey(d => d.EtapaProgramaCodigo).OnDelete(DeleteBehavior.NoAction); // FK_obdetp_obdacp
+            builder.HasOne(d => d.Prioridad).WithMany(p => p.Actividades).HasForeignKey(d => d.PrioridadActividadCodigo).OnDelete(DeleteBehavior.NoAction); // FK_obdpri_obdacp
+            builder.HasOne(d => d.Tipo).WithMany(p => p.Actividades).HasForeignKey(d => d.TipoActividadCodigo).OnDelete(DeleteBehavior.NoAction); // FK_obdtac_obdacp
             builder.HasOne(d => d.TipoEvaluacion).WithMany(p => p.Actividades).HasForeignKey(d => d.TipoEvaluacionCodigo).OnDelete(DeleteBehavior.NoAction); // FK_obdtev_obdacp
-            builder.HasOne(d => d.TipoResponsableActividad).WithMany(p => p.Actividades).HasForeignKey(d => d.TipoResponsableActividadCodigo).OnDelete(DeleteBehavior.NoAction); // FK_obdtra_obdacp
+            builder.HasOne(d => d.TipoResponsable).WithMany(p => p.Actividades).HasForeignKey(d => d.TipoResponsableActividadCodigo).OnDelete(DeleteBehavior.NoAction); // FK_obdtra_obdacp
         }
     }
 }

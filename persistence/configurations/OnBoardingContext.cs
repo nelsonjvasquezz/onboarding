@@ -23,9 +23,9 @@ public partial class OnBoardingContext : DbContext
     {
         modelBuilder.UseCollation("Latin1_General_CI_AS");
 
-        modelBuilder.ApplyConfiguration(new ContratacionProgramaConfiguration());
+        modelBuilder.ApplyConfiguration(new ParticipanteProgramaConfiguration());
         modelBuilder.ApplyConfiguration(new EventoNotificableConfiguration());
-        modelBuilder.ApplyConfiguration(new EtapaProgramaConfiguration());
+        modelBuilder.ApplyConfiguration(new EtapaActividadConfiguration());
 
 
         OnModelCreatingPartial(modelBuilder);

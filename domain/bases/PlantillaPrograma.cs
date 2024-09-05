@@ -79,16 +79,16 @@ public partial class PlantillaPrograma
     // Children collections
 
     /// <summary>
-    /// Child PlantillasDeActividades where [pac_plant_actividades].[pac_codppr] point to this entity (FK_obdppr_obdpac)
+    /// Child ActividadesPlantilla where [pac_plant_actividades].[pac_codppr] point to this entity (FK_obdppr_obdpac)
     /// </summary>
     [XmlIgnore, JsonIgnore]
-    public virtual ICollection<PlantillaActividad> PlantillasDeActividades { get; set; } = new List<PlantillaActividad>(); // FK_obdppr_obdpac
+    public virtual ICollection<ActividadPlantilla> ActividadesPlantilla { get; set; } = new List<ActividadPlantilla>(); // FK_obdppr_obdpac
 
     /// <summary>
     /// Child Alcances where [pal_plant_alcances].[pal_codppr] point to this entity (FK_obdppr_obdpap)
     /// </summary>
     [XmlIgnore, JsonIgnore]
-    public virtual ICollection<AlcancePlantillaPrograma> Alcances { get; set; } = new List<AlcancePlantillaPrograma>(); // FK_obdppr_obdpap
+    public virtual ICollection<AlcancePlantilla> Alcances { get; set; } = new List<AlcancePlantilla>(); // FK_obdppr_obdpap
 
     /// <summary>
     /// Child Programas where [pro_programas].[pro_codppr] point to this entity (FK_obdppr_obdpro)

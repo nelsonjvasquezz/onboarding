@@ -26,7 +26,7 @@ namespace onboarding.persistence.configurations
             builder.Property(e => e.Codigo).HasColumnName("ppr_codigo");
             builder.Property(e => e.GrupoCorporativoCodigo).HasColumnName("ppr_codgrc");
             builder.Property(e => e.Nombre).HasColumnName("ppr_nombre").HasMaxLength(250).IsUnicode(false);
-            builder.Property(e => e.Descripcion).HasColumnName("ppr_descripcion").HasMaxLength(500).IsUnicode(false);
+            builder.Property(e => e.Descripcion).HasColumnName("ppr_descripcion").HasMaxLength(4000).IsUnicode(false);
             builder.Property(e => e.Objetivo).HasColumnName("ppr_objetivo").HasMaxLength(4000).IsUnicode(false);
             builder.Property(e => e.Estado).HasColumnName("ppr_estado").HasMaxLength(10).IsUnicode(false);
             builder.Property(e => e.DuracionEstimada).HasColumnName("ppr_duracion_estimada");

@@ -25,7 +25,7 @@ namespace onboarding.persistence.configurations
 
             builder.Property(e => e.Codigo).HasColumnName("tra_codigo");
             builder.Property(e => e.GrupoCorporativoCodigo).HasColumnName("tra_codgrc");
-            builder.Property(e => e.Nombre).HasColumnName("tra_nombre").HasMaxLength(100).IsUnicode(false);
+            builder.Property(e => e.Nombre).HasColumnName("tra_nombre").HasMaxLength(50).IsUnicode(false);
             builder.Property(e => e.Descripcion).HasColumnName("tra_descripcion").HasMaxLength(500).IsUnicode(false);
             builder.Property(e => e.RequiereEmpleo).HasColumnName("tra_requiere_empleo");
             builder.Property(e => e.EmpleoValueListCodigo).HasColumnName("tra_codvli_empleo");

@@ -75,8 +75,8 @@ public partial class PrioridadActividad
     public virtual ICollection<ActividadPrograma> Actividades { get; set; } = new List<ActividadPrograma>(); // FK_obdpri_obdacp
 
     /// <summary>
-    /// Child PlantillasDeActividades where [pac_plant_actividades].[pac_codpri] point to this entity (FK_obdpri_obdpac)
+    /// Child ActividadesPlantilla where [pac_plant_actividades].[pac_codpri] point to this entity (FK_obdpri_obdpac)
     /// </summary>
     [XmlIgnore, JsonIgnore]
-    public virtual ICollection<PlantillaActividad> PlantillasDeActividades { get; set; } = new List<PlantillaActividad>(); // FK_obdpri_obdpac
+    public virtual ICollection<ActividadPlantilla> ActividadesPlantilla { get; set; } = new List<ActividadPlantilla>(); // FK_obdpri_obdpac
 }

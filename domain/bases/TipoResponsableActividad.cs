@@ -100,8 +100,8 @@ public partial class TipoResponsableActividad
     public virtual ICollection<ActividadPrograma> Actividades { get; set; } = new List<ActividadPrograma>(); // FK_obdtra_obdacp
 
     /// <summary>
-    /// Child PlantillasDeActividades where [pac_plant_actividades].[pac_codtra] point to this entity (FK_obdtra_obdpac)
+    /// Child ActividadesPlantilla where [pac_plant_actividades].[pac_codtra] point to this entity (FK_obdtra_obdpac)
     /// </summary>
     [XmlIgnore, JsonIgnore]
-    public virtual ICollection<PlantillaActividad> PlantillasDeActividades { get; set; } = new List<PlantillaActividad>(); // FK_obdtra_obdpac
+    public virtual ICollection<ActividadPlantilla> ActividadesPlantilla { get; set; } = new List<ActividadPlantilla>(); // FK_obdtra_obdpac
 }

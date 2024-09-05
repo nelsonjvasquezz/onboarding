@@ -1,13 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text.Json.Serialization;
+using System.Xml.Serialization;
 
 namespace onboarding.data.bases;
 
 /// <summary>
-/// Tabla que almacena los registros de la notificación de la actividad de la plantilla
+/// Tabla que almacena las configuraciones de las notificaciones para las actividades de la plantilla
 /// obd.pna_plant_notificacion_act
 /// </summary>
-public partial class PlantillaNotificacionActividad
+public partial class NotificacionActividadPlantilla
 {
     /// <summary>
     /// Código de registro de notificaciones de la actividad de la plantilla
@@ -15,9 +17,14 @@ public partial class PlantillaNotificacionActividad
     public int Codigo { get; set; } // pna_codigo
 
     /// <summary>
+    /// Código de Evento Notificable
+    /// </summary>
+    public int EventoNotificableCodigo { get; set; } // pna_codeno
+
+    /// <summary>
     /// Código de Actividad de la plantilla de programas de onboarding
     /// </summary>
-    public int PlantillaActividadCodigo { get; set; } // pna_codpac
+    public int ActividadPlantillaCodigo { get; set; } // pna_codpac
 
     /// <summary>
     /// Determina cual desplazamiento utiliza, si el de fecha inicio o fecha fin
@@ -27,12 +34,12 @@ public partial class PlantillaNotificacionActividad
     /// <summary>
     /// Desplamiento en dias antes o despues de la fecha de inicio 
     /// </summary>
-    public int OffsetInicio { get; set; } // pna_offset_inicio
+    public int? OffsetInicio { get; set; } // pna_offset_inicio
 
     /// <summary>
     /// Desplamiento en dias antes o despues de la fecha de finalizacion
     /// </summary>
-    public int OffsetFin { get; set; } // pna_offset_fin
+    public int? OffsetFin { get; set; } // pna_offset_fin
 
     /// <summary>
     /// Asunto de la notificación
@@ -84,8 +91,16 @@ public partial class PlantillaNotificacionActividad
     /// </summary>
     public DateTime? FechaUltimaModificacion { get; set; } // pna_fecha_modificacion
 
+    // Foreign keys
+
     /// <summary>
-    /// Parent PlantillaActividad pointed by [pna_plant_notificacion].([PlantillaActividadCodigo]) (FK_obdpac_obdpna)
+    /// Parent Actividad pointed by [pna_plant_notificacion].([ActividadPlantillaCodigo]) (FK_obdpac_obdpna)
     /// </summary>
-    public virtual PlantillaActividad PlantillaActividad { get; set; } // FK_obdpac_obdpna
+    public virtual ActividadPlantilla Actividad { get; set; } // FK_obdpac_obdpna
+
+    /// <summary>
+    /// Parent EventoNotificable pointed by [pna_plant_notificacion_act].[(EventoNotificableCodigo)] (FK_obdeno_obdpna)
+    /// </summary>
+    [XmlIgnore, JsonIgnore]
+    public virtual EventoNotificable EventoNotificable { get; set; } // FK_obdeno_obdpna
 }

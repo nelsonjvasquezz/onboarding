@@ -4,13 +4,11 @@ using System.Xml.Serialization;
 
 namespace onboarding.data.bases;
 
-// TODO: Agregar las enums correspondientes según la configuración de tabla de la base de datos
-
 /// <summary>
 /// Tabla que almacena el alcance para la Platilla del programa
 /// obd.pal_plant_alcances
 /// </summary>
-public partial class AlcancePlantillaPrograma
+public partial class AlcancePlantilla
 {
     /// <summary>
     /// Código de registro de alcance para la plantilla de programa de onboarding
@@ -36,6 +34,16 @@ public partial class AlcancePlantillaPrograma
     /// Código de Puesto
     /// </summary>
     public int? PuestoCodigo { get; set; } // pal_codpue
+
+    /// <summary>
+    /// Código del centro de trabajo
+    /// </summary>
+    public int? CentroTrabajoCodigo { get; set; } // pal_codcdt
+
+    /// <summary>
+    /// Código de la unidad organizativa
+    /// </summary>
+    public int? UnidadCodigo { get; set; } // pal_coduni
 
     /// <summary>
     /// Data de los campos adicionales
@@ -65,8 +73,8 @@ public partial class AlcancePlantillaPrograma
     // Foreing keys
 
     /// <summary>
-    /// Parent PlantillaPrograma pointed by [pal_plant_alcances].([PlantillaProgramaCodigo]) (FK_obdppr_obdpap)
+    /// Parent Plantilla pointed by [pal_plant_alcances].([PlantillaProgramaCodigo]) (FK_obdppr_obdpap)
     /// </summary>
     [XmlIgnore, JsonIgnore]
-    public virtual PlantillaPrograma PlantillaPrograma { get; set; } // FK_obdppr_obdpap
+    public virtual PlantillaPrograma Plantilla { get; set; } // FK_obdppr_obdpap
 }

@@ -1,308 +1,259 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="onboarding.data.bases.ActividadPrograma" Collapsed="true">
-    <Position X="7.25" Y="1.25" Width="1.75" />
-    <AssociationLine Name="ContratacionPrograma" Type="onboarding.data.bases.ContratacionPrograma" FixedFromPoint="true" FixedToPoint="true">
+    <Position X="7.25" Y="0.5" Width="1.75" />
+    <AssociationLine Name="TipoEvaluacion" Type="onboarding.data.bases.TipoEvaluacion" FixedFromPoint="true">
       <Path>
-        <Point X="7.25" Y="1.688" />
-        <Point X="6.875" Y="1.688" />
-        <Point X="6.875" Y="3.219" />
-        <Point X="3" Y="3.219" />
+        <Point X="8.438" Y="1.062" />
+        <Point X="8.438" Y="4.5" />
       </Path>
     </AssociationLine>
-    <AssociationLine Name="EtapaPrograma" Type="onboarding.data.bases.EtapaPrograma" FixedFromPoint="true" FixedToPoint="true">
+    <AssociationLine Name="Etapa" Type="onboarding.data.bases.EtapaActividad" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="7.833" Y="1.812" />
-        <Point X="7.833" Y="3.812" />
-        <Point X="6.75" Y="3.812" />
+        <Point X="7.812" Y="1.062" />
+        <Point X="7.812" Y="3.046" />
+        <Point X="6.5" Y="3.046" />
       </Path>
     </AssociationLine>
-    <AssociationLine Name="PrioridadActividad" Type="onboarding.data.bases.PrioridadActividad" FixedFromPoint="true">
+    <AssociationLine Name="Participante" Type="onboarding.data.bases.ParticipantePrograma" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="8.417" Y="1.812" />
-        <Point X="8.417" Y="4.75" />
+        <Point X="7.5" Y="1.062" />
+        <Point X="7.5" Y="2.438" />
+        <Point X="3.958" Y="2.437" Type="JumpStart" />
+        <Point X="3.792" Y="2.438" Type="JumpEnd" />
+        <Point X="3" Y="2.438" />
       </Path>
     </AssociationLine>
-    <AssociationLine Name="TipoEvaluacion" Type="onboarding.data.bases.TipoEvaluacion" FixedFromPoint="true" FixedToPoint="true">
+    <AssociationLine Name="Prioridad" Type="onboarding.data.bases.PrioridadActividad" FixedFromPoint="true">
       <Path>
-        <Point X="8.854" Y="1.812" />
-        <Point X="8.854" Y="4.5" />
-        <Point X="9.656" Y="4.5" />
-        <Point X="9.656" Y="6" />
+        <Point X="8" Y="1.062" />
+        <Point X="8" Y="3.5" />
       </Path>
     </AssociationLine>
-    <AssociationLine Name="TipoResponsableActividad" Type="onboarding.data.bases.TipoResponsableActividad" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+    <AssociationLine Name="Tipo" Type="onboarding.data.bases.TipoActividad" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="9" Y="1.688" />
-        <Point X="10.917" Y="1.688" />
-        <Point X="10.917" Y="7.25" />
+        <Point X="8.875" Y="1.062" />
+        <Point X="8.875" Y="1.437" />
+        <Point X="12.688" Y="1.437" />
+        <Point X="12.688" Y="7" />
       </Path>
     </AssociationLine>
-    <AssociationLine Name="TipoActividad" Type="onboarding.data.bases.TipoActividad" FixedFromPoint="true" FixedToPoint="true">
+    <AssociationLine Name="TipoResponsable" Type="onboarding.data.bases.TipoResponsableActividad" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="9" Y="1.563" />
-        <Point X="12" Y="1.563" />
-        <Point X="12" Y="7.941" />
-        <Point X="12.5" Y="7.941" />
+        <Point X="8.688" Y="1.062" />
+        <Point X="8.688" Y="2.78" />
+        <Point X="10.312" Y="2.78" />
+        <Point X="10.312" Y="5.5" />
       </Path>
-      <MemberNameLabel ManuallyPlaced="true">
-        <Position X="-0.695" Y="1.389" />
-      </MemberNameLabel>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>QAGAQAAAAQEEgAAIAAEBgYKDAgBBAAEAgAgAAwGwgAg=</HashCode>
+      <HashCode>AEQAIACCAQEEgAAIAQEAgYKDAgJBAAEAgCgAAQEwgAw=</HashCode>
       <FileName>domain\bases\ActividadPrograma.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
-      <Property Name="ContratacionPrograma" />
-      <Property Name="TipoActividad" />
-      <Property Name="TipoResponsableActividad" />
-      <Property Name="EtapaPrograma" />
-      <Property Name="PrioridadActividad" />
       <Property Name="TipoEvaluacion" />
+      <Property Name="Etapa" />
+      <Property Name="Participante" />
+      <Property Name="Prioridad" />
+      <Property Name="Tipo" />
+      <Property Name="TipoResponsable" />
     </ShowAsAssociation>
   </Class>
-  <Class Name="onboarding.data.bases.AlcancePlantillaPrograma" Collapsed="true">
-    <Position X="0.75" Y="6.75" Width="2" />
+  <Class Name="onboarding.data.bases.ParticipantePrograma" Collapsed="true">
+    <Position X="1" Y="2.25" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAQAIAAAAAAEBAQAAAABAAAAAAAEAAAGQAAQ=</HashCode>
-      <FileName>domain\bases\AlcancePlantillaPrograma.cs</FileName>
-    </TypeIdentifier>
-    <ShowAsAssociation>
-      <Property Name="PlantillaPrograma" />
-    </ShowAsAssociation>
-  </Class>
-  <Class Name="onboarding.data.bases.ContratacionPrograma" Collapsed="true">
-    <Position X="1" Y="3" Width="2" />
-    <TypeIdentifier>
-      <HashCode>ACAAAIAAAQAAAABAAAEBAQIBAoBAAIAAAgAEAAGkAAA=</HashCode>
-      <FileName>domain\bases\ContratacionPrograma.cs</FileName>
+      <HashCode>ACAAAICAAQAAAABAAAEAAQIBAoJAAIAAAgAEAAEkQAA=</HashCode>
+      <FileName>domain\bases\ParticipantePrograma.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Property Name="Programa" />
     </ShowAsAssociation>
   </Class>
-  <Class Name="onboarding.data.bases.EtapaPrograma" Collapsed="true">
-    <Position X="5.25" Y="3.5" Width="1.5" />
+  <Class Name="onboarding.data.bases.EtapaActividad" Collapsed="true">
+    <Position X="5" Y="2.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAIAAAQAAAIAAAAABgQQBAADAAAAAAACAAAGWAAA=</HashCode>
-      <FileName>domain\bases\EtapaPrograma.cs</FileName>
+      <HashCode>AAAAAACAAQAAAIAAAAAAgQQBAALAAAAAAICAAAEWAAA=</HashCode>
+      <FileName>domain\bases\EtapaActividad.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="onboarding.data.bases.EventoNotificable" Collapsed="true">
-    <Position X="1.5" Y="2.25" Width="1.5" />
+    <Position X="0.5" Y="1.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAQAAAAAAAAABgQABAABAAIAAAAAAAAGCAAA=</HashCode>
+      <HashCode>AIAAAAAAAQAEAAAAAAAAgAAAAAAAAAAAAAAAAAgAAAA=</HashCode>
       <FileName>domain\bases\EventoNotificable.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="onboarding.data.bases.NotificacionActividadPrograma" Collapsed="true">
-    <Position X="1.5" Y="1" Width="2.5" />
+  <Class Name="onboarding.data.bases.NotificacionActividad" Collapsed="true">
+    <Position X="1.5" Y="0.5" Width="2.5" />
+    <AssociationLine Name="EventoNotificable" Type="onboarding.data.bases.EventoNotificable" FixedFromPoint="true">
+      <Path>
+        <Point X="1.625" Y="1.062" />
+        <Point X="1.625" Y="1.5" />
+      </Path>
+    </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAAAAAQhAQAAAAAACoABAIEAAAAAAAAAAAEAAAAAAAg=</HashCode>
-      <FileName>domain\bases\NotificacionActividadPrograma.cs</FileName>
+      <HashCode>AAAAAAQhAQAAAAAACoCBAIEAAAAAAAAAAAEIAAAAIEg=</HashCode>
+      <FileName>domain\bases\NotificacionActividad.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Property Name="EventoNotificable" />
-      <Property Name="ActividadPrograma" />
-    </ShowAsAssociation>
-  </Class>
-  <Class Name="onboarding.data.bases.PlantillaActividad" Collapsed="true">
-    <Position X="6" Y="7" Width="1.5" />
-    <AssociationLine Name="PlantillaPrograma" Type="onboarding.data.bases.PlantillaPrograma" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
-      <Path>
-        <Point X="6" Y="7.125" />
-        <Point X="3.116" Y="7.125" />
-        <Point X="3.116" Y="5.843" />
-        <Point X="2.25" Y="5.843" />
-      </Path>
-      <MemberNameLabel ManuallyPlaced="true">
-        <Position X="0.27" Y="0.133" />
-      </MemberNameLabel>
-    </AssociationLine>
-    <AssociationLine Name="EtapaPrograma" Type="onboarding.data.bases.EtapaPrograma" FixedFromPoint="true" FixedToPoint="true">
-      <Path>
-        <Point X="6.688" Y="7" />
-        <Point X="6.688" Y="6.625" />
-        <Point X="6.5" Y="6.625" />
-        <Point X="6.5" Y="4.062" />
-      </Path>
-    </AssociationLine>
-    <AssociationLine Name="PrioridadActividad" Type="onboarding.data.bases.PrioridadActividad" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
-      <Path>
-        <Point X="7.062" Y="7" />
-        <Point X="7.062" Y="5.188" />
-        <Point X="7.75" Y="5.188" />
-      </Path>
-    </AssociationLine>
-    <AssociationLine Name="TipoEvaluacion" Type="onboarding.data.bases.TipoEvaluacion" FixedFromPoint="true" FixedToPoint="true">
-      <Path>
-        <Point X="7.375" Y="7" />
-        <Point X="7.375" Y="6.281" />
-        <Point X="8.25" Y="6.281" />
-      </Path>
-    </AssociationLine>
-    <AssociationLine Name="TipoResponsableActividad" Type="onboarding.data.bases.TipoResponsableActividad" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
-      <Path>
-        <Point X="7.062" Y="7.562" />
-        <Point X="7.062" Y="7.811" />
-        <Point X="9.285" Y="7.811" />
-        <Point X="9.285" Y="7.531" />
-        <Point X="9.75" Y="7.531" />
-      </Path>
-      <MemberNameLabel ManuallyPlaced="true">
-        <Position X="0.471" Y="-0.208" />
-      </MemberNameLabel>
-    </AssociationLine>
-    <AssociationLine Name="TipoActividad" Type="onboarding.data.bases.TipoActividad" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
-      <Path>
-        <Point X="6.75" Y="7.562" />
-        <Point X="6.75" Y="8.437" />
-        <Point X="13.188" Y="8.437" />
-        <Point X="13.188" Y="8.062" />
-      </Path>
-      <MemberNameLabel ManuallyPlaced="true">
-        <Position X="0.398" Y="0.46" />
-      </MemberNameLabel>
-    </AssociationLine>
-    <TypeIdentifier>
-      <HashCode>QAAAQCAAAQEMAAAIACEBgQABAABAAAEBgAAAAwmQAAA=</HashCode>
-      <FileName>domain\bases\PlantillaActividad.cs</FileName>
-    </TypeIdentifier>
-    <ShowAsAssociation>
-      <Property Name="PlantillaPrograma" />
-      <Property Name="EtapaPrograma" />
-      <Property Name="PrioridadActividad" />
-      <Property Name="TipoEvaluacion" />
-      <Property Name="TipoResponsableActividad" />
-      <Property Name="TipoActividad" />
-    </ShowAsAssociation>
-  </Class>
-  <Class Name="onboarding.data.bases.PlantillaNotificacionActividad" Collapsed="true">
-    <Position X="2.75" Y="4.25" Width="2.25" />
-    <AssociationLine Name="PlantillaActividad" Type="onboarding.data.bases.PlantillaActividad" FixedFromPoint="true" FixedToPoint="true">
-      <Path>
-        <Point X="3.485" Y="4.812" />
-        <Point X="3.485" Y="5.187" />
-        <Point X="6.25" Y="5.187" />
-        <Point X="6.25" Y="7" />
-      </Path>
-      <MemberNameLabel ManuallyPlaced="true">
-        <Position X="0.075" Y="0.62" />
-      </MemberNameLabel>
-    </AssociationLine>
-    <TypeIdentifier>
-      <HashCode>ABQAAAAAAQAAAAAAAIAFAQAAAABAAAAhQAABAAGBAAA=</HashCode>
-      <FileName>domain\bases\PlantillaNotificacionActividad.cs</FileName>
-    </TypeIdentifier>
-    <ShowAsAssociation>
-      <Property Name="PlantillaActividad" />
+      <Property Name="Actividad" />
     </ShowAsAssociation>
   </Class>
   <Class Name="onboarding.data.bases.PlantillaPrograma" Collapsed="true">
-    <Position X="0.75" Y="5.5" Width="1.5" />
+    <Position X="1" Y="5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>ACAAAIAAAQAAAAAYAAEBgQABAABAAAAAAAAAAAGCAAg=</HashCode>
+      <HashCode>ACAAAACAAQAAAAAYAAEAgQABAAJAAAAAAIAAAAECAAg=</HashCode>
       <FileName>domain\bases\PlantillaPrograma.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="onboarding.data.bases.PrerequisitoPlantillaActividad" Collapsed="true">
-    <Position X="0.5" Y="8" Width="2.25" />
-    <AssociationLine Name="PlantillaActividad" Type="onboarding.data.bases.PlantillaActividad" ManuallyRouted="true">
-      <Path>
-        <Point X="2.75" Y="8.313" />
-        <Point X="6.344" Y="8.313" />
-        <Point X="6.344" Y="7.562" />
-      </Path>
-      <MemberNameLabel ManuallyPlaced="true">
-        <Position X="0.157" Y="0.923" />
-      </MemberNameLabel>
-    </AssociationLine>
-    <AssociationLine Name="PlantillaPrerequisito" Type="onboarding.data.bases.PlantillaActividad" ManuallyRouted="true">
-      <Path>
-        <Point X="2.75" Y="8.127" />
-        <Point X="4.73" Y="8.127" />
-        <Point X="4.73" Y="7.312" />
-        <Point X="6" Y="7.312" />
-      </Path>
-      <MemberNameLabel ManuallyPlaced="true">
-        <Position X="1.518" Y="-0.648" />
-      </MemberNameLabel>
-    </AssociationLine>
-    <TypeIdentifier>
-      <HashCode>ABABAAQAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>domain\bases\PrerequisitoPlantillaActividad.cs</FileName>
-    </TypeIdentifier>
-    <ShowAsAssociation>
-      <Property Name="PlantillaActividad" />
-      <Property Name="PlantillaPrerequisito" />
-    </ShowAsAssociation>
-  </Class>
   <Class Name="onboarding.data.bases.PrioridadActividad" Collapsed="true">
-    <Position X="7.75" Y="4.75" Width="1.75" />
+    <Position X="6.5" Y="3.5" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AAAAAIAAAQAAAAAAAAABgQAAAABAAAAAAAAAgAGWAAA=</HashCode>
+      <HashCode>AAAAAACAAQAAAAAAAAAAgQAAAAJAAAAAAIAAgAGWAAA=</HashCode>
       <FileName>domain\bases\PrioridadActividad.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="onboarding.data.bases.Programa" Collapsed="true">
-    <Position X="0.75" Y="4.25" Width="1.5" />
+    <Position X="1" Y="3.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAgAAQAIAAAIAAEBgQABAABBAAAAAAAAAAGQAAg=</HashCode>
+      <HashCode>AAAAAACQAQAAAAAIAAEAgQABAAJBAAAAAAAAAAUQAAg=</HashCode>
       <FileName>domain\bases\Programa.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
-      <Property Name="PlantillaPrograma" />
-    </ShowAsAssociation>
-  </Class>
-  <Class Name="onboarding.data.bases.RequisitoActividadPrograma" Collapsed="true">
-    <Position X="12.25" Y="1.25" Width="2.25" />
-    <AssociationLine Name="ActividadPrograma" Type="onboarding.data.bases.ActividadPrograma" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
-      <Path>
-        <Point X="13.094" Y="1.25" />
-        <Point X="13.094" Y="0.875" />
-        <Point X="8.49" Y="0.875" />
-        <Point X="8.49" Y="1.25" />
-      </Path>
-      <MemberNameLabel ManuallyPlaced="true">
-        <Position X="-1.876" Y="0.46" />
-      </MemberNameLabel>
-    </AssociationLine>
-    <AssociationLine Name="ActividadPrerequisito" Type="onboarding.data.bases.ActividadPrograma" FixedToPoint="true">
-      <Path>
-        <Point X="12.25" Y="1.375" />
-        <Point X="9" Y="1.375" />
-      </Path>
-    </AssociationLine>
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAACAAAAAAAAEAAAAAAAQAAABAAAAA=</HashCode>
-      <FileName>domain\bases\RequisitoActividadPrograma.cs</FileName>
-    </TypeIdentifier>
-    <ShowAsAssociation>
-      <Property Name="ActividadPrograma" />
-      <Property Name="ActividadPrerequisito" />
+      <Property Name="Plantilla" />
     </ShowAsAssociation>
   </Class>
   <Class Name="onboarding.data.bases.TipoActividad" Collapsed="true">
-    <Position X="12.5" Y="7.5" Width="1.5" />
+    <Position X="12.25" Y="7" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAIIIAAQAAAAAAAAEBgQCBgABIAAAAAAAAAAGGAAA=</HashCode>
+      <HashCode>AAAAIAKAAQAAAAAAAAEAgQCBgAJIAAAAAIAAAAEGAAA=</HashCode>
       <FileName>domain\bases\TipoActividad.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="onboarding.data.bases.TipoEvaluacion" Collapsed="true">
-    <Position X="8.25" Y="6" Width="1.5" />
+    <Position X="7.25" Y="4.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAIAAAQAAAAAACAABgQABAABAAAAAEAAAAAGGAAA=</HashCode>
+      <HashCode>AAAAAACAAQAAAAAACAAAgQABAAJAAAAAEIAAAAEGAAA=</HashCode>
       <FileName>domain\bases\TipoEvaluacion.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="onboarding.data.bases.TipoResponsableActividad" Collapsed="true">
-    <Position X="9.75" Y="7.25" Width="2" />
+    <Position X="9.25" Y="5.5" Width="2" />
     <TypeIdentifier>
-      <HashCode>QAAAQIAAAQAAAAAAAAoDgQABAARAAAAAAAAAAAGGAAI=</HashCode>
+      <HashCode>QAAAQACAAQAAAAAAAAoCgQABAAZAAAAAAIAAAAEGAAI=</HashCode>
       <FileName>domain\bases\TipoResponsableActividad.cs</FileName>
     </TypeIdentifier>
+  </Class>
+  <Class Name="onboarding.data.bases.ActividadPlantilla" Collapsed="true">
+    <Position X="5.75" Y="6.5" Width="1.5" />
+    <AssociationLine Name="Plantilla" Type="onboarding.data.bases.PlantillaPrograma" ManuallyRouted="true">
+      <Path>
+        <Point X="5.75" Y="6.875" />
+        <Point X="3.449" Y="6.875" />
+        <Point X="3.449" Y="5.438" />
+        <Point X="2.5" Y="5.438" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="Tipo" Type="onboarding.data.bases.TipoActividad" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="7.062" Y="7.062" />
+        <Point X="7.062" Y="7.375" />
+        <Point X="12.25" Y="7.375" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="TipoEvaluacion" Type="onboarding.data.bases.TipoEvaluacion" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="7.25" Y="6.625" />
+        <Point X="7.875" Y="6.625" />
+        <Point X="7.875" Y="5.062" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="TipoResponsable" Type="onboarding.data.bases.TipoResponsableActividad" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="7.25" Y="6.875" />
+        <Point X="10.688" Y="6.875" />
+        <Point X="10.688" Y="6.062" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AEQAACCSAQEEAAAIAQEAgQABAAJAAAEFgABAAQEQAAQ=</HashCode>
+      <FileName>domain\bases\ActividadPlantilla.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Etapa" />
+      <Property Name="Plantilla" />
+      <Property Name="Prioridad" />
+      <Property Name="Tipo" />
+      <Property Name="TipoEvaluacion" />
+      <Property Name="TipoResponsable" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="onboarding.data.bases.AlcancePlantilla" Collapsed="true">
+    <Position X="0.5" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACQAQAAAAAAAAEAAQABAAJAAIAAAAEAAAEQAAQ=</HashCode>
+      <FileName>domain\bases\AlcancePlantilla.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Plantilla" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="onboarding.data.bases.NotificacionActividadPlantilla" Collapsed="true">
+    <Position X="3.5" Y="4" Width="1.5" />
+    <AssociationLine Name="EventoNotificable" Type="onboarding.data.bases.EventoNotificable" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="3.875" Y="4" />
+        <Point X="3.875" Y="1.781" />
+        <Point X="2" Y="1.781" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAQAAACgAQAAQAAAAIABAQAAAAJAAAAhQAEBAAEBAEA=</HashCode>
+      <FileName>domain\bases\NotificacionActividadPlantilla.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Actividad" />
+      <Property Name="EventoNotificable" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="onboarding.data.bases.RequisitoActividad" Collapsed="true">
+    <Position X="11.5" Y="0.5" Width="1.5" />
+    <AssociationLine Name="Actividad" Type="onboarding.data.bases.ActividadPrograma" FixedFromPoint="true">
+      <Path>
+        <Point X="11.5" Y="0.938" />
+        <Point X="9" Y="0.938" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAABAABEA=</HashCode>
+      <FileName>domain\bases\RequisitoActividad.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Actividad" />
+      <Property Name="Requisito" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="onboarding.data.bases.RequisitoActividadPlantilla" Collapsed="true">
+    <Position X="1.5" Y="7.5" Width="1.5" />
+    <AssociationLine Name="Actividad" Type="onboarding.data.bases.ActividadPlantilla" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="3" Y="7.875" />
+        <Point X="6.5" Y="7.875" />
+        <Point X="6.5" Y="7.062" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.11" Y="0.935" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAABAABEA=</HashCode>
+      <FileName>domain\bases\RequisitoActividadPlantilla.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Actividad" />
+      <Property Name="Requisito" />
+    </ShowAsAssociation>
   </Class>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>

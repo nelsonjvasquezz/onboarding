@@ -24,14 +24,8 @@ namespace onboarding.persistence.configurations
             builder.HasKey(e => e.Codigo);
 
             builder.Property(e => e.Codigo).HasColumnName("eno_codigo");
-            builder.Property(e => e.GrupoCorporativoCodigo).HasColumnName("eno_codgrc");
             builder.Property(e => e.Nombre).HasColumnName("eno_nombre").HasMaxLength(100).IsUnicode(false);
-            builder.Property(e => e.Descripcion).HasColumnName("eno_descripcion").HasMaxLength(500).IsUnicode(false);
-            builder.Property(e => e.RawPropertyBagData).HasColumnName("eno_property_bag_data");
-            builder.Property(e => e.UsuarioGrabacion).HasColumnName("eno_usuario_grabacion").HasMaxLength(50).IsUnicode(false);
-            builder.Property(e => e.FechaGrabacion).HasColumnName("eno_fecha_grabacion");
-            builder.Property(e => e.UsuarioUltimaModificacion).HasColumnName("eno_usuario_modificacion").HasMaxLength(50).IsUnicode(false);
-            builder.Property(e => e.FechaUltimaModificacion).HasColumnName("eno_fecha_modificacion");
+            builder.Property(e => e.DescripcionLocalizationKey).HasColumnName("eno_descripcion").HasMaxLength(500).IsUnicode(false);
         }
     }
 }

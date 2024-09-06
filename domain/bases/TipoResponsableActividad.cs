@@ -6,7 +6,7 @@ using System.Xml.Serialization;
 namespace onboarding.data.bases;
 
 /// <summary>
-/// Tabla de Tipos de resposnables de las Actividades
+/// Tabla de Tipos de responsables de las Actividades
 /// obd.tra_tipos_respon_actividad
 /// </summary>
 public partial class TipoResponsableActividad
@@ -22,12 +22,12 @@ public partial class TipoResponsableActividad
     public int GrupoCorporativoCodigo { get; set; } // tra_codgrc
 
     /// <summary>
-    /// Nombre del Tipo de Resonsable de Actividad
+    /// Nombre del Tipo de Responsable de Actividad
     /// </summary>
     public string Nombre { get; set; } // tra_nombre
 
     /// <summary>
-    /// Descripción del Tipo de Resonsable de Actividad
+    /// Descripción del Tipo de Responsable de Actividad
     /// </summary>
     public string Descripcion { get; set; } // tra_descripcion
 

@@ -11,7 +11,7 @@ namespace onboarding.data.bases;
 public partial class NotificacionActividad
 {
     /// <summary>
-    /// Código de registro de la configuración de notificaciones de la actividad del programa
+    /// Código del registro de la notificación de la actividad del programa
     /// </summary>
     public int Codigo { get; set; } // nap_codigo
 

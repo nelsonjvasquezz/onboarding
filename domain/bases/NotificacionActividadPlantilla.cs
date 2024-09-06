@@ -12,7 +12,7 @@ namespace onboarding.data.bases;
 public partial class NotificacionActividadPlantilla
 {
     /// <summary>
-    /// Código de registro de notificaciones de la actividad de la plantilla
+    /// Código de la configuración de las notificaciones de la actividad de la plantilla
     /// </summary>
     public int Codigo { get; set; } // pna_codigo
 

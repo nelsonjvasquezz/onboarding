@@ -6,7 +6,7 @@ using System.Xml.Serialization;
 namespace onboarding.data.bases;
 
 /// <summary>
-/// Tabla con las fases o etapas de los programas de Oboarding
+/// Tabla con las fases o etapas de los programas de Onboarding
 /// obd.etp_etapas_programa
 /// </summary>
 public partial class EtapaActividad

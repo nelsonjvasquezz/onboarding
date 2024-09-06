@@ -6,7 +6,7 @@ using System.Xml.Serialization;
 namespace onboarding.data.bases;
 
 /// <summary>
-/// Tabla que almacena los evento que son notificables para el seguimiento de los programas de onboarding
+/// Tabla que almacena los eventos que son notificables para el seguimiento de los programas de onboarding
 /// obd.eno_eventos_notificables
 /// </summary>
 public partial class EventoNotificable
@@ -22,9 +22,9 @@ public partial class EventoNotificable
     public string Nombre { get; set; } // eno_nombre
 
     /// <summary>
-    /// Descripción del Evento que se puede notificar
+    /// Llave de localización de la descripción del evento que se puede notificar
     /// </summary>
-    public string DescripcionLocalizationKey { get; set; } // eno_descripcion
+    public string DescripcionLocalizationKey { get; set; } // eno_descripcion_loc_key
 
     // Children collections
 

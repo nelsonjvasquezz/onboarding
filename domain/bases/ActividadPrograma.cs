@@ -6,18 +6,18 @@ using System.Xml.Serialization;
 namespace onboarding.data.bases;
 
 /// <summary>
-/// Tabla que almacena las actividades de la plantilla del programa de onboarding
+/// Tabla que almacena las actividades de los participantes de un programa de onboarding
 /// obd.acp_actividades_programa
 /// </summary>
 public partial class ActividadPrograma
 {
     /// <summary>
-    /// Código de registro de la actividad de la plantilla para programa de onboarding
+    /// Código de registro de la actividad de un participante para un programa de onboarding
     /// </summary>
     public int Codigo { get; set; } // acp_codigo (Primary key)
 
     /// <summary>
-    /// Código de la plantilla de programa de onboarding
+    /// Código del participante de un programa de onboarding
     /// </summary>
     public int ParticipanteProgramaCodigo { get; set; } // acp_codpap
 
@@ -57,7 +57,7 @@ public partial class ActividadPrograma
     public DateTime FechaInicio { get; set; } // acp_fecha_inicio
 
     /// <summary>
-    /// Fecha calculada de infalización de la actividad
+    /// Fecha calculada de finalización de la actividad
     /// </summary>
     public DateTime FechaFin { get; set; } // acp_fecha_fin
 
@@ -77,12 +77,12 @@ public partial class ActividadPrograma
     public int PrioridadActividadCodigo { get; set; } // acp_codpri
 
     /// <summary>
-    /// Orden de esta actividad respecto de las mismas que tienen los mismos prerequisitos
+    /// Orden de esta actividad respecto de las mismas que tienen los mismos requisitos
     /// </summary>
     public int Orden { get; set; } // acp_orden
 
     /// <summary>
-    /// Código de Tipo de Responsable de la actividad
+    /// Código de Tipo de Responsable de la actividad, NULL cuando el participante es el responsable
     /// </summary>
     public int? TipoResponsableActividadCodigo { get; set; } // acp_codtra
 

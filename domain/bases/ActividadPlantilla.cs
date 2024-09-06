@@ -72,7 +72,7 @@ public partial class ActividadPlantilla
     public int PrioridadActividadCodigo { get; set; } // pac_codpri
 
     /// <summary>
-    /// Orden de esta actividad respecto de las mismas que tienen los mismos prerequisitos
+    /// Orden de esta actividad respecto de las mismas que tienen los mismos requisitos
     /// </summary>
     public int Orden { get; set; } // pac_orden
 

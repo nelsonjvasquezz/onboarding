@@ -5,7 +5,7 @@ using System.Xml.Serialization;
 namespace onboarding.data.bases;
 
 /// <summary>
-/// Tabla que almacena el alcance para la Platilla del programa
+/// Tabla que almacena el alcance para la Plantilla del programa
 /// obd.pal_plant_alcances
 /// </summary>
 public partial class AlcancePlantilla

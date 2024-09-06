@@ -1,27 +1,27 @@
-﻿CREATE TABLE [obd].[etp_etapas_programa]
+CREATE TABLE [obd].[etp_etapas_programa]
 (
-    [etp_codigo]               INT          IDENTITY (1, 1) NOT NULL,
-    [etp_codgrc]               INT          NOT NULL,
-    [etp_nombre]               VARCHAR(100) NOT NULL,
-    [etp_descripcion]          VARCHAR(500) NULL,
-    [etp_orden]                INT          CONSTRAINT [DF_obd_etp_orden] DEFAULT ((0)) NOT NULL,
-    [etp_antes_primer_dia]     BIT          CONSTRAINT [DF_obd_etp_antes_primer_dia] DEFAULT ((0)) NOT NULL,
-    [etp_durante_primer_dia]   BIT          CONSTRAINT [DF_obd_etp_durante_primer_dia] DEFAULT ((0)) NOT NULL,
-    [etp_posterior_primer_dia] BIT          CONSTRAINT [DF_obd_etp_posterior_primer_dia] DEFAULT ((0)) NOT NULL,
-    [etp_periodo_prueba]       BIT          CONSTRAINT [DF_obd_etp_periodo_prueba] DEFAULT ((0)) NOT NULL,
-    [etp_property_bag_data]    XML          NULL,
-    [etp_usuario_grabacion]    VARCHAR(50)  NULL,
-    [etp_fecha_grabacion]      DATETIME     NULL,
-    [etp_usuario_modificacion] VARCHAR(50)  NULL,
-    [etp_fecha_modificacion]   DATETIME     NULL,
+	[etp_codigo] INT IDENTITY(1,1) NOT NULL,
+	[etp_codgrc] INT NOT NULL,
+	[etp_nombre] VARCHAR(100) NOT NULL,
+	[etp_descripcion] VARCHAR(500) NULL,
+	[etp_orden] INT CONSTRAINT [DF_obd_etp_orden] DEFAULT ((0)) NOT NULL,
+	[etp_antes_primer_dia] BIT CONSTRAINT [DF_obd_etp_antes_primer_dia] DEFAULT ((0)) NOT NULL,
+	[etp_durante_primer_dia] BIT CONSTRAINT [DF_obd_etp_durante_primer_dia] DEFAULT ((0)) NOT NULL,
+	[etp_posterior_primer_dia] BIT CONSTRAINT [DF_obd_etp_posterior_primer_dia] DEFAULT ((0)) NOT NULL,
+	[etp_periodo_prueba] BIT CONSTRAINT [DF_obd_etp_periodo_prueba] DEFAULT ((0)) NOT NULL,
+	[etp_property_bag_data] XML NULL,
+	[etp_usuario_grabacion] VARCHAR(50) NULL,
+	[etp_fecha_grabacion] DATETIME NULL,
+	[etp_usuario_modificacion] VARCHAR(50) NULL,
+	[etp_fecha_modificacion] DATETIME NULL,
 
-    CONSTRAINT [PK_etp_etapas_programa] PRIMARY KEY CLUSTERED ([etp_codigo] ASC),
-    CONSTRAINT [FK_eorgrc_obdetp] FOREIGN KEY ([etp_codgrc]) REFERENCES [eor].[grc_grupos_corporativos] ([grc_codigo])
-)
+ 	CONSTRAINT [PK_etp_etapas_programa] PRIMARY KEY CLUSTERED ([etp_codigo] ASC),
+	CONSTRAINT [FK_eorgrc_obdetp] FOREIGN KEY ([etp_codgrc]) REFERENCES [eor].[grc_grupos_corporativos] ([grc_codigo])
+) 
 
 GO
 EXEC sp_addextendedproperty @name = N'MS_Description',
-    @value = N'Tabla con las fases o etapas de los programas de Oboarding',
+    @value = N'Tabla con las fases o etapas de los programas de Onboarding',
     @level0type = N'SCHEMA',
     @level0name = N'obd',
     @level1type = N'TABLE',
@@ -38,9 +38,6 @@ EXEC sp_addextendedproperty @name = N'MS_Description',
     @level2type = N'COLUMN',
     @level2name = N'etp_codigo'
 GO
-
-GO
-
 EXEC sp_addextendedproperty @name = N'MS_Description',
     @value = N'Descripción de la etapa del programa',
     @level0type = N'SCHEMA',
@@ -157,3 +154,4 @@ EXEC sp_addextendedproperty @name = N'MS_Description',
     @level1name = N'etp_etapas_programa',
     @level2type = N'COLUMN',
     @level2name = N'etp_property_bag_data'
+GO

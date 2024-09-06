@@ -1,40 +1,38 @@
-﻿CREATE TABLE [obd].[pac_plant_actividades]
+CREATE TABLE [obd].[pac_plant_actividades]
 (
-    [pac_codigo] INT IDENTITY(1,1) NOT NULL,
-    [pac_codppr] INT NOT NULL,
-    [pac_nombre] VARCHAR(250) NOT NULL,
-    [pac_descripcion] VARCHAR(4000) NULL,
-    [pac_objetivo] VARCHAR(4000) NULL,
-    [pac_codetp] INT NOT NULL,
-    [pac_codtac] INT NOT NULL,
-    [pac_offset_inicio] INT CONSTRAINT [DF_obd_pac_offset_inicio] DEFAULT ((0)) NOT NULL,
-    [pac_unidad_offset_inicio] VARCHAR(50) CONSTRAINT [DF_obd_pac_unidad_offset_inicio] DEFAULT ('Días') NOT NULL,
-    [pac_duracion_estimada] INT CONSTRAINT [DF_obd_pac_duracion_estimada] DEFAULT ((0)) NOT NULL,
-    [pac_unidad_duracion] VARCHAR(50) CONSTRAINT [DF_obd_pac_unidad_duracion] DEFAULT ('Días') NOT NULL,
-    [pac_codpri] INT NOT NULL,
-    [pac_orden] INT CONSTRAINT [DF_obd_pac_orden] DEFAULT ((0)) NOT NULL,
-    [pac_codtra] INT NOT NULL,
-    [pac_codtev] INT NOT NULL,
-    [pac_nota_eval_esperada] DECIMAL(5, 2) CONSTRAINT [DF_obd_pac_nota_eval_esperada] DEFAULT ((0)) NOT NULL,
+	[pac_codigo] INT IDENTITY(1,1) NOT NULL,
+	[pac_codppr] INT NOT NULL,
+	[pac_nombre] VARCHAR(250) NOT NULL,
+	[pac_descripcion] VARCHAR(4000) NULL,
+	[pac_objetivo] VARCHAR(4000) NULL,
+	[pac_codetp] INT NOT NULL,
+	[pac_codtac] INT NOT NULL,
+	[pac_offset_inicio] INT CONSTRAINT [DF_obd_pac_offset_inicio] DEFAULT ((0)) NOT NULL,
+	[pac_unidad_offset_inicio] VARCHAR(50) CONSTRAINT [DF_obd_pac_unidad_offset_inicio] DEFAULT ('Dias') NOT NULL,
+	[pac_duracion_estimada] INT CONSTRAINT [DF_obd_pac_duracion_estimada] DEFAULT ((0)) NOT NULL,
+	[pac_unidad_duracion] VARCHAR(50) CONSTRAINT [DF_obd_pac_unidad_duracion] DEFAULT ('Dias') NOT NULL,
+	[pac_codpri] INT NOT NULL,
+	[pac_orden] INT CONSTRAINT [DF_obd_pac_orden] DEFAULT ((0)) NOT NULL,
+	[pac_codtra] INT NULL,
+	[pac_codtev] INT NULL,
+	[pac_nota_eval_esperada] DECIMAL(5, 2) NULL,
 
+	[pac_property_bag_data] XML NULL,
+	[pac_usuario_grabacion] VARCHAR(50) NULL,
+	[pac_fecha_grabacion] DATETIME NULL,
+	[pac_usuario_modificacion] VARCHAR(50) NULL,
+	[pac_fecha_modificacion] DATETIME NULL,
 
-    [pac_property_bag_data] XML NULL,
-    [pac_usuario_grabacion] VARCHAR(50) NULL,
-    [pac_fecha_grabacion] DATETIME NULL,
-    [pac_usuario_modificacion] VARCHAR(50) NULL,
-    [pac_fecha_modificacion] DATETIME NULL,
-
-    CONSTRAINT [PK_pac_plant_actividades] PRIMARY KEY CLUSTERED ([pac_codigo] ASC),
-    CONSTRAINT [FK_obdppr_obdpac] FOREIGN KEY ([pac_codppr]) REFERENCES [obd].[ppr_plant_programa] ([ppr_codigo]),
-    CONSTRAINT [FK_obdetp_obdpac] FOREIGN KEY ([pac_codetp]) REFERENCES [obd].[etp_etapas_programa] ([etp_codigo]),
-    CONSTRAINT [FK_obdtac_obdpac] FOREIGN KEY ([pac_codtac]) REFERENCES [obd].[tac_tipos_actividad] ([tac_codigo]),
-    CONSTRAINT [FK_obdpri_obdpac] FOREIGN KEY ([pac_codpri]) REFERENCES [obd].[pri_prioridades] ([pri_codigo]),
-    CONSTRAINT [FK_obdtra_obdpac] FOREIGN KEY ([pac_codtra]) REFERENCES [obd].[tra_tipos_respon_actividad] ([tra_codigo]),
-    CONSTRAINT [FK_obdtev_obdpac] FOREIGN KEY ([pac_codtev]) REFERENCES [obd].[tev_tipos_evaluacion] ([tev_codigo]),
-    CONSTRAINT [CK_pac_plant_actividades_unidad_offset_inicio] CHECK (pac_unidad_offset_inicio in ('Minutos', 'Horas', 'Días', 'Semanas', 'Meses', 'Años')),
-    CONSTRAINT [CK_pac_plant_actividades_unidad_duracion] CHECK (pac_unidad_duracion in ('Minutos', 'Horas', 'Días', 'Semanas', 'Meses', 'Años'))
-
-)
+ 	CONSTRAINT [PK_pac_plant_actividades] PRIMARY KEY CLUSTERED ([pac_codigo] ASC),
+	CONSTRAINT [FK_obdppr_obdpac] FOREIGN KEY([pac_codppr]) REFERENCES [obd].[ppr_plant_programa] ([ppr_codigo]),
+	CONSTRAINT [FK_obdetp_obdpac] FOREIGN KEY([pac_codetp]) REFERENCES [obd].[etp_etapas_programa] ([etp_codigo]),
+	CONSTRAINT [FK_obdtac_obdpac] FOREIGN KEY([pac_codtac]) REFERENCES [obd].[tac_tipos_actividad] ([tac_codigo]),
+	CONSTRAINT [FK_obdpri_obdpac] FOREIGN KEY([pac_codpri]) REFERENCES [obd].[pri_prioridades] ([pri_codigo]),
+	CONSTRAINT [FK_obdtra_obdpac] FOREIGN KEY([pac_codtra]) REFERENCES [obd].[tra_tipos_respon_actividad] ([tra_codigo]),
+	CONSTRAINT [FK_obdtev_obdpac] FOREIGN KEY([pac_codtev]) REFERENCES [obd].[tev_tipos_evaluacion] ([tev_codigo]),
+	CONSTRAINT [CK_pac_plant_actividades_unidad_offset_inicio] CHECK (pac_unidad_offset_inicio in ('Minutos', 'Horas', 'Dias', 'Semanas', 'Meses', 'Anios')),
+    CONSTRAINT [CK_pac_plant_actividades_unidad_duracion] CHECK (pac_unidad_duracion in ('Minutos', 'Horas', 'Dias', 'Semanas', 'Meses', 'Anios'))
+) 
 
 GO
 EXEC sp_addextendedproperty @name = N'MS_Description',
@@ -182,7 +180,7 @@ EXEC sp_addextendedproperty @name = N'MS_Description',
     @level2name = N'pac_codpri'
 GO
 EXEC sp_addextendedproperty @name = N'MS_Description',
-    @value = N'Orden de esta actividad respecto de las mismas que tienen los mismos prerequisitos',
+    @value = N'Orden de esta actividad respecto de las mismas que tienen los mismos requisitos',
     @level0type = N'SCHEMA',
     @level0name = N'obd',
     @level1type = N'TABLE',
@@ -191,7 +189,7 @@ EXEC sp_addextendedproperty @name = N'MS_Description',
     @level2name = N'pac_orden'
 GO
 EXEC sp_addextendedproperty @name = N'MS_Description',
-    @value = N'Código de Tipo de Responsable de la actividad',
+    @value = N'Código de Tipo de Responsable de la actividad, cuando es NULL el responsable es el nuevo empleado',
     @level0type = N'SCHEMA',
     @level0name = N'obd',
     @level1type = N'TABLE',
@@ -234,3 +232,4 @@ EXEC sp_addextendedproperty @name = N'MS_Description',
     @level1name = N'pac_plant_actividades',
     @level2type = N'COLUMN',
     @level2name = N'pac_nota_eval_esperada'
+GO

@@ -1,27 +1,36 @@
-﻿CREATE TABLE [obd].[tac_tipos_actividad]
+CREATE TABLE [obd].[tac_tipos_actividad]
 (
-    [tac_codigo]               INT          IDENTITY(1,1) NOT NULL,
-    [tac_codgrc]               INT          NOT NULL,
-    [tac_nombre]               VARCHAR(100) NOT NULL,
-    [tac_descripcion]          VARCHAR(500) NULL,
-    [tac_req_notificacion]     BIT          CONSTRAINT [DF_obd_tac_req_notificacion] DEFAULT ((0)) NOT NULL,
-    [tac_req_recordatorio]     BIT          CONSTRAINT [DF_obd_tac_req_recordatorio] DEFAULT ((0)) NOT NULL,
-    [tac_req_evaluacion]       BIT          CONSTRAINT [DF_obd_tac_req_evaluacion] DEFAULT ((0)) NOT NULL,
-    [tac_req_documentos]       BIT          CONSTRAINT [DF_obd_tac_req_documentos] DEFAULT ((0)) NOT NULL,
-    [tac_req_responsable]      BIT          CONSTRAINT [DF_obd_tac_req_responsable] DEFAULT ((0)) NOT NULL,
-    [tac_duracion_estimada]    INT          CONSTRAINT [DF_obd_tac_duracion_estimada] DEFAULT ((0)) NOT NULL,
-    [tac_unidad_duracion]      VARCHAR(50)  CONSTRAINT [DF_obd_tac_unidad_duracion] DEFAULT ('Días') NOT NULL,
-    [tac_property_bag_data]    XML          NULL,
-    [tac_usuario_grabacion]    VARCHAR(50)  NULL,
-    [tac_fecha_grabacion]      DATETIME     NULL,
-    [tac_usuario_modificacion] VARCHAR(50)  NULL,
-    [tac_fecha_modificacion]   DATETIME     NULL,
+	[tac_codigo] INT IDENTITY(1,1) NOT NULL,
+	[tac_codgrc] INT NOT NULL,
+	[tac_nombre] VARCHAR(100) NOT NULL,
+	[tac_descripcion] VARCHAR(500) NULL,
+	[tac_req_notificacion] BIT CONSTRAINT [DF_obd_tac_req_notificacion] DEFAULT ((0)) NOT NULL,
+	[tac_req_recordatorio] BIT CONSTRAINT [DF_obd_tac_req_recordatorio] DEFAULT ((0)) NOT NULL,
+	[tac_req_evaluacion] BIT CONSTRAINT [DF_obd_tac_req_evaluacion] DEFAULT ((0)) NOT NULL,
+	[tac_req_documentos] BIT CONSTRAINT [DF_obd_tac_req_documentos] DEFAULT ((0)) NOT NULL,
+	[tac_req_responsable] BIT CONSTRAINT [DF_obd_tac_req_responsable] DEFAULT ((0)) NOT NULL,
+	[tac_duracion_estimada] INT CONSTRAINT [DF_obd_tac_duracion_estimada] DEFAULT ((0)) NOT NULL,
+	[tac_unidad_duracion] VARCHAR(50) CONSTRAINT [DF_obd_tac_unidad_duracion] DEFAULT ('Dias') NOT NULL,
+	[tac_property_bag_data] XML NULL,
+	[tac_usuario_grabacion] VARCHAR(50) NULL,
+	[tac_fecha_grabacion] DATETIME NULL,
+	[tac_usuario_modificacion] VARCHAR(50) NULL,
+	[tac_fecha_modificacion] DATETIME NULL,
 
-    CONSTRAINT [PK_tac_tipos_actividad] PRIMARY KEY CLUSTERED ([tac_codigo] ASC),
-    CONSTRAINT [FK_eorgrc_obdtac] FOREIGN KEY ([tac_codgrc]) REFERENCES [eor].[grc_grupos_corporativos] ([grc_codigo]), 
-    CONSTRAINT [CK_tac_tipos_actividad_unidad_duracion] CHECK (tac_unidad_duracion in ('Minutos', 'Horas', 'Días', 'Semanas', 'Meses', 'Años'))
-)
+ 	CONSTRAINT [PK_tac_tipos_actividad] PRIMARY KEY CLUSTERED ([tac_codigo] ASC),
+	CONSTRAINT [FK_eorgrc_obdtac] FOREIGN KEY ([tac_codgrc]) REFERENCES [eor].[grc_grupos_corporativos] ([grc_codigo]), 
+    CONSTRAINT [CK_tac_tipos_actividad_unidad_duracion] CHECK (tac_unidad_duracion in ('Minutos', 'Horas', 'Dias', 'Semanas', 'Meses', 'Anios'))
+) 
 
+GO
+EXEC sp_addextendedproperty @name = N'MS_Description',
+    @value = N'Tabla que almacena los tipos de actividad para los programas de Onboarding',
+    @level0type = N'SCHEMA',
+    @level0name = N'obd',
+    @level1type = N'TABLE',
+    @level1name = N'tac_tipos_actividad',
+    @level2type = NULL,
+    @level2name = NULL
 GO
 EXEC sp_addextendedproperty @name = N'MS_Description',
     @value = N'Fecha de la última modificacion del registro',
@@ -159,15 +168,6 @@ EXEC sp_addextendedproperty @name = N'MS_Description',
     @level2name = N'tac_unidad_duracion'
 GO
 EXEC sp_addextendedproperty @name = N'MS_Description',
-    @value = N'Tabla que almacena los tipos de actividad para los programas de Onboarding',
-    @level0type = N'SCHEMA',
-    @level0name = N'obd',
-    @level1type = N'TABLE',
-    @level1name = N'tac_tipos_actividad',
-    @level2type = NULL,
-    @level2name = NULL
-GO
-EXEC sp_addextendedproperty @name = N'MS_Description',
     @value = N'Data de los campos adicionales',
     @level0type = N'SCHEMA',
     @level0name = N'obd',
@@ -175,3 +175,4 @@ EXEC sp_addextendedproperty @name = N'MS_Description',
     @level1name = N'tac_tipos_actividad',
     @level2type = N'COLUMN',
     @level2name = N'tac_property_bag_data'
+GO

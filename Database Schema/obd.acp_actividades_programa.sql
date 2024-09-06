@@ -1,55 +1,55 @@
-﻿CREATE TABLE [obd].[acp_actividades_programa]
+CREATE TABLE [obd].[acp_actividades_programa]
 (
-    [acp_codigo] INT IDENTITY(1,1) NOT NULL,
-    [acp_codcpr] INT NOT NULL,
-    [acp_nombre] VARCHAR(250) NOT NULL,
-    [acp_descripcion] VARCHAR(4000) NULL,
-    [acp_objetivo] VARCHAR(4000) NULL,
-    [acp_codetp] INT NOT NULL,
-    [acp_codtac] INT NOT NULL,
-    [acp_codemp_responsable] INT NULL,
-    [acp_fecha_inicio] DATETIME NOT NULL,
-    [acp_fecha_fin] DATETIME NOT NULL,
-    [acp_duracion] INT CONSTRAINT [DF_obd_acp_duracion] DEFAULT ((0)) NOT NULL,
-    [acp_unidad_duracion] VARCHAR(50) CONSTRAINT [DF_obd_acp_unidad_duracion] DEFAULT ('Días') NOT NULL,
-    [acp_codpri] INT NOT NULL,
-    [acp_orden] INT CONSTRAINT [DF_obd_acp_orden] DEFAULT ((0)) NOT NULL,
-    [acp_codtra] INT NOT NULL,
+	[acp_codigo] INT IDENTITY(1,1) NOT NULL,
+	[acp_codpap] INT NOT NULL,
+	[acp_nombre] VARCHAR(250) NOT NULL,
+	[acp_descripcion] VARCHAR(4000) NULL,
+	[acp_objetivo] VARCHAR(4000) NULL,
+	[acp_codetp] INT NOT NULL,
+	[acp_codtac] INT NOT NULL,
+	[acp_codemp_responsable] INT NULL,
+	[acp_fecha_inicio] DATETIME NOT NULL,
+	[acp_fecha_fin] DATETIME NOT NULL,
+	[acp_duracion] INT CONSTRAINT [DF_obd_acp_duracion] DEFAULT ((0)) NOT NULL,
+	[acp_unidad_duracion] VARCHAR(50) CONSTRAINT [DF_obd_acp_unidad_duracion] DEFAULT ('Dias') NOT NULL,
+	[acp_codpri] INT NOT NULL,
+	[acp_orden] INT CONSTRAINT [DF_obd_acp_orden] DEFAULT ((0)) NOT NULL,
+	[acp_codtra] INT NULL,
 
-    [acp_codtev] INT NULL,
+	[acp_codtev] INT NULL,
 
-    [acp_fecha_evaluacion] DATETIME NULL,
-    [acp_nota_evaluacion] DECIMAL(5, 2) NULL,
-    [acp_resultado_evaluacion] VARCHAR(100) NULL,
-    [acp_codfdd] INT NULL,
+	[acp_fecha_evaluacion] DATETIME NULL,
+	[acp_nota_evaluacion] DECIMAL(5, 2) NULL,
+	[acp_resultado_evaluacion] VARCHAR(100) NULL,
+	[acp_codfdd] INT NULL,
 
-    [acp_estado] VARCHAR(10) CONSTRAINT [DF_obd_acp_estado] DEFAULT ('Pendiente') NOT NULL,
-    [acp_fecha_finalizacion] DATETIME NULL,
-    [acp_comentario_finalizacion] VARCHAR(4000) NULL,
+	[acp_estado] VARCHAR(10) CONSTRAINT [DF_obd_acp_estado] DEFAULT ('Pendiente') NOT NULL,
+	[acp_fecha_finalizacion] DATETIME NULL,
+	[acp_comentario_finalizacion] VARCHAR(4000) NULL,
 
-    [acp_property_bag_data] XML NULL,
-    [acp_usuario_grabacion] VARCHAR(50) NULL,
-    [acp_fecha_grabacion] DATETIME NULL,
-    [acp_usuario_modificacion] VARCHAR(50) NULL,
-    [acp_fecha_modificacion] DATETIME NULL,
+	[acp_property_bag_data] XML NULL,
+	[acp_usuario_grabacion] VARCHAR(50) NULL,
+	[acp_fecha_grabacion] DATETIME NULL,
+	[acp_usuario_modificacion] VARCHAR(50) NULL,
+	[acp_fecha_modificacion] DATETIME NULL,
 
-    CONSTRAINT [PK_acp_actividades_programa] PRIMARY KEY CLUSTERED ([acp_codigo] ASC),
-    CONSTRAINT [FK_obdcpr_obdacp] FOREIGN KEY ([acp_codcpr]) REFERENCES [obd].[cpr_contrataciones_programa] ([cpr_codigo]),
-    CONSTRAINT [FK_obdetp_obdacp] FOREIGN KEY ([acp_codetp]) REFERENCES [obd].[etp_etapas_programa] ([etp_codigo]),
-    CONSTRAINT [FK_obdtac_obdacp] FOREIGN KEY ([acp_codtac]) REFERENCES [obd].[tac_tipos_actividad] ([tac_codigo]),
-    CONSTRAINT [FK_obdpri_obdacp] FOREIGN KEY ([acp_codpri]) REFERENCES [obd].[pri_prioridades] ([pri_codigo]),
-    CONSTRAINT [FK_obdtra_obdacp] FOREIGN KEY ([acp_codtra]) REFERENCES [obd].[tra_tipos_respon_actividad] ([tra_codigo]),
-    CONSTRAINT [FK_obdte_obdacp] FOREIGN KEY ([acp_codtev]) REFERENCES [obd].[tev_tipos_evaluacion] ([tev_codigo]),
-    CONSTRAINT [FK_genfdd_obdacp] FOREIGN KEY ([acp_codfdd]) REFERENCES [gen].[fdd_form_dinamico_data] ([fdd_codigo]),
-    CONSTRAINT [CK_acp_actividades_programa_unidad_duracion] CHECK (acp_unidad_duracion in ('Minutos', 'Horas', 'Días', 'Semanas', 'Meses', 'Años')),
+ 	CONSTRAINT [PK_acp_actividades_programa] PRIMARY KEY CLUSTERED ([acp_codigo] ASC),
+	CONSTRAINT [FK_obdpap_obdacp] FOREIGN KEY([acp_codpap]) REFERENCES [obd].[pap_participantes_programa] ([pap_codigo]),
+	CONSTRAINT [FK_obdetp_obdacp] FOREIGN KEY([acp_codetp]) REFERENCES [obd].[etp_etapas_programa] ([etp_codigo]),
+	CONSTRAINT [FK_obdtac_obdacp] FOREIGN KEY([acp_codtac]) REFERENCES [obd].[tac_tipos_actividad] ([tac_codigo]),
+	CONSTRAINT [FK_expemp_obdacp] FOREIGN KEY ([acp_codemp_responsable]) REFERENCES [exp].[emp_empleos] ([emp_codigo]),
+    CONSTRAINT [FK_obdpri_obdacp] FOREIGN KEY([acp_codpri]) REFERENCES [obd].[pri_prioridades] ([pri_codigo]),
+	CONSTRAINT [FK_obdtra_obdacp] FOREIGN KEY([acp_codtra]) REFERENCES [obd].[tra_tipos_respon_actividad] ([tra_codigo]),
+	CONSTRAINT [FK_obdtev_obdacp] FOREIGN KEY([acp_codtev]) REFERENCES [obd].[tev_tipos_evaluacion] ([tev_codigo]),
+	CONSTRAINT [FK_genfdd_obdacp] FOREIGN KEY ([acp_codfdd]) REFERENCES [gen].[fdd_form_dinamico_data] ([fdd_codigo]),
+	CONSTRAINT [CK_acp_actividades_programa_unidad_duracion] CHECK (acp_unidad_duracion in ('Minutos', 'Horas', 'Dias', 'Semanas', 'Meses', 'Anios')),
     CONSTRAINT [CK_acp_actividades_programa_resultado_evaluacion] CHECK (acp_resultado_evaluacion in ('Aprobado', 'Reprobado')),
-    CONSTRAINT [CK_acp_actividades_programa_estado] CHECK (acp_estado in ('Pendiente', 'En Proceso', 'Finalizada'))
-
-)
+    CONSTRAINT [CK_acp_actividades_programa_estado] CHECK (acp_estado in ('Pendiente', 'EnProceso', 'Finalizada'))
+) 
 
 GO
 EXEC sp_addextendedproperty @name = N'MS_Description',
-    @value = N'Tabla que almacena las actividades de la plantilla del programa de onboarding',
+    @value = N'Tabla que almacena las actividades de los participantes de un programa de onboarding',
     @level0type = N'SCHEMA',
     @level0name = N'obd',
     @level1type = N'TABLE',
@@ -58,7 +58,7 @@ EXEC sp_addextendedproperty @name = N'MS_Description',
     @level2name = NULL
 GO
 EXEC sp_addextendedproperty @name = N'MS_Description',
-    @value = N'Código de registro de la actividad de la plantilla para programa de onboarding',
+    @value = N'Código de registro de la actividad de un participante para un programa de onboarding',
     @level0type = N'SCHEMA',
     @level0name = N'obd',
     @level1type = N'TABLE',
@@ -67,13 +67,13 @@ EXEC sp_addextendedproperty @name = N'MS_Description',
     @level2name = N'acp_codigo'
 GO
 EXEC sp_addextendedproperty @name = N'MS_Description',
-    @value = N'Código de la plantilla de programa de onboarding',
+    @value = N'Código del participante de un programa de onboarding',
     @level0type = N'SCHEMA',
     @level0name = N'obd',
     @level1type = N'TABLE',
     @level1name = N'acp_actividades_programa',
     @level2type = N'COLUMN',
-    @level2name = N'acp_codcpr'
+    @level2name = N'acp_codpap'
 GO
 EXEC sp_addextendedproperty @name = N'MS_Description',
     @value = N'Nombre de la actividad',
@@ -175,7 +175,7 @@ EXEC sp_addextendedproperty @name = N'MS_Description',
     @level2name = N'acp_fecha_inicio'
 GO
 EXEC sp_addextendedproperty @name = N'MS_Description',
-    @value = N'Fecha calculada de infalización de la actividad',
+    @value = N'Fecha calculada de finalización de la actividad',
     @level0type = N'SCHEMA',
     @level0name = N'obd',
     @level1type = N'TABLE',
@@ -193,7 +193,7 @@ EXEC sp_addextendedproperty @name = N'MS_Description',
     @level2name = N'acp_codpri'
 GO
 EXEC sp_addextendedproperty @name = N'MS_Description',
-    @value = N'Orden de esta actividad respecto de las mismas que tienen los mismos prerequisitos',
+    @value = N'Orden de esta actividad respecto de las mismas que tienen los mismos requisitos',
     @level0type = N'SCHEMA',
     @level0name = N'obd',
     @level1type = N'TABLE',
@@ -202,7 +202,7 @@ EXEC sp_addextendedproperty @name = N'MS_Description',
     @level2name = N'acp_orden'
 GO
 EXEC sp_addextendedproperty @name = N'MS_Description',
-    @value = N'Código de Tipo de Responsable de la actividad',
+    @value = N'Código de Tipo de Responsable de la actividad, NULL cuando el participante es el responsable',
     @level0type = N'SCHEMA',
     @level0name = N'obd',
     @level1type = N'TABLE',
@@ -308,3 +308,4 @@ EXEC sp_addextendedproperty @name = N'MS_Description',
     @level1name = N'acp_actividades_programa',
     @level2type = N'COLUMN',
     @level2name = N'acp_codfdd'
+GO

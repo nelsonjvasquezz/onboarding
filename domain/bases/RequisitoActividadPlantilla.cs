@@ -24,13 +24,13 @@ namespace onboarding.data.bases
         // Foreign keys
 
         /// <summary>
-        /// Parent ActividadPrograma pointed by [ppa_plant_prerequisitos_act].([PlantillaActividadCodigo]) (FK_obdpac_obdppa)
+        /// Parent Actividad pointed by [ppa_plant_prerequisitos_act].(ActividadCodigo]) (FK_obdpac_obdppa)
         /// </summary>
         [XmlIgnore, JsonIgnore]
         public virtual ActividadPlantilla Actividad { get; set; } // FK_obdpac_obdppa
 
         /// <summary>
-        /// Parent ActividadPrograma pointed by [ppa_plant_prerequisitos_act].([PlantillaPrerequisitoCodigo]) (FK_obdpac_obdppa_prerequisito)
+        /// Parent Requisito pointed by [ppa_plant_prerequisitos_act].([ActividadRequisitoCodigo]) (FK_obdpac_obdppa_prerequisito)
         /// </summary>
         [XmlIgnore, JsonIgnore]
         public virtual ActividadPlantilla Requisito { get; set; } // FK_obdpac_obdppa_prerequisito

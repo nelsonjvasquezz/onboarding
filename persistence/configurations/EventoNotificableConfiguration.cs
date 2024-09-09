@@ -25,7 +25,7 @@ namespace onboarding.persistence.configurations
 
             builder.Property(e => e.Codigo).HasColumnName("eno_codigo");
             builder.Property(e => e.Nombre).HasColumnName("eno_nombre").HasMaxLength(100).IsUnicode(false);
-            builder.Property(e => e.DescripcionLocalizationKey).HasColumnName("eno_descripcion").HasMaxLength(500).IsUnicode(false);
+            builder.Property(e => e.DescripcionLocalizationKey).HasColumnName("eno_descripcion_loc_key").HasMaxLength(500).IsUnicode(false);
         }
     }
 }

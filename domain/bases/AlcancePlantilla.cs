@@ -73,8 +73,8 @@ public partial class AlcancePlantilla
     // Foreing keys
 
     /// <summary>
-    /// Parent Plantilla pointed by [pal_plant_alcances].([PlantillaProgramaCodigo]) (FK_obdppr_obdpap)
+    /// Parent Plantilla pointed by [pal_plant_alcances].([PlantillaProgramaCodigo]) (FK_obdppr_obdpal)
     /// </summary>
     [XmlIgnore, JsonIgnore]
-    public virtual PlantillaPrograma Plantilla { get; set; } // FK_obdppr_obdpap
+    public virtual PlantillaPrograma Plantilla { get; set; } // FK_obdppr_obdpal
 }

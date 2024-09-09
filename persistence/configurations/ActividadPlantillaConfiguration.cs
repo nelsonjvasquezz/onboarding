@@ -38,7 +38,7 @@ namespace onboarding.persistence.configurations
             builder.Property(e => e.Orden).HasColumnName("pac_orden");
             builder.Property(e => e.TipoResponsableActividadCodigo).HasColumnName("pac_codtra");
             builder.Property(e => e.TipoEvaluacionCodigo).HasColumnName("pac_codtev");
-            builder.Property(e => e.NotaEvalEsperada).HasColumnName("pac_nota_eval_esperada").HasPrecision(19, 4);
+            builder.Property(e => e.NotaEvalEsperada).HasColumnName("pac_nota_eval_esperada").HasPrecision(5, 2);
             builder.Property(e => e.RawPropertyBagData).HasColumnName("pac_property_bag_data");
             builder.Property(e => e.UsuarioGrabacion).HasColumnName("pac_usuario_grabacion").HasMaxLength(50).IsUnicode(false);
             builder.Property(e => e.FechaGrabacion).HasColumnName("pac_fecha_grabacion");

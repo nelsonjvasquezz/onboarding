@@ -85,10 +85,10 @@ public partial class PlantillaPrograma
     public virtual ICollection<ActividadPlantilla> ActividadesPlantilla { get; set; } = new List<ActividadPlantilla>(); // FK_obdppr_obdpac
 
     /// <summary>
-    /// Child Alcances where [pal_plant_alcances].[pal_codppr] point to this entity (FK_obdppr_obdpap)
+    /// Child Alcances where [pal_plant_alcances].[pal_codppr] point to this entity (FK_obdppr_obdpal)
     /// </summary>
     [XmlIgnore, JsonIgnore]
-    public virtual ICollection<AlcancePlantilla> Alcances { get; set; } = new List<AlcancePlantilla>(); // FK_obdppr_obdpap
+    public virtual ICollection<AlcancePlantilla> Alcances { get; set; } = new List<AlcancePlantilla>(); // FK_obdppr_obdpal
 
     /// <summary>
     /// Child Programas where [pro_programas].[pro_codppr] point to this entity (FK_obdppr_obdpro)

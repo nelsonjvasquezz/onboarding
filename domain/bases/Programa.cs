@@ -37,7 +37,7 @@ public partial class Programa
     public string Objetivo { get; set; } // pro_objetivo
 
     /// <summary>
-    /// Estado del programa 'Planificado' o 'En Ejecución' o 'Finalizado'
+    /// Estado del programa 'Planificado' o 'EnEjecucion' o 'Finalizado'
     /// </summary>
     public string Estado { get; set; } // pro_estado
 

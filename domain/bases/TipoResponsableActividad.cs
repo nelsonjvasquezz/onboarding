@@ -12,7 +12,7 @@ namespace onboarding.data.bases;
 public partial class TipoResponsableActividad
 {
     /// <summary>
-    /// Código de Tipo de Resonsable de Actividad
+    /// Código de Tipo de Responsable de Actividad
     /// </summary>
     public int Codigo { get; set; } // tra_codigo
 

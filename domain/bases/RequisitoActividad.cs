@@ -14,18 +14,18 @@ namespace onboarding.data.bases
         public int ActividadCodigo { get; set; } // rap_codacp (Primary key)
 
         /// <summary>
-        /// Código de Actividad Prerequisito en el programa de onboarding
+        /// Código de la Actividad Requisito en el programa de onboarding
         /// </summary>
         public int ActividadRequisitoCodigo { get; set; } // rap_codacp_prerequisito (Primary key)
 
         /// <summary>
-        /// Parent ActividadPrograma pointed by [rap_req_actividades_programa].([ActividadCodigo]) (FK_obdacp_obdrpa)
+        /// Parent Actividad pointed by [rap_req_actividades_programa].([ActividadCodigo]) (FK_obdacp_obdrpa)
         /// </summary>
-        public virtual ActividadPrograma Actividad { get; set; }
+        public virtual ActividadPrograma Actividad { get; set; } // FK_obdacp_obdrpa
 
         /// <summary>
-        /// Parent ActividadPrograma pointed by [rap_req_actividades_programa].([ActividadPrerequisitoCodigo]) (FK_obdacp_obdrap_prerequisito)
+        /// Parent Requisito pointed by [rap_req_actividades_programa].([ActividadRequisitoCodigo]) (FK_obdacp_obdrap_prerequisito)
         /// </summary>
-        public virtual ActividadPrograma Requisito { get; set; }
+        public virtual ActividadPrograma Requisito { get; set; } // FK_obdacp_obdrap_prerequisito
     }
 }

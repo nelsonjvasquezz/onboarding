@@ -40,7 +40,7 @@ namespace onboarding.persistence.configurations
             builder.Property(e => e.TipoResponsableActividadCodigo).HasColumnName("acp_codtra");
             builder.Property(e => e.TipoEvaluacionCodigo).HasColumnName("acp_codtev");
             builder.Property(e => e.FechaEvaluacion).HasColumnName("acp_fecha_evaluacion");
-            builder.Property(e => e.NotaEvaluacion).HasColumnName("acp_nota_evaluacion").HasPrecision(19, 4);
+            builder.Property(e => e.NotaEvaluacion).HasColumnName("acp_nota_evaluacion").HasPrecision(5, 2);
             builder.Property(e => e.ResultadoEvaluacion).HasColumnName("acp_resultado_evaluacion").HasMaxLength(100).IsUnicode(false);
             builder.Property(e => e.FormularioDinamicoDataCodigo).HasColumnName("acp_codfdd");
             builder.Property(e => e.Estado).HasColumnName("acp_estado").HasMaxLength(10).IsUnicode(false);

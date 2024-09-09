@@ -87,7 +87,7 @@ public partial class ActividadPrograma
     public int? TipoResponsableActividadCodigo { get; set; } // acp_codtra
 
     /// <summary>
-    /// Codigo de Tipo de Evaluación de la activdidad (NULL cuando no requiere evaluación)
+    /// Codigo de Tipo de Evaluación de la actividad (NULL cuando no requiere evaluación)
     /// </summary>
     public int? TipoEvaluacionCodigo { get; set; } // acp_codtev
 
@@ -160,7 +160,7 @@ public partial class ActividadPrograma
     public virtual ParticipantePrograma Participante { get; set; } // FK_obdpap_obdacp
 
     /// <summary>
-    /// Parent EtapaPrograma pointed by [acp_actividades_programa].([EtapaProgramaCodigo]) (FK_obdetp_obdacp)
+    /// Parent EtapaActividad pointed by [acp_actividades_programa].([EtapaActividadCodigo]) (FK_obdetp_obdacp)
     /// </summary>
     [XmlIgnore, JsonIgnore]
     public virtual EtapaActividad Etapa { get; set; } // FK_obdetp_obdacp

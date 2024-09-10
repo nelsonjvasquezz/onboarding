@@ -4,7 +4,7 @@ CREATE TABLE [obd].[ppa_plant_prerequisitos_act]
 	[ppa_codpac_prerequisito] INT NOT NULL,
 
  	CONSTRAINT [PK_ppa_plant_prerequisitos_act] PRIMARY KEY CLUSTERED ([ppa_codpac], [ppa_codpac_prerequisito] ASC),
-	CONSTRAINT [FK_obdpac_obdppa] FOREIGN KEY([ppa_codpac]) REFERENCES [obd].[pac_plant_actividades] ([pac_codigo]) ON DELETE CASCADE,
+	CONSTRAINT [FK_obdpac_obdppa] FOREIGN KEY([ppa_codpac]) REFERENCES [obd].[pac_plant_actividades] ([pac_codigo]),
 	CONSTRAINT [FK_obdpac_obdppa_prerequisito] FOREIGN KEY([ppa_codpac_prerequisito]) REFERENCES [obd].[pac_plant_actividades] ([pac_codigo])
 ) 
 

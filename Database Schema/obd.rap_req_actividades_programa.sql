@@ -4,7 +4,7 @@ CREATE TABLE [obd].[rap_req_actividades_programa]
 	[rap_codacp_prerequisito] INT NOT NULL,
 
  	CONSTRAINT [PK_rap_req_actividades_programa] PRIMARY KEY CLUSTERED ([rap_codacp], [rap_codacp_prerequisito] ASC),
-	CONSTRAINT [FK_obdacp_obdrpa] FOREIGN KEY([rap_codacp]) REFERENCES [obd].[acp_actividades_programa] ([acp_codigo]) ON DELETE CASCADE,
+	CONSTRAINT [FK_obdacp_obdrpa] FOREIGN KEY([rap_codacp]) REFERENCES [obd].[acp_actividades_programa] ([acp_codigo]),
 	CONSTRAINT [FK_obdacp_obdrap_prerequisito] FOREIGN KEY([rap_codacp_prerequisito]) REFERENCES [obd].[acp_actividades_programa] ([acp_codigo])
 )
 

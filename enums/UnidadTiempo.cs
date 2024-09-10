@@ -33,6 +33,6 @@
         /// <summary>
         /// Años
         /// </summary>
-        Años
+        Anios
     }
 }

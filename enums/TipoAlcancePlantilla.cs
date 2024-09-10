@@ -16,6 +16,16 @@
         Puesto,
 
         /// <summary>
+        /// Alcance por Centro de Trabajo
+        /// </summary>
+        CentroTrabajo,
+
+        /// <summary>
+        /// Alcance por Unidad Organizativa
+        /// </summary>
+        UnidadOrganizativa,
+
+        /// <summary>
         /// Tipo de Alcance Default
         /// </summary>
         Default

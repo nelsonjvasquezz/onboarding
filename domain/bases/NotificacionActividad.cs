@@ -33,7 +33,7 @@ public partial class NotificacionActividad
     /// <summary>
     /// Destinatario de la notificación: Contratado | JefeInmediato | ResponsableActividad | ResponsableRRHH
     /// </summary>
-    public string TipoDestinatario { get; set; } = null; // nap_tipo_destinatario
+    public string TipoDestinatarioDb { get; set; } = null; // nap_tipo_destinatario
 
     /// <summary>
     /// Código del empleo del destinatario, puede ser NULL cuando el empleado nuevo no ha sido contratado
@@ -78,7 +78,7 @@ public partial class NotificacionActividad
     /// <summary>
     /// Estado de la notificación (NULL | 'Pendiente' | 'Enviada' | 'Error')
     /// </summary>
-    public string Estado { get; set; } // nap_estado
+    public string EstadoDb { get; set; } // nap_estado
 
     /// <summary>
     /// Mensaje o excepción cuando el estado es 'Error'

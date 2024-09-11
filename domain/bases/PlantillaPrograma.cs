@@ -39,7 +39,7 @@ public partial class PlantillaPrograma
     /// <summary>
     /// Estado de la plantilla 'Activa' o 'Inactiva'  (inactivas para fines de guardar históricos y que no aparezcan en la selección)
     /// </summary>
-    public string Estado { get; set; } // ppr_estado
+    public string EstadoDb { get; set; } // ppr_estado
 
     /// <summary>
     /// Duración estimada del programa
@@ -49,7 +49,7 @@ public partial class PlantillaPrograma
     /// <summary>
     /// Unidad de medida de la duración estimada del programa
     /// </summary>
-    public string UnidadDuracion { get; set; } // ppr_unidad_duracion
+    public string UnidadDuracionDb { get; set; } // ppr_unidad_duracion
 
     /// <summary>
     /// Data de los campos adicionales

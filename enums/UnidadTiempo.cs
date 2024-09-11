@@ -1,4 +1,4 @@
-﻿namespace aseinfo.evolution.onboarding.domain.enums
+﻿namespace onboarding.enums
 {
     /// <summary>
     /// Unidades de medida del tiempo de duración de las actividades o del programa de onboarding

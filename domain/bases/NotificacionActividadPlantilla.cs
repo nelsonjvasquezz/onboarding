@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Text.Json.Serialization;
 using System.Xml.Serialization;
 
@@ -27,7 +26,7 @@ public partial class NotificacionActividadPlantilla
     public int ActividadPlantillaCodigo { get; set; } // pna_codpac
 
     /// <summary>
-    /// Determina cual desplazamiento utiliza, si el de fecha inicio o fecha fin
+    /// Determina que se utiliza el desplazamiento de fecha inicio
     /// </summary>
     public bool UsaFechaInicio { get; set; } // pna_usa_fecha_inicio
 

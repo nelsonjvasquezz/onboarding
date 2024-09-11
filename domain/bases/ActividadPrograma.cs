@@ -69,7 +69,7 @@ public partial class ActividadPrograma
     /// <summary>
     /// Unidad de medida de la duración de la actividad
     /// </summary>
-    public string UnidadDuracion { get; set; } // acp_unidad_duracion
+    public string UnidadDuracionDb { get; set; } // acp_unidad_duracion
 
     /// <summary>
     /// Código de Prioridad de la actividad
@@ -104,7 +104,7 @@ public partial class ActividadPrograma
     /// <summary>
     /// Determina si la evaluación fue aprobada o no
     /// </summary>
-    public string ResultadoEvaluacion { get; set; } // acp_resultado_evaluacion
+    public string ResultadoEvaluacionDb { get; set; } // acp_resultado_evaluacion
 
     /// <summary>
     /// Código de la data del formulario dinámico (cuando está definido según el tipo de evaluación)
@@ -114,7 +114,7 @@ public partial class ActividadPrograma
     /// <summary>
     /// Estado de la actividad (Pendiente, En Proceso, Finalizada)
     /// </summary>
-    public string Estado { get; set; } // acp_estado
+    public string EstadoDb { get; set; } // acp_estado
 
     /// <summary>
     /// Fecha de finalización de la actividad (fecha en el estado cambio a finalizada)

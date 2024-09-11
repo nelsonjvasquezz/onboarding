@@ -31,9 +31,9 @@ namespace onboarding.persistence.configurations
             builder.Property(e => e.EtapaActividadCodigo).HasColumnName("pac_codetp");
             builder.Property(e => e.TipoActividadCodigo).HasColumnName("pac_codtac");
             builder.Property(e => e.OffsetInicio).HasColumnName("pac_offset_inicio");
-            builder.Property(e => e.UnidadOffsetInicio).HasColumnName("pac_unidad_offset_inicio").HasMaxLength(50).IsUnicode(false);
+            builder.Property(e => e.UnidadOffsetInicioDb).HasColumnName("pac_unidad_offset_inicio").HasMaxLength(50).IsUnicode(false);
             builder.Property(e => e.DuracionEstimada).HasColumnName("pac_duracion_estimada");
-            builder.Property(e => e.UnidadDuracion).HasColumnName("pac_unidad_duracion").HasMaxLength(50).IsUnicode(false);
+            builder.Property(e => e.UnidadDuracionDb).HasColumnName("pac_unidad_duracion").HasMaxLength(50).IsUnicode(false);
             builder.Property(e => e.PrioridadActividadCodigo).HasColumnName("pac_codpri");
             builder.Property(e => e.Orden).HasColumnName("pac_orden");
             builder.Property(e => e.TipoResponsableActividadCodigo).HasColumnName("pac_codtra");

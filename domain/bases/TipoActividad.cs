@@ -64,7 +64,7 @@ public partial class TipoActividad
     /// <summary>
     /// Unidad de medida para la duración estimada
     /// </summary>
-    public string UnidadDuracion { get; set; } // tac_unidad_duracion
+    public string UnidadDuracionDb { get; set; } // tac_unidad_duracion
 
     /// <summary>
     /// Data de los campos adicionales

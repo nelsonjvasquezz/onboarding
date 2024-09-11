@@ -54,7 +54,7 @@ public partial class ActividadPlantilla
     /// <summary>
     /// Unidad de medida del desplazamiento
     /// </summary>
-    public string UnidadOffsetInicio { get; set; } // pac_unidad_offset_inicio
+    public string UnidadOffsetInicioDb { get; set; } // pac_unidad_offset_inicio
 
     /// <summary>
     /// Duración estimada de la actividad
@@ -64,7 +64,7 @@ public partial class ActividadPlantilla
     /// <summary>
     /// Unidad de medida de la duracióon estimada de la actividad
     /// </summary>
-    public string UnidadDuracion { get; set; } // pac_unidad_duracion
+    public string UnidadDuracionDb { get; set; } // pac_unidad_duracion
 
     /// <summary>
     /// Código de Prioridad de la actividad

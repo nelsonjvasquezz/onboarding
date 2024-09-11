@@ -28,9 +28,9 @@ namespace onboarding.persistence.configurations
             builder.Property(e => e.Nombre).HasColumnName("ppr_nombre").HasMaxLength(250).IsUnicode(false);
             builder.Property(e => e.Descripcion).HasColumnName("ppr_descripcion").HasMaxLength(4000).IsUnicode(false);
             builder.Property(e => e.Objetivo).HasColumnName("ppr_objetivo").HasMaxLength(4000).IsUnicode(false);
-            builder.Property(e => e.Estado).HasColumnName("ppr_estado").HasMaxLength(10).IsUnicode(false);
+            builder.Property(e => e.EstadoDb).HasColumnName("ppr_estado").HasMaxLength(10).IsUnicode(false);
             builder.Property(e => e.DuracionEstimada).HasColumnName("ppr_duracion_estimada");
-            builder.Property(e => e.UnidadDuracion).HasColumnName("ppr_unidad_duracion").HasMaxLength(50).IsUnicode(false);
+            builder.Property(e => e.UnidadDuracionDb).HasColumnName("ppr_unidad_duracion").HasMaxLength(50).IsUnicode(false);
             builder.Property(e => e.RawPropertyBagData).HasColumnName("ppr_property_bag_data");
             builder.Property(e => e.UsuarioGrabacion).HasColumnName("ppr_usuario_grabacion").HasMaxLength(50).IsUnicode(false);
             builder.Property(e => e.FechaGrabacion).HasColumnName("ppr_fecha_grabacion");

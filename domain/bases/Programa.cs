@@ -39,7 +39,7 @@ public partial class Programa
     /// <summary>
     /// Estado del programa 'Planificado' o 'EnEjecucion' o 'Finalizado'
     /// </summary>
-    public string Estado { get; set; } // pro_estado
+    public string EstadoDb { get; set; } // pro_estado
 
     /// <summary>
     /// Duración estimada del programa
@@ -49,7 +49,7 @@ public partial class Programa
     /// <summary>
     /// Unidad de medida de la duración estimada del programa
     /// </summary>
-    public string UnidadDuracion { get; set; } // pro_unidad_duracion
+    public string UnidadDuracionDb { get; set; } // pro_unidad_duracion
 
     /// <summary>
     /// Data de los campos adicionales

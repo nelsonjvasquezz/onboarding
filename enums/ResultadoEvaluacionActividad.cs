@@ -1,4 +1,4 @@
-﻿namespace aseinfo.evolution.onboarding.domain.enums
+﻿namespace onboarding.enums
 {
     /// <summary>
     /// Resultado de la evaluación realizada en la Actividad del Programa de onboarding

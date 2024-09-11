@@ -25,7 +25,7 @@ namespace onboarding.persistence.configurations
 
             builder.Property(e => e.Codigo).HasColumnName("pal_codigo");
             builder.Property(e => e.PlantillaProgramaCodigo).HasColumnName("pal_codppr");
-            builder.Property(e => e.Tipo).HasColumnName("pal_tipo");
+            builder.Property(e => e.TipoDb).HasColumnName("pal_tipo");
             builder.Property(e => e.TipoPuestoCodigo).HasColumnName("pal_codtpp");
             builder.Property(e => e.PuestoCodigo).HasColumnName("pal_codpue");
             builder.Property(e => e.CentroTrabajoCodigo).HasColumnName("pal_codcdt");

@@ -23,7 +23,7 @@ public partial class AlcancePlantilla
     /// <summary>
     /// Tipo de Alcance
     /// </summary>
-    public string Tipo { get; set; } // pal_tipo
+    public string TipoDb { get; set; } // pal_tipo
 
     /// <summary>
     /// Código de Tipo de Puesto

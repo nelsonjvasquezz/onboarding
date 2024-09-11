@@ -1,4 +1,4 @@
-﻿namespace aseinfo.evolution.onboarding.domain.enums
+﻿namespace onboarding.enums
 {
     /// <summary>
     /// Estado de la Actividad del Programa de onboarding

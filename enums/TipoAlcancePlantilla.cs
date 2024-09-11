@@ -1,4 +1,4 @@
-﻿namespace aseinfo.evolution.onboarding.domain.enums
+﻿namespace onboarding.enums
 {
     /// <summary>
     /// Tipo de alcance de la plantilla del programa

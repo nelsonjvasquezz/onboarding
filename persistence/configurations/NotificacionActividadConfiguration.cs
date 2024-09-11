@@ -27,7 +27,7 @@ namespace onboarding.persistence.configurations
             builder.Property(e => e.ActividadProgramaCodigo).HasColumnName("nap_codacp");
             builder.Property(e => e.EventoNotificableCodigo).HasColumnName("nap_codeno");
             builder.Property(e => e.OffsetDias).HasColumnName("nap_offset_dias");
-            builder.Property(e => e.TipoDestinatario).HasColumnName("nap_tipo_destinatario").HasMaxLength(25).IsUnicode(false).HasDefaultValue("Contratado");
+            builder.Property(e => e.TipoDestinatarioDb).HasColumnName("nap_tipo_destinatario").HasMaxLength(25).IsUnicode(false).HasDefaultValue("Contratado");
             builder.Property(e => e.EmpleoDestinatarioCodigo).HasColumnName("nap_codemp_destinatario");
             builder.Property(e => e.ExpedienteDestinatarioCodigo).HasColumnName("nap_codexp_destinatario");
             builder.Property(e => e.EmailsDestinatario).HasColumnName("nap_emails_destinatario").HasMaxLength(4000).IsUnicode(false);
@@ -36,7 +36,7 @@ namespace onboarding.persistence.configurations
             builder.Property(e => e.Body).HasColumnName("nap_body").HasMaxLength(4000).IsUnicode(false);
             builder.Property(e => e.FechaEvento).HasColumnName("nap_fecha_evento");
             builder.Property(e => e.FechaNotificacion).HasColumnName("nap_fecha_notificacion");
-            builder.Property(e => e.Estado).HasColumnName("nap_estado").HasMaxLength(10).IsUnicode(false);
+            builder.Property(e => e.EstadoDb).HasColumnName("nap_estado").HasMaxLength(10).IsUnicode(false);
             builder.Property(e => e.MensajeError).HasColumnName("nap_mensaje_error").HasMaxLength(4000).IsUnicode(false);
 
             builder.HasOne(d => d.Actividad).WithMany(p => p.Notificaciones)

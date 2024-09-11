@@ -5,7 +5,7 @@ CREATE TABLE [obd].[pro_programas]
 	[pro_nombre] VARCHAR(250) NOT NULL,
 	[pro_descripcion] VARCHAR(4000) NULL,
 	[pro_objetivo] VARCHAR(4000) NULL,
-	[pro_estado] VARCHAR(10) CONSTRAINT [DF_obd_pro_estado] DEFAULT ('Planificado') NOT NULL,
+	[pro_estado] VARCHAR(15) CONSTRAINT [DF_obd_pro_estado] DEFAULT ('Planificado') NOT NULL,
 	[pro_duracion] INT CONSTRAINT [DF_obd_pro_duracion] DEFAULT ((0)) NOT NULL,
 	[pro_unidad_duracion] VARCHAR(50) CONSTRAINT [DF_obd_pro_unidad_duracion] DEFAULT ('Dias') NOT NULL,
 	[pro_property_bag_data] XML NULL,

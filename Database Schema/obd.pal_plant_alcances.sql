@@ -14,7 +14,7 @@ CREATE TABLE [obd].[pal_plant_alcances]
 	[pal_fecha_modificacion] DATETIME NULL,
  
  	CONSTRAINT [PK_pal_plant_alcances] PRIMARY KEY CLUSTERED ([pal_codigo] ASC),
-	CONSTRAINT [FK_obdppr_obdpal] FOREIGN KEY([pal_codppr]) REFERENCES [obd].[ppr_plant_programa] ([ppr_codigo]),
+	CONSTRAINT [FK_obdppr_obdpal] FOREIGN KEY([pal_codppr]) REFERENCES [obd].[ppr_plantilla_prg] ([ppr_codigo]),
 	CONSTRAINT [FK_eortpp_obdpal] FOREIGN KEY ([pal_codtpp]) REFERENCES [eor].[tpp_tipos_puestos] ([tpp_codigo]),
     CONSTRAINT [FK_eorpue_obdpal] FOREIGN KEY ([pal_codpue]) REFERENCES [eor].[pue_puestos] ([pue_codigo]),
     CONSTRAINT [FK_eorcdt_obdpal] FOREIGN KEY ([pal_codcdt]) REFERENCES [eor].[cdt_centros_de_trabajo] ([cdt_codigo]),

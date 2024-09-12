@@ -20,16 +20,16 @@ namespace onboarding.persistence.configurations
 
         public void Configure(EntityTypeBuilder<RequisitoActividadPlantilla> builder)
         {
-            builder.ToTable("ppa_plant_prerequisitos_act", _schema);
+            builder.ToTable("ppa_plant_requisitos_act", _schema);
             builder.HasKey(e => new { e.ActividadCodigo, e.ActividadRequisitoCodigo });
 
             builder.Property(e => e.ActividadCodigo).HasColumnName("ppa_codpac");
-            builder.Property(e => e.ActividadRequisitoCodigo).HasColumnName("ppa_codpac_prerequisito");
+            builder.Property(e => e.ActividadRequisitoCodigo).HasColumnName("ppa_codpac_requisito");
 
             // TODO: Analizar la configuración
             // Foreign keys
             //builder.HasOne(d => d.Actividad).WithMany(p => p.Requisitos).HasForeignKey(d => d.ActividadCodigo).OnDelete(DeleteBehavior.NoAction); // FK_obdpac_obdppa
-            builder.HasOne(d => d.Requisito).WithMany(p => p.Requisitos).HasForeignKey(d => d.ActividadRequisitoCodigo).OnDelete(DeleteBehavior.NoAction); // FK_obdpac_obdppa_prerequisito
+            builder.HasOne(d => d.Requisito).WithMany(p => p.Requisitos).HasForeignKey(d => d.ActividadRequisitoCodigo).OnDelete(DeleteBehavior.NoAction); // FK_obdpac_obdppa_requisito
         }
     }
 }

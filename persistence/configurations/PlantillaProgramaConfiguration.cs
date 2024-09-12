@@ -20,7 +20,7 @@ namespace onboarding.persistence.configurations
 
         public void Configure(EntityTypeBuilder<PlantillaPrograma> builder)
         {
-            builder.ToTable("ppr_plant_programa", _schema);
+            builder.ToTable("ppr_plantilla_prg", _schema);
             builder.HasKey(e => e.Codigo);
 
             builder.Property(e => e.Codigo).HasColumnName("ppr_codigo");

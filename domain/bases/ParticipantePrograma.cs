@@ -7,7 +7,7 @@ namespace onboarding.data.bases;
 
 /// <summary>
 /// Tabla con el detalle de nuevas contrataciones que participan de un programa de onboarding
-/// obd.pap_participantes_programa
+/// obd.pap_participantes_prg
 /// </summary>
 public partial class ParticipantePrograma
 {
@@ -104,7 +104,7 @@ public partial class ParticipantePrograma
     // Foreing keys
 
     /// <summary>
-    /// Parent Programa pointed by [pap_participantes_programa].([ProgramaCodigo]) (FK_obdpro_obdpap)
+    /// Parent Programa pointed by [pap_participantes_prg].([ProgramaCodigo]) (FK_obdpro_obdpap)
     /// </summary>
     [XmlIgnore, JsonIgnore]
     public virtual Programa Programa { get; set; } // FK_obdpro_obdpap
@@ -112,7 +112,7 @@ public partial class ParticipantePrograma
     // Children collections
 
     /// <summary>
-    /// Child Actividades where [acp_actividades_programa].[ParticipanteProgramaCodigo] point to this entity (FK_obdpap_obdacp)
+    /// Child Actividades where [acp_actividades_prg].[ParticipanteProgramaCodigo] point to this entity (FK_obdpap_obdacp)
     /// </summary>
     [XmlIgnore, JsonIgnore]
     public virtual ICollection<ActividadPrograma> Actividades { get; set; } = new List<ActividadPrograma>(); // FK_obdpap_obdacp

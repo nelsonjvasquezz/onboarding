@@ -163,8 +163,8 @@ public partial class ActividadPlantilla
     public virtual ICollection<NotificacionActividadPlantilla> Notificaciones { get; set; } = new List<NotificacionActividadPlantilla>(); // FK_obdpac_obdpna
 
     /// <summary>
-    /// Child Requisitos (Many-to-Many) mapped by table [ppa_plant_prerequisitos_act]
+    /// Child Requisitos (Many-to-Many) mapped by table [ppa_plant_requisitos_act]
     /// </summary>
     [XmlIgnore, JsonIgnore]
-    public virtual ICollection<RequisitoActividadPlantilla> Requisitos { get; set; } = new List<RequisitoActividadPlantilla>(); // ppa_plant_prerequisitos_act
+    public virtual ICollection<RequisitoActividadPlantilla> Requisitos { get; set; } = new List<RequisitoActividadPlantilla>(); // ppa_plant_requisitos_act
 }

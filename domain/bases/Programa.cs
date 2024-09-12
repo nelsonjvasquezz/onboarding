@@ -87,7 +87,7 @@ public partial class Programa
     // Children collections
 
     /// <summary>
-    /// Child Participantes where [pap_participantes_programa].[pap_codpro] point to this entity (FK_obdpro_obdpap)
+    /// Child Participantes where [pap_participantes_prg].[pap_codpro] point to this entity (FK_obdpro_obdpap)
     /// </summary>
     [XmlIgnore, JsonIgnore]
     public virtual ICollection<ParticipantePrograma> Participantes { get; set; } = new List<ParticipantePrograma>(); // FK_obdpro_obdpap

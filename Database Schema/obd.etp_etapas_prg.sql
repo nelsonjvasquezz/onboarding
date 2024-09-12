@@ -1,4 +1,4 @@
-CREATE TABLE [obd].[etp_etapas_programa]
+CREATE TABLE [obd].[etp_etapas_prg]
 (
 	[etp_codigo] INT IDENTITY(1,1) NOT NULL,
 	[etp_codgrc] INT NOT NULL,
@@ -15,7 +15,7 @@ CREATE TABLE [obd].[etp_etapas_programa]
 	[etp_usuario_modificacion] VARCHAR(50) NULL,
 	[etp_fecha_modificacion] DATETIME NULL,
 
- 	CONSTRAINT [PK_etp_etapas_programa] PRIMARY KEY CLUSTERED ([etp_codigo] ASC),
+ 	CONSTRAINT [PK_etp_etapas_prg] PRIMARY KEY CLUSTERED ([etp_codigo] ASC),
 	CONSTRAINT [FK_eorgrc_obdetp] FOREIGN KEY ([etp_codgrc]) REFERENCES [eor].[grc_grupos_corporativos] ([grc_codigo])
 ) 
 
@@ -25,7 +25,7 @@ EXEC sp_addextendedproperty @name = N'MS_Description',
     @level0type = N'SCHEMA',
     @level0name = N'obd',
     @level1type = N'TABLE',
-    @level1name = N'etp_etapas_programa',
+    @level1name = N'etp_etapas_prg',
     @level2type = NULL,
     @level2name = NULL
 GO
@@ -34,7 +34,7 @@ EXEC sp_addextendedproperty @name = N'MS_Description',
     @level0type = N'SCHEMA',
     @level0name = N'obd',
     @level1type = N'TABLE',
-    @level1name = N'etp_etapas_programa',
+    @level1name = N'etp_etapas_prg',
     @level2type = N'COLUMN',
     @level2name = N'etp_codigo'
 GO
@@ -43,7 +43,7 @@ EXEC sp_addextendedproperty @name = N'MS_Description',
     @level0type = N'SCHEMA',
     @level0name = N'obd',
     @level1type = N'TABLE',
-    @level1name = N'etp_etapas_programa',
+    @level1name = N'etp_etapas_prg',
     @level2type = N'COLUMN',
     @level2name = N'etp_descripcion'
 GO
@@ -52,7 +52,7 @@ EXEC sp_addextendedproperty @name = N'MS_Description',
     @level0type = N'SCHEMA',
     @level0name = N'obd',
     @level1type = N'TABLE',
-    @level1name = N'etp_etapas_programa',
+    @level1name = N'etp_etapas_prg',
     @level2type = N'COLUMN',
     @level2name = N'etp_nombre'
 GO
@@ -61,7 +61,7 @@ EXEC sp_addextendedproperty @name = N'MS_Description',
     @level0type = N'SCHEMA',
     @level0name = N'obd',
     @level1type = N'TABLE',
-    @level1name = N'etp_etapas_programa',
+    @level1name = N'etp_etapas_prg',
     @level2type = N'COLUMN',
     @level2name = N'etp_codgrc'
 GO
@@ -70,7 +70,7 @@ EXEC sp_addextendedproperty @name = N'MS_Description',
     @level0type = N'SCHEMA',
     @level0name = N'obd',
     @level1type = N'TABLE',
-    @level1name = N'etp_etapas_programa',
+    @level1name = N'etp_etapas_prg',
     @level2type = N'COLUMN',
     @level2name = N'etp_fecha_modificacion'
 GO
@@ -79,7 +79,7 @@ EXEC sp_addextendedproperty @name = N'MS_Description',
     @level0type = N'SCHEMA',
     @level0name = N'obd',
     @level1type = N'TABLE',
-    @level1name = N'etp_etapas_programa',
+    @level1name = N'etp_etapas_prg',
     @level2type = N'COLUMN',
     @level2name = N'etp_usuario_modificacion'
 GO
@@ -88,7 +88,7 @@ EXEC sp_addextendedproperty @name = N'MS_Description',
     @level0type = N'SCHEMA',
     @level0name = N'obd',
     @level1type = N'TABLE',
-    @level1name = N'etp_etapas_programa',
+    @level1name = N'etp_etapas_prg',
     @level2type = N'COLUMN',
     @level2name = N'etp_fecha_grabacion'
 GO
@@ -97,7 +97,7 @@ EXEC sp_addextendedproperty @name = N'MS_Description',
     @level0type = N'SCHEMA',
     @level0name = N'obd',
     @level1type = N'TABLE',
-    @level1name = N'etp_etapas_programa',
+    @level1name = N'etp_etapas_prg',
     @level2type = N'COLUMN',
     @level2name = N'etp_usuario_grabacion'
 GO
@@ -106,7 +106,7 @@ EXEC sp_addextendedproperty @name = N'MS_Description',
     @level0type = N'SCHEMA',
     @level0name = N'obd',
     @level1type = N'TABLE',
-    @level1name = N'etp_etapas_programa',
+    @level1name = N'etp_etapas_prg',
     @level2type = N'COLUMN',
     @level2name = N'etp_antes_primer_dia'
 GO
@@ -115,7 +115,7 @@ EXEC sp_addextendedproperty @name = N'MS_Description',
     @level0type = N'SCHEMA',
     @level0name = N'obd',
     @level1type = N'TABLE',
-    @level1name = N'etp_etapas_programa',
+    @level1name = N'etp_etapas_prg',
     @level2type = N'COLUMN',
     @level2name = N'etp_durante_primer_dia'
 GO
@@ -124,7 +124,7 @@ EXEC sp_addextendedproperty @name = N'MS_Description',
     @level0type = N'SCHEMA',
     @level0name = N'obd',
     @level1type = N'TABLE',
-    @level1name = N'etp_etapas_programa',
+    @level1name = N'etp_etapas_prg',
     @level2type = N'COLUMN',
     @level2name = N'etp_posterior_primer_dia'
 GO
@@ -133,7 +133,7 @@ EXEC sp_addextendedproperty @name = N'MS_Description',
     @level0type = N'SCHEMA',
     @level0name = N'obd',
     @level1type = N'TABLE',
-    @level1name = N'etp_etapas_programa',
+    @level1name = N'etp_etapas_prg',
     @level2type = N'COLUMN',
     @level2name = N'etp_orden'
 GO
@@ -142,7 +142,7 @@ EXEC sp_addextendedproperty @name = N'MS_Description',
     @level0type = N'SCHEMA',
     @level0name = N'obd',
     @level1type = N'TABLE',
-    @level1name = N'etp_etapas_programa',
+    @level1name = N'etp_etapas_prg',
     @level2type = N'COLUMN',
     @level2name = N'etp_periodo_prueba'
 GO
@@ -151,7 +151,7 @@ EXEC sp_addextendedproperty @name = N'MS_Description',
     @level0type = N'SCHEMA',
     @level0name = N'obd',
     @level1type = N'TABLE',
-    @level1name = N'etp_etapas_programa',
+    @level1name = N'etp_etapas_prg',
     @level2type = N'COLUMN',
     @level2name = N'etp_property_bag_data'
 GO

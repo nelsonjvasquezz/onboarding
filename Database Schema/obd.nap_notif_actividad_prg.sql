@@ -1,4 +1,4 @@
-CREATE TABLE [obd].[nap_notif_actividad_programa]
+CREATE TABLE [obd].[nap_notif_actividad_prg]
 (
 	[nap_codigo] INT IDENTITY(1,1) NOT NULL,
 	[nap_codacp] INT NOT NULL,
@@ -16,13 +16,13 @@ CREATE TABLE [obd].[nap_notif_actividad_programa]
 	[nap_estado] VARCHAR(10) NULL,
 	[nap_mensaje_error] VARCHAR(4000) NULL,
 
- 	CONSTRAINT [PK_nap_notif_actividad_programa] PRIMARY KEY CLUSTERED ([nap_codigo] ASC),
-	CONSTRAINT [FK_obdacp_obdnap] FOREIGN KEY([nap_codacp]) REFERENCES [obd].[acp_actividades_programa] ([acp_codigo]),
+ 	CONSTRAINT [PK_nap_notif_actividad_prg] PRIMARY KEY CLUSTERED ([nap_codigo] ASC),
+	CONSTRAINT [FK_obdacp_obdnap] FOREIGN KEY([nap_codacp]) REFERENCES [obd].[acp_actividades_prg] ([acp_codigo]),
 	CONSTRAINT [FK_obdeno_obdnap] FOREIGN KEY([nap_codeno]) REFERENCES [obd].[eno_eventos_notificables] ([eno_codigo]),
     CONSTRAINT [FK_expemp_obdnap] FOREIGN KEY ([nap_codemp_destinatario]) REFERENCES [exp].[emp_empleos] ([emp_codigo]),
 	CONSTRAINT [FK_expexp_obdnap] FOREIGN KEY ([nap_codexp_destinatario]) REFERENCES [exp].[exp_expedientes] ([exp_codigo]),
-    CONSTRAINT [CK_nap_notif_actividad_programa_estado] CHECK (nap_estado in ('Pendiente', 'Enviado', 'Error')),
-    CONSTRAINT [CK_nap_notif_actividad_programa_tipo_destinatario] CHECK (nap_tipo_destinatario is null or nap_tipo_destinatario = 'Contratado' or nap_tipo_destinatario = 'JefeInmediato' or nap_tipo_destinatario = 'ResponsableActividad' or nap_tipo_destinatario =  'ResponsableRRHH')
+    CONSTRAINT [CK_nap_notif_actividad_prg_estado] CHECK (nap_estado in ('Pendiente', 'Enviado', 'Error')),
+    CONSTRAINT [CK_nap_notif_actividad_prg_tipo_destinatario] CHECK (nap_tipo_destinatario is null or nap_tipo_destinatario = 'Contratado' or nap_tipo_destinatario = 'JefeInmediato' or nap_tipo_destinatario = 'ResponsableActividad' or nap_tipo_destinatario =  'ResponsableRRHH')
 ) 
 
 GO
@@ -31,7 +31,7 @@ EXEC sp_addextendedproperty @name = N'MS_Description',
     @level0type = N'SCHEMA',
     @level0name = N'obd',
     @level1type = N'TABLE',
-    @level1name = N'nap_notif_actividad_programa',
+    @level1name = N'nap_notif_actividad_prg',
     @level2type = NULL,
     @level2name = NULL
 GO
@@ -40,7 +40,7 @@ EXEC sp_addextendedproperty @name = N'MS_Description',
     @level0type = N'SCHEMA',
     @level0name = N'obd',
     @level1type = N'TABLE',
-    @level1name = N'nap_notif_actividad_programa',
+    @level1name = N'nap_notif_actividad_prg',
     @level2type = N'COLUMN',
     @level2name = N'nap_tipo_destinatario'
 GO
@@ -49,7 +49,7 @@ EXEC sp_addextendedproperty @name = N'MS_Description',
     @level0type = N'SCHEMA',
     @level0name = N'obd',
     @level1type = N'TABLE',
-    @level1name = N'nap_notif_actividad_programa',
+    @level1name = N'nap_notif_actividad_prg',
     @level2type = N'COLUMN',
     @level2name = N'nap_codigo'
 GO
@@ -58,7 +58,7 @@ EXEC sp_addextendedproperty @name = N'MS_Description',
     @level0type = N'SCHEMA',
     @level0name = N'obd',
     @level1type = N'TABLE',
-    @level1name = N'nap_notif_actividad_programa',
+    @level1name = N'nap_notif_actividad_prg',
     @level2type = N'COLUMN',
     @level2name = N'nap_codacp'
 GO
@@ -67,7 +67,7 @@ EXEC sp_addextendedproperty @name = N'MS_Description',
     @level0type = N'SCHEMA',
     @level0name = N'obd',
     @level1type = N'TABLE',
-    @level1name = N'nap_notif_actividad_programa',
+    @level1name = N'nap_notif_actividad_prg',
     @level2type = N'COLUMN',
     @level2name = N'nap_codeno'
 GO
@@ -76,7 +76,7 @@ EXEC sp_addextendedproperty @name = N'MS_Description',
     @level0type = N'SCHEMA',
     @level0name = N'obd',
     @level1type = N'TABLE',
-    @level1name = N'nap_notif_actividad_programa',
+    @level1name = N'nap_notif_actividad_prg',
     @level2type = N'COLUMN',
     @level2name = N'nap_offset_dias'
 GO
@@ -85,7 +85,7 @@ EXEC sp_addextendedproperty @name = N'MS_Description',
     @level0type = N'SCHEMA',
     @level0name = N'obd',
     @level1type = N'TABLE',
-    @level1name = N'nap_notif_actividad_programa',
+    @level1name = N'nap_notif_actividad_prg',
     @level2type = N'COLUMN',
     @level2name = N'nap_codemp_destinatario'
 GO
@@ -94,7 +94,7 @@ EXEC sp_addextendedproperty @name = N'MS_Description',
     @level0type = N'SCHEMA',
     @level0name = N'obd',
     @level1type = N'TABLE',
-    @level1name = N'nap_notif_actividad_programa',
+    @level1name = N'nap_notif_actividad_prg',
     @level2type = N'COLUMN',
     @level2name = N'nap_codexp_destinatario'
 GO
@@ -103,7 +103,7 @@ EXEC sp_addextendedproperty @name = N'MS_Description',
     @level0type = N'SCHEMA',
     @level0name = N'obd',
     @level1type = N'TABLE',
-    @level1name = N'nap_notif_actividad_programa',
+    @level1name = N'nap_notif_actividad_prg',
     @level2type = N'COLUMN',
     @level2name = N'nap_emails_destinatario'
 GO
@@ -112,7 +112,7 @@ EXEC sp_addextendedproperty @name = N'MS_Description',
     @level0type = N'SCHEMA',
     @level0name = N'obd',
     @level1type = N'TABLE',
-    @level1name = N'nap_notif_actividad_programa',
+    @level1name = N'nap_notif_actividad_prg',
     @level2type = N'COLUMN',
     @level2name = N'nap_onesignal_ids_destinatario'
 GO
@@ -121,7 +121,7 @@ EXEC sp_addextendedproperty @name = N'MS_Description',
     @level0type = N'SCHEMA',
     @level0name = N'obd',
     @level1type = N'TABLE',
-    @level1name = N'nap_notif_actividad_programa',
+    @level1name = N'nap_notif_actividad_prg',
     @level2type = N'COLUMN',
     @level2name = N'nap_subject'
 GO
@@ -130,7 +130,7 @@ EXEC sp_addextendedproperty @name = N'MS_Description',
     @level0type = N'SCHEMA',
     @level0name = N'obd',
     @level1type = N'TABLE',
-    @level1name = N'nap_notif_actividad_programa',
+    @level1name = N'nap_notif_actividad_prg',
     @level2type = N'COLUMN',
     @level2name = N'nap_body'
 GO
@@ -139,7 +139,7 @@ EXEC sp_addextendedproperty @name = N'MS_Description',
     @level0type = N'SCHEMA',
     @level0name = N'obd',
     @level1type = N'TABLE',
-    @level1name = N'nap_notif_actividad_programa',
+    @level1name = N'nap_notif_actividad_prg',
     @level2type = N'COLUMN',
     @level2name = N'nap_fecha_notificacion'
 GO
@@ -148,7 +148,7 @@ EXEC sp_addextendedproperty @name = N'MS_Description',
     @level0type = N'SCHEMA',
     @level0name = N'obd',
     @level1type = N'TABLE',
-    @level1name = N'nap_notif_actividad_programa',
+    @level1name = N'nap_notif_actividad_prg',
     @level2type = N'COLUMN',
     @level2name = N'nap_fecha_evento'
 GO
@@ -157,7 +157,7 @@ EXEC sp_addextendedproperty @name = N'MS_Description',
     @level0type = N'SCHEMA',
     @level0name = N'obd',
     @level1type = N'TABLE',
-    @level1name = N'nap_notif_actividad_programa',
+    @level1name = N'nap_notif_actividad_prg',
     @level2type = N'COLUMN',
     @level2name = N'nap_estado'
 GO
@@ -166,7 +166,7 @@ EXEC sp_addextendedproperty @name = N'MS_Description',
     @level0type = N'SCHEMA',
     @level0name = N'obd',
     @level1type = N'TABLE',
-    @level1name = N'nap_notif_actividad_programa',
+    @level1name = N'nap_notif_actividad_prg',
     @level2type = N'COLUMN',
     @level2name = N'nap_mensaje_error'
 GO

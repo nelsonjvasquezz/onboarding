@@ -1,4 +1,4 @@
-CREATE TABLE [obd].[ppr_plant_programa]
+CREATE TABLE [obd].[ppr_plantilla_prg]
 (
 	[ppr_codigo] INT IDENTITY(1,1) NOT NULL,
 	[ppr_codgrc] INT NOT NULL,
@@ -14,10 +14,10 @@ CREATE TABLE [obd].[ppr_plant_programa]
 	[ppr_usuario_modificacion] VARCHAR(50) NULL,
 	[ppr_fecha_modificacion] DATETIME NULL,
 
- 	CONSTRAINT [PK_ppr_plant_programa] PRIMARY KEY CLUSTERED ([ppr_codigo] ASC),
+ 	CONSTRAINT [PK_ppr_plantilla_prg] PRIMARY KEY CLUSTERED ([ppr_codigo] ASC),
 	CONSTRAINT [FK_eorgrc_obdppr] FOREIGN KEY ([ppr_codgrc]) REFERENCES [eor].[grc_grupos_corporativos] ([grc_codigo]),
-    CONSTRAINT [CK_ppr_plant_programa_estado] CHECK (ppr_estado in ('Activo', 'Inactivo')),
-    CONSTRAINT [CK_ppr_plant_programa_unidad_duracion] CHECK (ppr_unidad_duracion in ('Minutos', 'Horas', 'Dias', 'Semanas', 'Meses', 'Anios'))
+    CONSTRAINT [CK_ppr_plantilla_prg_estado] CHECK (ppr_estado in ('Activo', 'Inactivo')),
+    CONSTRAINT [CK_ppr_plantilla_prg_unidad_duracion] CHECK (ppr_unidad_duracion in ('Minutos', 'Horas', 'Dias', 'Semanas', 'Meses', 'Anios'))
 ) 
 
 GO
@@ -26,7 +26,7 @@ EXEC sp_addextendedproperty @name = N'MS_Description',
     @level0type = N'SCHEMA',
     @level0name = N'obd',
     @level1type = N'TABLE',
-    @level1name = N'ppr_plant_programa',
+    @level1name = N'ppr_plantilla_prg',
     @level2type = NULL,
     @level2name = NULL
 GO
@@ -35,7 +35,7 @@ EXEC sp_addextendedproperty @name = N'MS_Description',
     @level0type = N'SCHEMA',
     @level0name = N'obd',
     @level1type = N'TABLE',
-    @level1name = N'ppr_plant_programa',
+    @level1name = N'ppr_plantilla_prg',
     @level2type = N'COLUMN',
     @level2name = N'ppr_codigo'
 GO
@@ -44,7 +44,7 @@ EXEC sp_addextendedproperty @name = N'MS_Description',
     @level0type = N'SCHEMA',
     @level0name = N'obd',
     @level1type = N'TABLE',
-    @level1name = N'ppr_plant_programa',
+    @level1name = N'ppr_plantilla_prg',
     @level2type = N'COLUMN',
     @level2name = N'ppr_nombre'
 GO
@@ -53,7 +53,7 @@ EXEC sp_addextendedproperty @name = N'MS_Description',
     @level0type = N'SCHEMA',
     @level0name = N'obd',
     @level1type = N'TABLE',
-    @level1name = N'ppr_plant_programa',
+    @level1name = N'ppr_plantilla_prg',
     @level2type = N'COLUMN',
     @level2name = N'ppr_descripcion'
 GO
@@ -62,7 +62,7 @@ EXEC sp_addextendedproperty @name = N'MS_Description',
     @level0type = N'SCHEMA',
     @level0name = N'obd',
     @level1type = N'TABLE',
-    @level1name = N'ppr_plant_programa',
+    @level1name = N'ppr_plantilla_prg',
     @level2type = N'COLUMN',
     @level2name = N'ppr_estado'
 GO
@@ -71,7 +71,7 @@ EXEC sp_addextendedproperty @name = N'MS_Description',
     @level0type = N'SCHEMA',
     @level0name = N'obd',
     @level1type = N'TABLE',
-    @level1name = N'ppr_plant_programa',
+    @level1name = N'ppr_plantilla_prg',
     @level2type = N'COLUMN',
     @level2name = N'ppr_codgrc'
 GO
@@ -80,7 +80,7 @@ EXEC sp_addextendedproperty @name = N'MS_Description',
     @level0type = N'SCHEMA',
     @level0name = N'obd',
     @level1type = N'TABLE',
-    @level1name = N'ppr_plant_programa',
+    @level1name = N'ppr_plantilla_prg',
     @level2type = N'COLUMN',
     @level2name = N'ppr_objetivo'
 GO
@@ -89,7 +89,7 @@ EXEC sp_addextendedproperty @name = N'MS_Description',
     @level0type = N'SCHEMA',
     @level0name = N'obd',
     @level1type = N'TABLE',
-    @level1name = N'ppr_plant_programa',
+    @level1name = N'ppr_plantilla_prg',
     @level2type = N'COLUMN',
     @level2name = N'ppr_duracion_estimada'
 GO
@@ -98,7 +98,7 @@ EXEC sp_addextendedproperty @name = N'MS_Description',
     @level0type = N'SCHEMA',
     @level0name = N'obd',
     @level1type = N'TABLE',
-    @level1name = N'ppr_plant_programa',
+    @level1name = N'ppr_plantilla_prg',
     @level2type = N'COLUMN',
     @level2name = N'ppr_unidad_duracion'
 GO
@@ -107,7 +107,7 @@ EXEC sp_addextendedproperty @name = N'MS_Description',
     @level0type = N'SCHEMA',
     @level0name = N'obd',
     @level1type = N'TABLE',
-    @level1name = N'ppr_plant_programa',
+    @level1name = N'ppr_plantilla_prg',
     @level2type = N'COLUMN',
     @level2name = N'ppr_property_bag_data'
 GO
@@ -116,7 +116,7 @@ EXEC sp_addextendedproperty @name = N'MS_Description',
     @level0type = N'SCHEMA',
     @level0name = N'obd',
     @level1type = N'TABLE',
-    @level1name = N'ppr_plant_programa',
+    @level1name = N'ppr_plantilla_prg',
     @level2type = N'COLUMN',
     @level2name = N'ppr_usuario_grabacion'
 GO
@@ -125,7 +125,7 @@ EXEC sp_addextendedproperty @name = N'MS_Description',
     @level0type = N'SCHEMA',
     @level0name = N'obd',
     @level1type = N'TABLE',
-    @level1name = N'ppr_plant_programa',
+    @level1name = N'ppr_plantilla_prg',
     @level2type = N'COLUMN',
     @level2name = N'ppr_fecha_grabacion'
 GO
@@ -134,7 +134,7 @@ EXEC sp_addextendedproperty @name = N'MS_Description',
     @level0type = N'SCHEMA',
     @level0name = N'obd',
     @level1type = N'TABLE',
-    @level1name = N'ppr_plant_programa',
+    @level1name = N'ppr_plantilla_prg',
     @level2type = N'COLUMN',
     @level2name = N'ppr_usuario_modificacion'
 GO
@@ -143,7 +143,7 @@ EXEC sp_addextendedproperty @name = N'MS_Description',
     @level0type = N'SCHEMA',
     @level0name = N'obd',
     @level1type = N'TABLE',
-    @level1name = N'ppr_plant_programa',
+    @level1name = N'ppr_plantilla_prg',
     @level2type = N'COLUMN',
     @level2name = N'ppr_fecha_modificacion'
 GO

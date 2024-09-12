@@ -29,7 +29,7 @@ public partial class EventoNotificable
     // Children collections
 
     /// <summary>
-    /// Child Notificaciones where [nap_notif_actividad_programa].[nap_codeno] point to this entity (FK_obdeno_obdnap)
+    /// Child Notificaciones where [nap_notif_actividad_prg].[nap_codeno] point to this entity (FK_obdeno_obdnap)
     /// </summary>
     [XmlIgnore, JsonIgnore]
     public virtual ICollection<NotificacionActividad> Notificaciones { get; set; } = new List<NotificacionActividad>(); // FK_obdeno_obdnap

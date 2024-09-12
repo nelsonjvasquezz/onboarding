@@ -7,7 +7,7 @@ namespace onboarding.data.bases;
 
 /// <summary>
 /// Tabla que almacena la plantilla para los programas de onboarding
-/// obd.ppr_plant_programa
+/// obd.ppr_plantilla_prg
 /// </summary>
 public partial class PlantillaPrograma
 {

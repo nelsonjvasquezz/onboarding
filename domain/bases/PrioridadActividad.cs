@@ -32,11 +32,6 @@ public partial class PrioridadActividad
     public string Color { get; set; } // pri_color
 
     /// <summary>
-    /// Ícono con que se muestra la prioridad
-    /// </summary>
-    public string Icono { get; set; } // pri_icono
-
-    /// <summary>
     /// Determina el orden las prioridades
     /// </summary>
     public int Orden { get; set; } // pri_orden
@@ -69,7 +64,7 @@ public partial class PrioridadActividad
     // Children collections
 
     /// <summary>
-    /// Child Actividades where [acp_actividades_programa].[acp_codpri] point to this entity (FK_obdpri_obdacp)
+    /// Child Actividades where [acp_actividades_prg].[acp_codpri] point to this entity (FK_obdpri_obdacp)
     /// </summary>
     [XmlIgnore, JsonIgnore]
     public virtual ICollection<ActividadPrograma> Actividades { get; set; } = new List<ActividadPrograma>(); // FK_obdpri_obdacp

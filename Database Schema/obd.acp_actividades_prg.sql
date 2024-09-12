@@ -1,4 +1,4 @@
-CREATE TABLE [obd].[acp_actividades_programa]
+CREATE TABLE [obd].[acp_actividades_prg]
 (
 	[acp_codigo] INT IDENTITY(1,1) NOT NULL,
 	[acp_codpap] INT NOT NULL,
@@ -33,18 +33,18 @@ CREATE TABLE [obd].[acp_actividades_programa]
 	[acp_usuario_modificacion] VARCHAR(50) NULL,
 	[acp_fecha_modificacion] DATETIME NULL,
 
- 	CONSTRAINT [PK_acp_actividades_programa] PRIMARY KEY CLUSTERED ([acp_codigo] ASC),
-	CONSTRAINT [FK_obdpap_obdacp] FOREIGN KEY([acp_codpap]) REFERENCES [obd].[pap_participantes_programa] ([pap_codigo]),
-	CONSTRAINT [FK_obdetp_obdacp] FOREIGN KEY([acp_codetp]) REFERENCES [obd].[etp_etapas_programa] ([etp_codigo]),
+ 	CONSTRAINT [PK_acp_actividades_prg] PRIMARY KEY CLUSTERED ([acp_codigo] ASC),
+	CONSTRAINT [FK_obdpap_obdacp] FOREIGN KEY([acp_codpap]) REFERENCES [obd].[pap_participantes_prg] ([pap_codigo]),
+	CONSTRAINT [FK_obdetp_obdacp] FOREIGN KEY([acp_codetp]) REFERENCES [obd].[etp_etapas_prg] ([etp_codigo]),
 	CONSTRAINT [FK_obdtac_obdacp] FOREIGN KEY([acp_codtac]) REFERENCES [obd].[tac_tipos_actividad] ([tac_codigo]),
 	CONSTRAINT [FK_expemp_obdacp] FOREIGN KEY ([acp_codemp_responsable]) REFERENCES [exp].[emp_empleos] ([emp_codigo]),
     CONSTRAINT [FK_obdpri_obdacp] FOREIGN KEY([acp_codpri]) REFERENCES [obd].[pri_prioridades] ([pri_codigo]),
 	CONSTRAINT [FK_obdtra_obdacp] FOREIGN KEY([acp_codtra]) REFERENCES [obd].[tra_tipos_respon_actividad] ([tra_codigo]),
 	CONSTRAINT [FK_obdtev_obdacp] FOREIGN KEY([acp_codtev]) REFERENCES [obd].[tev_tipos_evaluacion] ([tev_codigo]),
 	CONSTRAINT [FK_genfdd_obdacp] FOREIGN KEY ([acp_codfdd]) REFERENCES [gen].[fdd_form_dinamico_data] ([fdd_codigo]),
-	CONSTRAINT [CK_acp_actividades_programa_unidad_duracion] CHECK (acp_unidad_duracion in ('Minutos', 'Horas', 'Dias', 'Semanas', 'Meses', 'Anios')),
-    CONSTRAINT [CK_acp_actividades_programa_resultado_evaluacion] CHECK (acp_resultado_evaluacion in ('Aprobado', 'Reprobado')),
-    CONSTRAINT [CK_acp_actividades_programa_estado] CHECK (acp_estado in ('Pendiente', 'EnProceso', 'Finalizada'))
+	CONSTRAINT [CK_acp_actividades_prg_unidad_duracion] CHECK (acp_unidad_duracion in ('Minutos', 'Horas', 'Dias', 'Semanas', 'Meses', 'Anios')),
+    CONSTRAINT [CK_acp_actividades_prg_resultado_evaluacion] CHECK (acp_resultado_evaluacion in ('Aprobado', 'Reprobado')),
+    CONSTRAINT [CK_acp_actividades_prg_estado] CHECK (acp_estado in ('Pendiente', 'EnProceso', 'Finalizada'))
 ) 
 
 GO
@@ -53,7 +53,7 @@ EXEC sp_addextendedproperty @name = N'MS_Description',
     @level0type = N'SCHEMA',
     @level0name = N'obd',
     @level1type = N'TABLE',
-    @level1name = N'acp_actividades_programa',
+    @level1name = N'acp_actividades_prg',
     @level2type = NULL,
     @level2name = NULL
 GO
@@ -62,7 +62,7 @@ EXEC sp_addextendedproperty @name = N'MS_Description',
     @level0type = N'SCHEMA',
     @level0name = N'obd',
     @level1type = N'TABLE',
-    @level1name = N'acp_actividades_programa',
+    @level1name = N'acp_actividades_prg',
     @level2type = N'COLUMN',
     @level2name = N'acp_codigo'
 GO
@@ -71,7 +71,7 @@ EXEC sp_addextendedproperty @name = N'MS_Description',
     @level0type = N'SCHEMA',
     @level0name = N'obd',
     @level1type = N'TABLE',
-    @level1name = N'acp_actividades_programa',
+    @level1name = N'acp_actividades_prg',
     @level2type = N'COLUMN',
     @level2name = N'acp_codpap'
 GO
@@ -80,7 +80,7 @@ EXEC sp_addextendedproperty @name = N'MS_Description',
     @level0type = N'SCHEMA',
     @level0name = N'obd',
     @level1type = N'TABLE',
-    @level1name = N'acp_actividades_programa',
+    @level1name = N'acp_actividades_prg',
     @level2type = N'COLUMN',
     @level2name = N'acp_nombre'
 GO
@@ -89,7 +89,7 @@ EXEC sp_addextendedproperty @name = N'MS_Description',
     @level0type = N'SCHEMA',
     @level0name = N'obd',
     @level1type = N'TABLE',
-    @level1name = N'acp_actividades_programa',
+    @level1name = N'acp_actividades_prg',
     @level2type = N'COLUMN',
     @level2name = N'acp_descripcion'
 GO
@@ -98,7 +98,7 @@ EXEC sp_addextendedproperty @name = N'MS_Description',
     @level0type = N'SCHEMA',
     @level0name = N'obd',
     @level1type = N'TABLE',
-    @level1name = N'acp_actividades_programa',
+    @level1name = N'acp_actividades_prg',
     @level2type = N'COLUMN',
     @level2name = N'acp_objetivo'
 GO
@@ -107,7 +107,7 @@ EXEC sp_addextendedproperty @name = N'MS_Description',
     @level0type = N'SCHEMA',
     @level0name = N'obd',
     @level1type = N'TABLE',
-    @level1name = N'acp_actividades_programa',
+    @level1name = N'acp_actividades_prg',
     @level2type = N'COLUMN',
     @level2name = N'acp_property_bag_data'
 GO
@@ -116,7 +116,7 @@ EXEC sp_addextendedproperty @name = N'MS_Description',
     @level0type = N'SCHEMA',
     @level0name = N'obd',
     @level1type = N'TABLE',
-    @level1name = N'acp_actividades_programa',
+    @level1name = N'acp_actividades_prg',
     @level2type = N'COLUMN',
     @level2name = N'acp_usuario_grabacion'
 GO
@@ -125,7 +125,7 @@ EXEC sp_addextendedproperty @name = N'MS_Description',
     @level0type = N'SCHEMA',
     @level0name = N'obd',
     @level1type = N'TABLE',
-    @level1name = N'acp_actividades_programa',
+    @level1name = N'acp_actividades_prg',
     @level2type = N'COLUMN',
     @level2name = N'acp_fecha_grabacion'
 GO
@@ -134,7 +134,7 @@ EXEC sp_addextendedproperty @name = N'MS_Description',
     @level0type = N'SCHEMA',
     @level0name = N'obd',
     @level1type = N'TABLE',
-    @level1name = N'acp_actividades_programa',
+    @level1name = N'acp_actividades_prg',
     @level2type = N'COLUMN',
     @level2name = N'acp_usuario_modificacion'
 GO
@@ -143,7 +143,7 @@ EXEC sp_addextendedproperty @name = N'MS_Description',
     @level0type = N'SCHEMA',
     @level0name = N'obd',
     @level1type = N'TABLE',
-    @level1name = N'acp_actividades_programa',
+    @level1name = N'acp_actividades_prg',
     @level2type = N'COLUMN',
     @level2name = N'acp_fecha_modificacion'
 GO
@@ -152,7 +152,7 @@ EXEC sp_addextendedproperty @name = N'MS_Description',
     @level0type = N'SCHEMA',
     @level0name = N'obd',
     @level1type = N'TABLE',
-    @level1name = N'acp_actividades_programa',
+    @level1name = N'acp_actividades_prg',
     @level2type = N'COLUMN',
     @level2name = N'acp_codetp'
 GO
@@ -161,7 +161,7 @@ EXEC sp_addextendedproperty @name = N'MS_Description',
     @level0type = N'SCHEMA',
     @level0name = N'obd',
     @level1type = N'TABLE',
-    @level1name = N'acp_actividades_programa',
+    @level1name = N'acp_actividades_prg',
     @level2type = N'COLUMN',
     @level2name = N'acp_codtac'
 GO
@@ -170,7 +170,7 @@ EXEC sp_addextendedproperty @name = N'MS_Description',
     @level0type = N'SCHEMA',
     @level0name = N'obd',
     @level1type = N'TABLE',
-    @level1name = N'acp_actividades_programa',
+    @level1name = N'acp_actividades_prg',
     @level2type = N'COLUMN',
     @level2name = N'acp_fecha_inicio'
 GO
@@ -179,7 +179,7 @@ EXEC sp_addextendedproperty @name = N'MS_Description',
     @level0type = N'SCHEMA',
     @level0name = N'obd',
     @level1type = N'TABLE',
-    @level1name = N'acp_actividades_programa',
+    @level1name = N'acp_actividades_prg',
     @level2type = N'COLUMN',
     @level2name = N'acp_fecha_fin'
 GO
@@ -188,7 +188,7 @@ EXEC sp_addextendedproperty @name = N'MS_Description',
     @level0type = N'SCHEMA',
     @level0name = N'obd',
     @level1type = N'TABLE',
-    @level1name = N'acp_actividades_programa',
+    @level1name = N'acp_actividades_prg',
     @level2type = N'COLUMN',
     @level2name = N'acp_codpri'
 GO
@@ -197,7 +197,7 @@ EXEC sp_addextendedproperty @name = N'MS_Description',
     @level0type = N'SCHEMA',
     @level0name = N'obd',
     @level1type = N'TABLE',
-    @level1name = N'acp_actividades_programa',
+    @level1name = N'acp_actividades_prg',
     @level2type = N'COLUMN',
     @level2name = N'acp_orden'
 GO
@@ -206,7 +206,7 @@ EXEC sp_addextendedproperty @name = N'MS_Description',
     @level0type = N'SCHEMA',
     @level0name = N'obd',
     @level1type = N'TABLE',
-    @level1name = N'acp_actividades_programa',
+    @level1name = N'acp_actividades_prg',
     @level2type = N'COLUMN',
     @level2name = N'acp_codtra'
 GO
@@ -215,7 +215,7 @@ EXEC sp_addextendedproperty @name = N'MS_Description',
     @level0type = N'SCHEMA',
     @level0name = N'obd',
     @level1type = N'TABLE',
-    @level1name = N'acp_actividades_programa',
+    @level1name = N'acp_actividades_prg',
     @level2type = N'COLUMN',
     @level2name = N'acp_codtev'
 GO
@@ -224,7 +224,7 @@ EXEC sp_addextendedproperty @name = N'MS_Description',
     @level0type = N'SCHEMA',
     @level0name = N'obd',
     @level1type = N'TABLE',
-    @level1name = N'acp_actividades_programa',
+    @level1name = N'acp_actividades_prg',
     @level2type = N'COLUMN',
     @level2name = N'acp_duracion'
 GO
@@ -233,7 +233,7 @@ EXEC sp_addextendedproperty @name = N'MS_Description',
     @level0type = N'SCHEMA',
     @level0name = N'obd',
     @level1type = N'TABLE',
-    @level1name = N'acp_actividades_programa',
+    @level1name = N'acp_actividades_prg',
     @level2type = N'COLUMN',
     @level2name = N'acp_unidad_duracion'
 GO
@@ -242,7 +242,7 @@ EXEC sp_addextendedproperty @name = N'MS_Description',
     @level0type = N'SCHEMA',
     @level0name = N'obd',
     @level1type = N'TABLE',
-    @level1name = N'acp_actividades_programa',
+    @level1name = N'acp_actividades_prg',
     @level2type = N'COLUMN',
     @level2name = N'acp_nota_evaluacion'
 GO
@@ -251,7 +251,7 @@ EXEC sp_addextendedproperty @name = N'MS_Description',
     @level0type = N'SCHEMA',
     @level0name = N'obd',
     @level1type = N'TABLE',
-    @level1name = N'acp_actividades_programa',
+    @level1name = N'acp_actividades_prg',
     @level2type = N'COLUMN',
     @level2name = N'acp_resultado_evaluacion'
 GO
@@ -260,7 +260,7 @@ EXEC sp_addextendedproperty @name = N'MS_Description',
     @level0type = N'SCHEMA',
     @level0name = N'obd',
     @level1type = N'TABLE',
-    @level1name = N'acp_actividades_programa',
+    @level1name = N'acp_actividades_prg',
     @level2type = N'COLUMN',
     @level2name = N'acp_codemp_responsable'
 GO
@@ -269,7 +269,7 @@ EXEC sp_addextendedproperty @name = N'MS_Description',
     @level0type = N'SCHEMA',
     @level0name = N'obd',
     @level1type = N'TABLE',
-    @level1name = N'acp_actividades_programa',
+    @level1name = N'acp_actividades_prg',
     @level2type = N'COLUMN',
     @level2name = N'acp_fecha_evaluacion'
 GO
@@ -278,7 +278,7 @@ EXEC sp_addextendedproperty @name = N'MS_Description',
     @level0type = N'SCHEMA',
     @level0name = N'obd',
     @level1type = N'TABLE',
-    @level1name = N'acp_actividades_programa',
+    @level1name = N'acp_actividades_prg',
     @level2type = N'COLUMN',
     @level2name = N'acp_fecha_finalizacion'
 GO
@@ -287,7 +287,7 @@ EXEC sp_addextendedproperty @name = N'MS_Description',
     @level0type = N'SCHEMA',
     @level0name = N'obd',
     @level1type = N'TABLE',
-    @level1name = N'acp_actividades_programa',
+    @level1name = N'acp_actividades_prg',
     @level2type = N'COLUMN',
     @level2name = N'acp_comentario_finalizacion'
 GO
@@ -296,7 +296,7 @@ EXEC sp_addextendedproperty @name = N'MS_Description',
     @level0type = N'SCHEMA',
     @level0name = N'obd',
     @level1type = N'TABLE',
-    @level1name = N'acp_actividades_programa',
+    @level1name = N'acp_actividades_prg',
     @level2type = N'COLUMN',
     @level2name = N'acp_estado'
 GO
@@ -305,7 +305,7 @@ EXEC sp_addextendedproperty @name = N'MS_Description',
     @level0type = N'SCHEMA',
     @level0name = N'obd',
     @level1type = N'TABLE',
-    @level1name = N'acp_actividades_programa',
+    @level1name = N'acp_actividades_prg',
     @level2type = N'COLUMN',
     @level2name = N'acp_codfdd'
 GO

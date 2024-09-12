@@ -20,7 +20,7 @@ namespace onboarding.persistence.configurations
 
         public void Configure(EntityTypeBuilder<NotificacionActividad> builder)
         {
-            builder.ToTable("nap_notif_actividad_programa", _schema);
+            builder.ToTable("nap_notif_actividad_prg", _schema);
             builder.HasKey(e => e.Codigo);
 
             builder.Property(e => e.Codigo).HasColumnName("nap_codigo");

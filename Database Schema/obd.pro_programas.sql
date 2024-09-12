@@ -15,7 +15,7 @@ CREATE TABLE [obd].[pro_programas]
 	[pro_fecha_modificacion] DATETIME NULL,
 
  	CONSTRAINT [PK_pro_programas] PRIMARY KEY CLUSTERED ([pro_codigo] ASC),
-	CONSTRAINT [FK_obdppr_obdpro] FOREIGN KEY([pro_codppr]) REFERENCES [obd].[ppr_plant_programa] ([ppr_codigo]),
+	CONSTRAINT [FK_obdppr_obdpro] FOREIGN KEY([pro_codppr]) REFERENCES [obd].[ppr_plantilla_prg] ([ppr_codigo]),
 	CONSTRAINT [CK_pro_programas_estado] CHECK (pro_estado in ('Planificado', 'EnEjecucion', 'Finalizado')),
     CONSTRAINT [CK_pro_programas_unidad_duracion] CHECK (pro_unidad_duracion in ('Minutos', 'Horas', 'Dias', 'Semanas', 'Meses', 'Anios'))
 )

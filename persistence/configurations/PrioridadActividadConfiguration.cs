@@ -27,7 +27,6 @@ namespace onboarding.persistence.configurations
             builder.Property(e => e.GrupoCorporativoCodigo).HasColumnName("pri_codgrc");
             builder.Property(e => e.Nombre).HasColumnName("pri_nombre").HasMaxLength(50).IsUnicode(false);
             builder.Property(e => e.Color).HasColumnName("pri_color").HasMaxLength(20).IsUnicode(false);
-            builder.Property(e => e.Icono).HasColumnName("pri_icono").HasMaxLength(500).IsUnicode(false);
             builder.Property(e => e.Orden).HasColumnName("pri_orden");
             builder.Property(e => e.RawPropertyBagData).HasColumnName("pri_property_bag_data");
             builder.Property(e => e.UsuarioGrabacion).HasColumnName("pri_usuario_grabacion").HasMaxLength(50).IsUnicode(false);

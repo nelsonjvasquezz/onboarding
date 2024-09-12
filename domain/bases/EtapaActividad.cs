@@ -7,7 +7,7 @@ namespace onboarding.data.bases;
 
 /// <summary>
 /// Tabla con las fases o etapas de los programas de Onboarding
-/// obd.etp_etapas_programa
+/// obd.etp_etapas_prg
 /// </summary>
 public partial class EtapaActividad
 {
@@ -84,7 +84,7 @@ public partial class EtapaActividad
     // Children collections
 
     /// <summary>
-    /// Child Actividades where [acp_actividades_programa].[acp_codigo] point to this entity (FK_obdetp_obdacp)
+    /// Child Actividades where [acp_actividades_prg].[acp_codigo] point to this entity (FK_obdetp_obdacp)
     /// </summary>
     [XmlIgnore, JsonIgnore]
     public virtual ICollection<ActividadPrograma> Actividades { get; set; } = new List<ActividadPrograma>(); // FK_obdetp_obdacp

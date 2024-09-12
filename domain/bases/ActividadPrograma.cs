@@ -7,7 +7,7 @@ namespace onboarding.data.bases;
 
 /// <summary>
 /// Tabla que almacena las actividades de los participantes de un programa de onboarding
-/// obd.acp_actividades_programa
+/// obd.acp_actividades_prg
 /// </summary>
 public partial class ActividadPrograma
 {
@@ -154,37 +154,37 @@ public partial class ActividadPrograma
     // Foreing keys
 
     /// <summary>
-    /// Parent ParticipantePrograma pointed by [acp_actividades_programa].([ParticipanteProgramaCodigo]) (FK_obdpap_obdacp)
+    /// Parent ParticipantePrograma pointed by [acp_actividades_prg].([ParticipanteProgramaCodigo]) (FK_obdpap_obdacp)
     /// </summary>
     [XmlIgnore, JsonIgnore]
     public virtual ParticipantePrograma Participante { get; set; } // FK_obdpap_obdacp
 
     /// <summary>
-    /// Parent EtapaActividad pointed by [acp_actividades_programa].([EtapaActividadCodigo]) (FK_obdetp_obdacp)
+    /// Parent EtapaActividad pointed by [acp_actividades_prg].([EtapaActividadCodigo]) (FK_obdetp_obdacp)
     /// </summary>
     [XmlIgnore, JsonIgnore]
     public virtual EtapaActividad Etapa { get; set; } // FK_obdetp_obdacp
 
     /// <summary>
-    /// Parent PrioridadActividad pointed by [acp_actividades_programa].([PrioridadActividadCodigo]) (FK_obdpri_obdacp)
+    /// Parent PrioridadActividad pointed by [acp_actividades_prg].([PrioridadActividadCodigo]) (FK_obdpri_obdacp)
     /// </summary>
     [XmlIgnore, JsonIgnore]
     public virtual PrioridadActividad Prioridad { get; set; } // FK_obdpri_obdacp
 
     /// <summary>
-    /// Parent TipoActividad pointed by [acp_actividades_programa].([TipoActividadCodigo]) (FK_obdtac_obdacp)
+    /// Parent TipoActividad pointed by [acp_actividades_prg].([TipoActividadCodigo]) (FK_obdtac_obdacp)
     /// </summary>
     [XmlIgnore, JsonIgnore]
     public virtual TipoActividad Tipo { get; set; } // FK_obdtac_obdacp
 
     /// <summary>
-    /// Parent TipoEvaluacion pointed by [acp_actividades_programa].([TipoEvaluacionCodigo]) (FK_obdtev_obdacp)
+    /// Parent TipoEvaluacion pointed by [acp_actividades_prg].([TipoEvaluacionCodigo]) (FK_obdtev_obdacp)
     /// </summary>
     [XmlIgnore, JsonIgnore]
     public virtual TipoEvaluacion TipoEvaluacion { get; set; } // FK_obdtev_obdacp
 
     /// <summary>
-    /// Parent TipoResponsableActividad pointed by [acp_actividades_programa].([TipoResponsableActividadCodigo]) (FK_obdtra_obdacp)
+    /// Parent TipoResponsableActividad pointed by [acp_actividades_prg].([TipoResponsableActividadCodigo]) (FK_obdtra_obdacp)
     /// </summary>
     [XmlIgnore, JsonIgnore]
     public virtual TipoResponsableActividad TipoResponsable { get; set; } // FK_obdtra_obdacp
@@ -192,13 +192,13 @@ public partial class ActividadPrograma
     // Children collections
 
     /// <summary>
-    /// Child Notificaciones where [nap_notif_actividad_programa].[nap_codacp] point to this entity (FK_obdacp_obdnap)
+    /// Child Notificaciones where [nap_notif_actividad_prg].[nap_codacp] point to this entity (FK_obdacp_obdnap)
     /// </summary>
     [XmlIgnore, JsonIgnore]
     public virtual ICollection<NotificacionActividad> Notificaciones { get; set; } = new List<NotificacionActividad>();
 
     /// <summary>
-    /// Child Requisitos (Many-to-Many) mapped by table [rap_req_actividades_programa]
+    /// Child Requisitos (Many-to-Many) mapped by table [rap_req_actividades_prg]
     /// </summary>
     [XmlIgnore, JsonIgnore]
     public virtual ICollection<RequisitoActividad> Requisitos { get; set; } = new List<RequisitoActividad>();

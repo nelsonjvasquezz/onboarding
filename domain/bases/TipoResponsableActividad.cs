@@ -94,7 +94,7 @@ public partial class TipoResponsableActividad
     // Children collections
 
     /// <summary>
-    /// Child Actividades where [acp_actividades_programa].[acp_codtra] point to this entity (FK_obdtra_obdacp)
+    /// Child Actividades where [acp_actividades_prg].[acp_codtra] point to this entity (FK_obdtra_obdacp)
     /// </summary>
     [XmlIgnore, JsonIgnore]
     public virtual ICollection<ActividadPrograma> Actividades { get; set; } = new List<ActividadPrograma>(); // FK_obdtra_obdacp

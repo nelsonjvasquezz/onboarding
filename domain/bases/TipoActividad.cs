@@ -94,7 +94,7 @@ public partial class TipoActividad
     // Children collections
 
     /// <summary>
-    /// Child Actividades where [acp_actividades_programa].[acp_codtac] point to this entity (FK_obdtac_obdacp)
+    /// Child Actividades where [acp_actividades_prg].[acp_codtac] point to this entity (FK_obdtac_obdacp)
     /// </summary>
     [XmlIgnore, JsonIgnore]
     public virtual ICollection<ActividadPrograma> Actividades { get; set; } = new List<ActividadPrograma>();

@@ -6,7 +6,7 @@ namespace onboarding.data.bases;
 
 /// <summary>
 /// Tabla que almacena los registros de las notificaciones generadas de la actividad del programa
-/// obd.nap_notif_actividad_programa
+/// obd.nap_notif_actividad_prg
 /// </summary>
 public partial class NotificacionActividad
 {
@@ -88,13 +88,13 @@ public partial class NotificacionActividad
     // Foreign keys
 
     /// <summary>
-    /// Parent Actividad pointed by [nap_notif_actividad_programa].[(ActividadProgramaCodigo)] (FK_obdacp_obdnap)
+    /// Parent Actividad pointed by [nap_notif_actividad_prg].[(ActividadProgramaCodigo)] (FK_obdacp_obdnap)
     /// </summary>
     [XmlIgnore, JsonIgnore]
     public virtual ActividadPrograma Actividad { get; set; } // FK_obdacp_obdnap
 
     /// <summary>
-    /// Parent EventoNotificable pointed by [nap_notif_actividad_programa].[(EventoNotificableCodigo)] (FK_obdeno_obdnap)
+    /// Parent EventoNotificable pointed by [nap_notif_actividad_prg].[(EventoNotificableCodigo)] (FK_obdeno_obdnap)
     /// </summary>
     [XmlIgnore, JsonIgnore]
     public virtual EventoNotificable EventoNotificable { get; set; } // FK_obdeno_obdnap

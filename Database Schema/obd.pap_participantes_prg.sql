@@ -1,4 +1,4 @@
-CREATE TABLE [obd].[pap_participantes_programa]
+CREATE TABLE [obd].[pap_participantes_prg]
 (
 	[pap_codigo] INT IDENTITY(1,1) NOT NULL,
 	[pap_codpro] INT NOT NULL,
@@ -19,7 +19,7 @@ CREATE TABLE [obd].[pap_participantes_programa]
 	[pap_usuario_modificacion] VARCHAR(50) NULL,
 	[pap_fecha_modificacion] DATETIME NULL,
 
- 	CONSTRAINT [PK_pap_participantes_programa] PRIMARY KEY CLUSTERED ([pap_codigo] ASC),
+ 	CONSTRAINT [PK_pap_participantes_prg] PRIMARY KEY CLUSTERED ([pap_codigo] ASC),
 	CONSTRAINT [FK_obdpro_obdpap] FOREIGN KEY([pap_codpro]) REFERENCES [obd].[pro_programas] ([pro_codigo]),
 	CONSTRAINT [FK_expemp_obdpap_resp_rrhh] FOREIGN KEY ([pap_codemp_resp_rrhh]) REFERENCES [exp].[emp_empleos] ([emp_codigo]),
 	CONSTRAINT [FK_eorpue_obdpap] FOREIGN KEY ([pap_codpue]) REFERENCES [eor].[pue_puestos] ([pue_codigo]),
@@ -37,7 +37,7 @@ EXEC sp_addextendedproperty @name = N'MS_Description',
     @level0type = N'SCHEMA',
     @level0name = N'obd',
     @level1type = N'TABLE',
-    @level1name = N'pap_participantes_programa',
+    @level1name = N'pap_participantes_prg',
     @level2type = NULL,
     @level2name = NULL
 GO
@@ -46,7 +46,7 @@ EXEC sp_addextendedproperty @name = N'MS_Description',
     @level0type = N'SCHEMA',
     @level0name = N'obd',
     @level1type = N'TABLE',
-    @level1name = N'pap_participantes_programa',
+    @level1name = N'pap_participantes_prg',
     @level2type = N'COLUMN',
     @level2name = N'pap_codigo'
 GO
@@ -55,7 +55,7 @@ EXEC sp_addextendedproperty @name = N'MS_Description',
     @level0type = N'SCHEMA',
     @level0name = N'obd',
     @level1type = N'TABLE',
-    @level1name = N'pap_participantes_programa',
+    @level1name = N'pap_participantes_prg',
     @level2type = N'COLUMN',
     @level2name = N'pap_codpro'
 GO
@@ -64,7 +64,7 @@ EXEC sp_addextendedproperty @name = N'MS_Description',
     @level0type = N'SCHEMA',
     @level0name = N'obd',
     @level1type = N'TABLE',
-    @level1name = N'pap_participantes_programa',
+    @level1name = N'pap_participantes_prg',
     @level2type = N'COLUMN',
     @level2name = N'pap_codexp'
 GO
@@ -73,7 +73,7 @@ EXEC sp_addextendedproperty @name = N'MS_Description',
     @level0type = N'SCHEMA',
     @level0name = N'obd',
     @level1type = N'TABLE',
-    @level1name = N'pap_participantes_programa',
+    @level1name = N'pap_participantes_prg',
     @level2type = N'COLUMN',
     @level2name = N'pap_codemp'
 GO
@@ -82,7 +82,7 @@ EXEC sp_addextendedproperty @name = N'MS_Description',
     @level0type = N'SCHEMA',
     @level0name = N'obd',
     @level1type = N'TABLE',
-    @level1name = N'pap_participantes_programa',
+    @level1name = N'pap_participantes_prg',
     @level2type = N'COLUMN',
     @level2name = N'pap_fecha_inicio'
 GO
@@ -91,7 +91,7 @@ EXEC sp_addextendedproperty @name = N'MS_Description',
     @level0type = N'SCHEMA',
     @level0name = N'obd',
     @level1type = N'TABLE',
-    @level1name = N'pap_participantes_programa',
+    @level1name = N'pap_participantes_prg',
     @level2type = N'COLUMN',
     @level2name = N'pap_fecha_contratacion'
 GO
@@ -100,7 +100,7 @@ EXEC sp_addextendedproperty @name = N'MS_Description',
     @level0type = N'SCHEMA',
     @level0name = N'obd',
     @level1type = N'TABLE',
-    @level1name = N'pap_participantes_programa',
+    @level1name = N'pap_participantes_prg',
     @level2type = N'COLUMN',
     @level2name = N'pap_fecha_fin'
 GO
@@ -109,7 +109,7 @@ EXEC sp_addextendedproperty @name = N'MS_Description',
     @level0type = N'SCHEMA',
     @level0name = N'obd',
     @level1type = N'TABLE',
-    @level1name = N'pap_participantes_programa',
+    @level1name = N'pap_participantes_prg',
     @level2type = N'COLUMN',
     @level2name = N'pap_codpue'
 GO
@@ -118,7 +118,7 @@ EXEC sp_addextendedproperty @name = N'MS_Description',
     @level0type = N'SCHEMA',
     @level0name = N'obd',
     @level1type = N'TABLE',
-    @level1name = N'pap_participantes_programa',
+    @level1name = N'pap_participantes_prg',
     @level2type = N'COLUMN',
     @level2name = N'pap_codemp_jefe'
 GO
@@ -127,7 +127,7 @@ EXEC sp_addextendedproperty @name = N'MS_Description',
     @level0type = N'SCHEMA',
     @level0name = N'obd',
     @level1type = N'TABLE',
-    @level1name = N'pap_participantes_programa',
+    @level1name = N'pap_participantes_prg',
     @level2type = N'COLUMN',
     @level2name = N'pap_codcdt'
 GO
@@ -136,7 +136,7 @@ EXEC sp_addextendedproperty @name = N'MS_Description',
     @level0type = N'SCHEMA',
     @level0name = N'obd',
     @level1type = N'TABLE',
-    @level1name = N'pap_participantes_programa',
+    @level1name = N'pap_participantes_prg',
     @level2type = N'COLUMN',
     @level2name = N'pap_coduni'
 GO
@@ -145,7 +145,7 @@ EXEC sp_addextendedproperty @name = N'MS_Description',
     @level0type = N'SCHEMA',
     @level0name = N'obd',
     @level1type = N'TABLE',
-    @level1name = N'pap_participantes_programa',
+    @level1name = N'pap_participantes_prg',
     @level2type = N'COLUMN',
     @level2name = N'pap_codplz'
 GO
@@ -154,7 +154,7 @@ EXEC sp_addextendedproperty @name = N'MS_Description',
     @level0type = N'SCHEMA',
     @level0name = N'obd',
     @level1type = N'TABLE',
-    @level1name = N'pap_participantes_programa',
+    @level1name = N'pap_participantes_prg',
     @level2type = N'COLUMN',
     @level2name = N'pap_codemp_resp_rrhh'
 GO
@@ -163,7 +163,7 @@ EXEC sp_addextendedproperty @name = N'MS_Description',
     @level0type = N'SCHEMA',
     @level0name = N'obd',
     @level1type = N'TABLE',
-    @level1name = N'pap_participantes_programa',
+    @level1name = N'pap_participantes_prg',
     @level2type = N'COLUMN',
     @level2name = N'pap_property_bag_data'
 GO
@@ -172,7 +172,7 @@ EXEC sp_addextendedproperty @name = N'MS_Description',
     @level0type = N'SCHEMA',
     @level0name = N'obd',
     @level1type = N'TABLE',
-    @level1name = N'pap_participantes_programa',
+    @level1name = N'pap_participantes_prg',
     @level2type = N'COLUMN',
     @level2name = N'pap_usuario_grabacion'
 GO
@@ -181,7 +181,7 @@ EXEC sp_addextendedproperty @name = N'MS_Description',
     @level0type = N'SCHEMA',
     @level0name = N'obd',
     @level1type = N'TABLE',
-    @level1name = N'pap_participantes_programa',
+    @level1name = N'pap_participantes_prg',
     @level2type = N'COLUMN',
     @level2name = N'pap_fecha_grabacion'
 GO
@@ -190,7 +190,7 @@ EXEC sp_addextendedproperty @name = N'MS_Description',
     @level0type = N'SCHEMA',
     @level0name = N'obd',
     @level1type = N'TABLE',
-    @level1name = N'pap_participantes_programa',
+    @level1name = N'pap_participantes_prg',
     @level2type = N'COLUMN',
     @level2name = N'pap_usuario_modificacion'
 GO
@@ -199,7 +199,7 @@ EXEC sp_addextendedproperty @name = N'MS_Description',
     @level0type = N'SCHEMA',
     @level0name = N'obd',
     @level1type = N'TABLE',
-    @level1name = N'pap_participantes_programa',
+    @level1name = N'pap_participantes_prg',
     @level2type = N'COLUMN',
     @level2name = N'pap_fecha_modificacion'
 GO

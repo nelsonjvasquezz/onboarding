@@ -69,7 +69,7 @@ public partial class TipoEvaluacion
     // Children collections
 
     /// <summary>
-    /// Child Actividades where [acp_actividades_programa].[acp_codtev] point to this entity (FK_obdtev_obdacp)
+    /// Child Actividades where [acp_actividades_prg].[acp_codtev] point to this entity (FK_obdtev_obdacp)
     /// </summary>
     [XmlIgnore, JsonIgnore]
     public virtual ICollection<ActividadPrograma> Actividades { get; set; } = new List<ActividadPrograma>(); // FK_obdtev_obdacp

@@ -20,7 +20,7 @@ namespace onboarding.persistence.configurations
 
         public void Configure(EntityTypeBuilder<ActividadPrograma> builder)
         {
-            builder.ToTable("acp_actividades_programa", _schema);
+            builder.ToTable("acp_actividades_prg", _schema);
             builder.HasKey(e => e.Codigo);
 
             builder.Property(e => e.Codigo).HasColumnName("acp_codigo");

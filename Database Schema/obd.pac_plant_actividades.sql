@@ -24,8 +24,8 @@ CREATE TABLE [obd].[pac_plant_actividades]
 	[pac_fecha_modificacion] DATETIME NULL,
 
  	CONSTRAINT [PK_pac_plant_actividades] PRIMARY KEY CLUSTERED ([pac_codigo] ASC),
-	CONSTRAINT [FK_obdppr_obdpac] FOREIGN KEY([pac_codppr]) REFERENCES [obd].[ppr_plant_programa] ([ppr_codigo]),
-	CONSTRAINT [FK_obdetp_obdpac] FOREIGN KEY([pac_codetp]) REFERENCES [obd].[etp_etapas_programa] ([etp_codigo]),
+	CONSTRAINT [FK_obdppr_obdpac] FOREIGN KEY([pac_codppr]) REFERENCES [obd].[ppr_plantilla_prg] ([ppr_codigo]),
+	CONSTRAINT [FK_obdetp_obdpac] FOREIGN KEY([pac_codetp]) REFERENCES [obd].[etp_etapas_prg] ([etp_codigo]),
 	CONSTRAINT [FK_obdtac_obdpac] FOREIGN KEY([pac_codtac]) REFERENCES [obd].[tac_tipos_actividad] ([tac_codigo]),
 	CONSTRAINT [FK_obdpri_obdpac] FOREIGN KEY([pac_codpri]) REFERENCES [obd].[pri_prioridades] ([pri_codigo]),
 	CONSTRAINT [FK_obdtra_obdpac] FOREIGN KEY([pac_codtra]) REFERENCES [obd].[tra_tipos_respon_actividad] ([tra_codigo]),

@@ -34,7 +34,7 @@ CREATE TABLE [obd].[acp_actividades_prg]
 	[acp_fecha_modificacion] DATETIME NULL,
 
  	CONSTRAINT [PK_acp_actividades_prg] PRIMARY KEY CLUSTERED ([acp_codigo] ASC),
-	CONSTRAINT [FK_obdpap_obdacp] FOREIGN KEY([acp_codpap]) REFERENCES [obd].[pap_participantes_prg] ([pap_codigo]),
+	CONSTRAINT [FK_obdpap_obdacp] FOREIGN KEY([acp_codpap]) REFERENCES [obd].[pap_participantes_prg] ([pap_codigo]) ON DELETE CASCADE,
 	CONSTRAINT [FK_obdetp_obdacp] FOREIGN KEY([acp_codetp]) REFERENCES [obd].[etp_etapas_prg] ([etp_codigo]),
 	CONSTRAINT [FK_obdtac_obdacp] FOREIGN KEY([acp_codtac]) REFERENCES [obd].[tac_tipos_actividad] ([tac_codigo]),
 	CONSTRAINT [FK_expemp_obdacp] FOREIGN KEY ([acp_codemp_responsable]) REFERENCES [exp].[emp_empleos] ([emp_codigo]),

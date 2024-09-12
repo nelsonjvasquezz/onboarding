@@ -40,7 +40,7 @@ namespace onboarding.persistence.configurations
             builder.Property(e => e.UsuarioUltimaModificacion).HasColumnName("pna_usuario_modificacion").HasMaxLength(50).IsUnicode(false);
             builder.Property(e => e.FechaUltimaModificacion).HasColumnName("pna_fecha_modificacion");
 
-            builder.HasOne(d => d.Actividad).WithMany(p => p.Notificaciones).HasForeignKey(d => d.ActividadPlantillaCodigo).OnDelete(DeleteBehavior.NoAction); // FK_obdpac_obdpna
+            builder.HasOne(d => d.Actividad).WithMany(p => p.Notificaciones).HasForeignKey(d => d.ActividadPlantillaCodigo).OnDelete(DeleteBehavior.Cascade); // FK_obdpac_obdpna
             builder.HasOne(d => d.EventoNotificable).WithMany(p => p.NotificacionesPlantilla).HasForeignKey(d => d.EventoNotificableCodigo).OnDelete(DeleteBehavior.NoAction); // FK_obdeno_obdpna
         }
     }

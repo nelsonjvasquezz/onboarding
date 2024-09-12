@@ -19,7 +19,7 @@ CREATE TABLE [obd].[pna_plant_notificacion_act]
 
  	CONSTRAINT [PK_pna_plant_notificacion_act] PRIMARY KEY CLUSTERED ([pna_codigo] ASC),
 	CONSTRAINT [FK_obdeno_obdpna] FOREIGN KEY([pna_codeno]) REFERENCES [obd].[eno_eventos_notificables] ([eno_codigo]),
-	CONSTRAINT [FK_obdpac_obdpna] FOREIGN KEY([pna_codpac]) REFERENCES [obd].[pac_plant_actividades] ([pac_codigo])
+	CONSTRAINT [FK_obdpac_obdpna] FOREIGN KEY([pna_codpac]) REFERENCES [obd].[pac_plant_actividades] ([pac_codigo]) ON DELETE CASCADE
 
 )
 

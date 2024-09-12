@@ -17,7 +17,7 @@ CREATE TABLE [obd].[nap_notif_actividad_prg]
 	[nap_mensaje_error] VARCHAR(4000) NULL,
 
  	CONSTRAINT [PK_nap_notif_actividad_prg] PRIMARY KEY CLUSTERED ([nap_codigo] ASC),
-	CONSTRAINT [FK_obdacp_obdnap] FOREIGN KEY([nap_codacp]) REFERENCES [obd].[acp_actividades_prg] ([acp_codigo]),
+	CONSTRAINT [FK_obdacp_obdnap] FOREIGN KEY([nap_codacp]) REFERENCES [obd].[acp_actividades_prg] ([acp_codigo]) ON DELETE CASCADE,
 	CONSTRAINT [FK_obdeno_obdnap] FOREIGN KEY([nap_codeno]) REFERENCES [obd].[eno_eventos_notificables] ([eno_codigo]),
     CONSTRAINT [FK_expemp_obdnap] FOREIGN KEY ([nap_codemp_destinatario]) REFERENCES [exp].[emp_empleos] ([emp_codigo]),
 	CONSTRAINT [FK_expexp_obdnap] FOREIGN KEY ([nap_codexp_destinatario]) REFERENCES [exp].[exp_expedientes] ([exp_codigo]),

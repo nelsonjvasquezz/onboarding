@@ -5,7 +5,7 @@ CREATE TABLE [obd].[rap_req_actividades_prg]
 
  	CONSTRAINT [PK_rap_req_actividades_prg] PRIMARY KEY CLUSTERED ([rap_codacp], [rap_codacp_requisito] ASC),
 	CONSTRAINT [FK_obdacp_obdrpa] FOREIGN KEY([rap_codacp]) REFERENCES [obd].[acp_actividades_prg] ([acp_codigo]),
-	CONSTRAINT [FK_obdacp_obdrap_requisito] FOREIGN KEY([rap_codacp_requisito]) REFERENCES [obd].[acp_actividades_prg] ([acp_codigo])
+	CONSTRAINT [FK_obdacp_obdrap_requisito] FOREIGN KEY([rap_codacp_requisito]) REFERENCES [obd].[acp_actividades_prg] ([acp_codigo]) ON DELETE CASCADE
 )
 
 GO

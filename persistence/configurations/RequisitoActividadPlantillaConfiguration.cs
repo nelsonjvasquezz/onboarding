@@ -29,7 +29,7 @@ namespace onboarding.persistence.configurations
             // TODO: Analizar la configuración
             // Foreign keys
             //builder.HasOne(d => d.Actividad).WithMany(p => p.Requisitos).HasForeignKey(d => d.ActividadCodigo).OnDelete(DeleteBehavior.NoAction); // FK_obdpac_obdppa
-            builder.HasOne(d => d.Requisito).WithMany(p => p.Requisitos).HasForeignKey(d => d.ActividadRequisitoCodigo).OnDelete(DeleteBehavior.NoAction); // FK_obdpac_obdppa_requisito
+            builder.HasOne(d => d.Requisito).WithMany(p => p.Requisitos).HasForeignKey(d => d.ActividadRequisitoCodigo).OnDelete(DeleteBehavior.Cascade); // FK_obdpac_obdppa_requisito
         }
     }
 }

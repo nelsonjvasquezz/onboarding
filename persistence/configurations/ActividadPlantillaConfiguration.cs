@@ -46,7 +46,7 @@ namespace onboarding.persistence.configurations
             builder.Property(e => e.FechaUltimaModificacion).HasColumnName("pac_fecha_modificacion");
 
             builder.HasOne(d => d.Etapa).WithMany(p => p.ActividadesPlantilla).HasForeignKey(d => d.EtapaActividadCodigo).OnDelete(DeleteBehavior.NoAction); // FK_obdetp_obdpac
-            builder.HasOne(d => d.Plantilla).WithMany(p => p.ActividadesPlantilla).HasForeignKey(d => d.PlantillaCodigo).OnDelete(DeleteBehavior.NoAction); // FK_obdppr_obdpac
+            builder.HasOne(d => d.Plantilla).WithMany(p => p.ActividadesPlantilla).HasForeignKey(d => d.PlantillaCodigo).OnDelete(DeleteBehavior.Cascade); // FK_obdppr_obdpac
             builder.HasOne(d => d.Prioridad).WithMany(p => p.ActividadesPlantilla).HasForeignKey(d => d.PrioridadActividadCodigo).OnDelete(DeleteBehavior.NoAction); // FK_obdpri_obdpac
             builder.HasOne(d => d.Tipo).WithMany(p => p.ActividadesPlantilla).HasForeignKey(d => d.TipoActividadCodigo).OnDelete(DeleteBehavior.NoAction); // FK_obdtac_obdpac
             builder.HasOne(d => d.TipoEvaluacion).WithMany(p => p.ActividadesPlantilla).HasForeignKey(d => d.TipoEvaluacionCodigo).OnDelete(DeleteBehavior.NoAction); // FK_obdtev_obdpac

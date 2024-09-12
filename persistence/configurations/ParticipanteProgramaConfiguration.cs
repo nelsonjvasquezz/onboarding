@@ -43,7 +43,7 @@ namespace onboarding.persistence.configurations
             builder.Property(e => e.FechaUltimaModificacion).HasColumnName("pap_fecha_modificacion");
 
             // Foreign keys
-            builder.HasOne(d => d.Programa).WithMany(p => p.Participantes).HasForeignKey(d => d.ProgramaCodigo).OnDelete(DeleteBehavior.NoAction); // FK_obdpro_obdpap
+            builder.HasOne(d => d.Programa).WithMany(p => p.Participantes).HasForeignKey(d => d.ProgramaCodigo).OnDelete(DeleteBehavior.Cascade); // FK_obdpro_obdpap
         }
     }
 }

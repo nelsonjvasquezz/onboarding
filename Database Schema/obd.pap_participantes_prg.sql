@@ -20,7 +20,7 @@ CREATE TABLE [obd].[pap_participantes_prg]
 	[pap_fecha_modificacion] DATETIME NULL,
 
  	CONSTRAINT [PK_pap_participantes_prg] PRIMARY KEY CLUSTERED ([pap_codigo] ASC),
-	CONSTRAINT [FK_obdpro_obdpap] FOREIGN KEY([pap_codpro]) REFERENCES [obd].[pro_programas] ([pro_codigo]),
+	CONSTRAINT [FK_obdpro_obdpap] FOREIGN KEY([pap_codpro]) REFERENCES [obd].[pro_programas] ([pro_codigo]) ON DELETE CASCADE,
 	CONSTRAINT [FK_expemp_obdpap_resp_rrhh] FOREIGN KEY ([pap_codemp_resp_rrhh]) REFERENCES [exp].[emp_empleos] ([emp_codigo]),
 	CONSTRAINT [FK_eorpue_obdpap] FOREIGN KEY ([pap_codpue]) REFERENCES [eor].[pue_puestos] ([pue_codigo]),
 	CONSTRAINT [FK_expexp_obdpap] FOREIGN KEY ([pap_codexp]) REFERENCES [exp].[exp_expedientes] ([exp_codigo]),

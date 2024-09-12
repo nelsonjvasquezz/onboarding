@@ -41,12 +41,12 @@ namespace onboarding.persistence.configurations
 
             builder.HasOne(d => d.Actividad).WithMany(p => p.Notificaciones)
                 .HasForeignKey(d => d.ActividadProgramaCodigo)
-                .OnDelete(DeleteBehavior.ClientSetNull)
+                .OnDelete(DeleteBehavior.Cascade)
                 .HasConstraintName("FK_obdacp_obdnap");
 
             builder.HasOne(d => d.EventoNotificable).WithMany(p => p.Notificaciones)
                 .HasForeignKey(d => d.EventoNotificableCodigo)
-                .OnDelete(DeleteBehavior.ClientSetNull)
+                .OnDelete(DeleteBehavior.NoAction)
                 .HasConstraintName("FK_obdeno_obdnap");
         }
     }

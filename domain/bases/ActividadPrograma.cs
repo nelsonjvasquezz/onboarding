@@ -39,7 +39,7 @@ public partial class ActividadPrograma
     /// <summary>
     /// Código de Etapa o Fase del programa
     /// </summary>
-    public int EtapaProgramaCodigo { get; set; } // acp_codetp
+    public int EtapaActividadCodigo { get; set; } // acp_codetp
 
     /// <summary>
     /// Código de Tipo de Actividad

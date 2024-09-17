@@ -1,0 +1,11 @@
+﻿INSERT [obd].[ppa_plant_requisitos_act] ([ppa_codpac], [ppa_codpac_requisito]) VALUES (3, 1)
+INSERT [obd].[ppa_plant_requisitos_act] ([ppa_codpac], [ppa_codpac_requisito]) VALUES (6, 5)
+INSERT [obd].[ppa_plant_requisitos_act] ([ppa_codpac], [ppa_codpac_requisito]) VALUES (7, 6)
+INSERT [obd].[ppa_plant_requisitos_act] ([ppa_codpac], [ppa_codpac_requisito]) VALUES (8, 7)
+INSERT [obd].[ppa_plant_requisitos_act] ([ppa_codpac], [ppa_codpac_requisito]) VALUES (10, 9)
+INSERT [obd].[ppa_plant_requisitos_act] ([ppa_codpac], [ppa_codpac_requisito]) VALUES (13, 12)
+INSERT [obd].[ppa_plant_requisitos_act] ([ppa_codpac], [ppa_codpac_requisito]) VALUES (14, 13)
+INSERT [obd].[ppa_plant_requisitos_act] ([ppa_codpac], [ppa_codpac_requisito]) VALUES (17, 16)
+INSERT [obd].[ppa_plant_requisitos_act] ([ppa_codpac], [ppa_codpac_requisito]) VALUES (19, 17)
+INSERT [obd].[ppa_plant_requisitos_act] ([ppa_codpac], [ppa_codpac_requisito]) VALUES (19, 18)
+GO

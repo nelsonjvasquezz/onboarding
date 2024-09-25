@@ -4,7 +4,7 @@ CREATE TABLE [obd].[nap_notif_actividad_prg]
 	[nap_codacp] INT NOT NULL,
 	[nap_codeno] INT NOT NULL,
 	[nap_offset_dias] INT CONSTRAINT [DF_obd_nap_offset_dias] DEFAULT ((0)) NOT NULL,
-	[nap_tipo_destinatario] VARCHAR(25) CONSTRAINT [DF_obd_nap_tipo_destinatario] DEFAULT ('Contratado') NOT NULL,
+	[nap_tipo_destinatario] VARCHAR(25) CONSTRAINT [DF_obd_nap_tipo_destinatario] DEFAULT ('Participante') NOT NULL,
 	[nap_codemp_destinatario] INT NULL,
 	[nap_codexp_destinatario] INT NOT NULL,
 	[nap_emails_destinatario] VARCHAR(4000) NULL,
@@ -22,7 +22,7 @@ CREATE TABLE [obd].[nap_notif_actividad_prg]
     CONSTRAINT [FK_expemp_obdnap] FOREIGN KEY ([nap_codemp_destinatario]) REFERENCES [exp].[emp_empleos] ([emp_codigo]),
 	CONSTRAINT [FK_expexp_obdnap] FOREIGN KEY ([nap_codexp_destinatario]) REFERENCES [exp].[exp_expedientes] ([exp_codigo]),
     CONSTRAINT [CK_nap_notif_actividad_prg_estado] CHECK (nap_estado in ('Pendiente', 'Enviado', 'Error')),
-    CONSTRAINT [CK_nap_notif_actividad_prg_tipo_destinatario] CHECK (nap_tipo_destinatario is null or nap_tipo_destinatario = 'Contratado' or nap_tipo_destinatario = 'JefeInmediato' or nap_tipo_destinatario = 'ResponsableActividad' or nap_tipo_destinatario =  'ResponsableRRHH')
+    CONSTRAINT [CK_nap_notif_actividad_prg_tipo_destinatario] CHECK (nap_tipo_destinatario is null or nap_tipo_destinatario = 'Participante' or nap_tipo_destinatario = 'JefeInmediato' or nap_tipo_destinatario = 'ResponsableActividad' or nap_tipo_destinatario =  'ResponsableRRHH')
 ) 
 
 GO
@@ -36,7 +36,7 @@ EXEC sp_addextendedproperty @name = N'MS_Description',
     @level2name = NULL
 GO
 EXEC sp_addextendedproperty @name = N'MS_Description',
-    @value = N'Destinatario de la notificación: Contratado | JefeInmediato | ResponsableActividad | ResponsableRRHH',
+    @value = N'Destinatario de la notificación: Participante | JefeInmediato | ResponsableActividad | ResponsableRRHH',
     @level0type = N'SCHEMA',
     @level0name = N'obd',
     @level1type = N'TABLE',

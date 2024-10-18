@@ -31,7 +31,7 @@ public partial class NotificacionActividad
     public int OffsetDias { get; set; } // nap_offset_dias
 
     /// <summary>
-    /// Destinatario de la notificación: Contratado | JefeInmediato | ResponsableActividad | ResponsableRRHH
+    /// Destinatario de la notificación: Participante | JefeInmediato | ResponsableActividad | ResponsableRRHH
     /// </summary>
     public string TipoDestinatarioDb { get; set; } = null; // nap_tipo_destinatario
 

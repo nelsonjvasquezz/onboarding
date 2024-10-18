@@ -30,7 +30,7 @@ CREATE TABLE [obd].[psa_part_sin_asignar]
 
 GO
 EXEC sp_addextendedproperty @name = N'MS_Description',
-    @value = N'Tabla que almacena la información de los empleados que son cantidatos a participar en un programa de onboarding',
+    @value = N'Tabla que almacena la información de los empleados participantes sin asignar en un programa de onboarding',
     @level0type = N'SCHEMA',
     @level0name = N'obd',
     @level1type = N'TABLE',
@@ -39,7 +39,7 @@ EXEC sp_addextendedproperty @name = N'MS_Description',
     @level2name = NULL
 GO
 EXEC sp_addextendedproperty @name = N'MS_Description',
-    @value = N'Código de registro del candidato a participar en un programa de onboarding',
+    @value = N'Código de registro del participante sin asignar en un programa de onboarding',
     @level0type = N'SCHEMA',
     @level0name = N'obd',
     @level1type = N'TABLE',
@@ -48,7 +48,7 @@ EXEC sp_addextendedproperty @name = N'MS_Description',
     @level2name = N'psa_codigo'
 GO
 EXEC sp_addextendedproperty @name = N'MS_Description',
-    @value = N'Código de participante cuando el candidato ya ha sido asignado a un programa de onboarding',
+    @value = N'Código del participante cuando ya ha sido asignado a un programa de onboarding',
     @level0type = N'SCHEMA',
     @level0name = N'obd',
     @level1type = N'TABLE',
@@ -57,7 +57,7 @@ EXEC sp_addextendedproperty @name = N'MS_Description',
     @level2name = N'psa_codpap'
 GO
 EXEC sp_addextendedproperty @name = N'MS_Description',
-    @value = N'Código de la contratación del candidato a participar en un programa de onboarding',
+    @value = N'Código de la contratación del participante sin asignar a un programa de onboarding',
     @level0type = N'SCHEMA',
     @level0name = N'obd',
     @level1type = N'TABLE',
@@ -66,7 +66,7 @@ EXEC sp_addextendedproperty @name = N'MS_Description',
     @level2name = N'psa_codcon'
 GO
 EXEC sp_addextendedproperty @name = N'MS_Description',
-    @value = N'Código del concurso de selección donde fue contratado el candidato a participar en un programa de onboarding',
+    @value = N'Código del concurso de selección donde fue contratado el participante sin asignar a un programa de onboarding',
     @level0type = N'SCHEMA',
     @level0name = N'obd',
     @level1type = N'TABLE',
@@ -75,7 +75,7 @@ EXEC sp_addextendedproperty @name = N'MS_Description',
     @level2name = N'psa_codcos'
 GO
 EXEC sp_addextendedproperty @name = N'MS_Description',
-    @value = N'Código de expediente del candidato a participar en un programa de onboarding',
+    @value = N'Código de expediente del participante sin asignar a un programa de onboarding',
     @level0type = N'SCHEMA',
     @level0name = N'obd',
     @level1type = N'TABLE',
@@ -84,7 +84,7 @@ EXEC sp_addextendedproperty @name = N'MS_Description',
     @level2name = N'psa_codexp'
 GO
 EXEC sp_addextendedproperty @name = N'MS_Description',
-    @value = N'Código de empleo del candidato, cuando la nueva contratación ya se realizó',
+    @value = N'Código de empleo del participante, cuando la nueva contratación ya se realizó',
     @level0type = N'SCHEMA',
     @level0name = N'obd',
     @level1type = N'TABLE',

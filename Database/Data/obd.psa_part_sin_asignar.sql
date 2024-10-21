@@ -1,0 +1,11 @@
+INSERT [obd].[psa_part_sin_asignar] ([psa_codcon], [psa_codpue], [psa_codexp], [psa_codemp], [psa_codplz], [psa_codemp_jefe], [psa_codcdt], [psa_coduni], [psa_fecha_contratacion]) VALUES (1, 200, 6, 725, 124, 178, 1, 24, '2024-10-01')
+INSERT [obd].[psa_part_sin_asignar] ([psa_codcon], [psa_codpue], [psa_codexp], [psa_codemp], [psa_codplz], [psa_codemp_jefe], [psa_codcdt], [psa_coduni], [psa_fecha_contratacion]) VALUES (2, 200, 21, 726, 124, 178, 1, 24, '2024-10-01')
+INSERT [obd].[psa_part_sin_asignar] ([psa_codcon], [psa_codpue], [psa_codexp], [psa_codemp], [psa_codplz], [psa_codemp_jefe], [psa_codcdt], [psa_coduni], [psa_fecha_contratacion]) VALUES (3, 4, 34, 727, 273, 178, 7, 33, '2024-10-01')
+INSERT [obd].[psa_part_sin_asignar] ([psa_codcon], [psa_codpue], [psa_codexp], [psa_codemp], [psa_codplz], [psa_codemp_jefe], [psa_codcdt], [psa_coduni], [psa_fecha_contratacion]) VALUES (4, 134, 43, 728, 297, 178, 1, 21, '2024-10-01')
+INSERT [obd].[psa_part_sin_asignar] ([psa_codcon], [psa_codpue], [psa_codexp], [psa_codemp], [psa_codplz], [psa_codemp_jefe], [psa_codcdt], [psa_coduni], [psa_fecha_contratacion]) VALUES (5, 35, 46, 729, 1153, 178, 9, 119, '2024-10-01')
+INSERT [obd].[psa_part_sin_asignar] ([psa_codcon], [psa_codpue], [psa_codexp], [psa_codemp], [psa_codplz], [psa_codemp_jefe], [psa_codcdt], [psa_coduni], [psa_fecha_contratacion]) VALUES (6, 6, 68, 730, 1126, 178, 5, 29, '2024-09-01')
+INSERT [obd].[psa_part_sin_asignar] ([psa_codcon], [psa_codpue], [psa_codexp], [psa_codemp], [psa_codplz], [psa_codemp_jefe], [psa_codcdt], [psa_coduni], [psa_fecha_contratacion]) VALUES (7, 4, 45, 731, 500, 178, 1, 1, '2024-10-01')
+INSERT [obd].[psa_part_sin_asignar] ([psa_codcon], [psa_codpue], [psa_codexp], [psa_codemp], [psa_codplz], [psa_codemp_jefe], [psa_codcdt], [psa_coduni], [psa_fecha_contratacion]) VALUES (8, 14, 103, 732, 473, 178, 1, 1, '2024-10-01')
+INSERT [obd].[psa_part_sin_asignar] ([psa_codcon], [psa_codpue], [psa_codexp], [psa_codemp], [psa_codplz], [psa_codemp_jefe], [psa_codcdt], [psa_coduni], [psa_fecha_contratacion]) VALUES (9, 325, 107, 733, 1133, 178, 5, 26, '2024-10-01')
+INSERT [obd].[psa_part_sin_asignar] ([psa_codcon], [psa_codpue], [psa_codexp], [psa_codemp], [psa_codplz], [psa_codemp_jefe], [psa_codcdt], [psa_coduni], [psa_fecha_contratacion]) VALUES (10, 166, 110, 734, 1167, 178, 10, 119, '2024-09-01')
+GO

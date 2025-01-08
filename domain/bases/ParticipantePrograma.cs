@@ -117,4 +117,9 @@ public partial class ParticipantePrograma
     [XmlIgnore, JsonIgnore]
     public virtual ICollection<ActividadPrograma> Actividades { get; set; } = new List<ActividadPrograma>(); // FK_obdpap_obdacp
 
+    /// <summary>
+    /// Parent (One-to-One) ParticipantePrograma pointed by [psa_part_sin_asignar].[psa_codpap] point to this entity (FK_obdpap_obdpsa)
+    /// </summary>
+    [XmlIgnore, JsonIgnore]
+    public virtual ParticipanteSinAsignar ParticipanteSinAsignar { get; set; } // psa_part_sin_asignar.psa_codpap
 }

@@ -216,7 +216,7 @@ EXEC sp_addextendedproperty @name = N'MS_Description',
     @level2name = N'pac_duracion_estimada'
 GO
 EXEC sp_addextendedproperty @name = N'MS_Description',
-    @value = N'Unidad de medida de la duracióon estimada de la actividad',
+    @value = N'Unidad de medida de la duración estimada de la actividad',
     @level0type = N'SCHEMA',
     @level0name = N'obd',
     @level1type = N'TABLE',

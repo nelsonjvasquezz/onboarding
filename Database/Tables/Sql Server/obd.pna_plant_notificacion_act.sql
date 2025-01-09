@@ -61,7 +61,7 @@ EXEC sp_addextendedproperty @name = N'MS_Description',
     @level2name = N'pna_codpac'
 GO
 EXEC sp_addextendedproperty @name = N'MS_Description',
-    @value = N'Desplamiento en dias antes o despues de la fecha de inicio ',
+    @value = N'Desplazamiento en dias antes o despues de la fecha de inicio ',
     @level0type = N'SCHEMA',
     @level0name = N'obd',
     @level1type = N'TABLE',
@@ -70,7 +70,7 @@ EXEC sp_addextendedproperty @name = N'MS_Description',
     @level2name = N'pna_offset_inicio'
 GO
 EXEC sp_addextendedproperty @name = N'MS_Description',
-    @value = N'Desplamiento en dias antes o despues de la fecha de finalizacion',
+    @value = N'Desplazamiento en dias antes o despues de la fecha de finalizacion',
     @level0type = N'SCHEMA',
     @level0name = N'obd',
     @level1type = N'TABLE',

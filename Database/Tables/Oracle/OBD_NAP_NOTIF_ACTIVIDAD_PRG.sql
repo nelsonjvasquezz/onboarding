@@ -1,0 +1,35 @@
+CREATE TABLE OBD_NAP_NOTIF_ACTIVIDAD_PRG (
+   NAP_CODIGO INT NOT NULL,
+   NAP_CODACP INT NOT NULL,
+   NAP_CODENO INT NOT NULL,
+   NAP_OFFSET_DIAS INT DEFAULT ((0)) NOT NULL,
+   NAP_TIPO_DESTINATARIO VARCHAR2(25 CHAR) DEFAULT ('Participante') NOT NULL,
+   NAP_CODEMP_DESTINATARIO INT,
+   NAP_CODEXP_DESTINATARIO INT NOT NULL,
+   NAP_EMAILS_DESTINATARIO VARCHAR2(4000 CHAR),
+   NAP_ONESIGNAL_IDS_DESTINATARIO VARCHAR2(4000 CHAR),
+   NAP_SUBJECT VARCHAR2(250 CHAR),
+   NAP_BODY VARCHAR2(4000 CHAR),
+   NAP_FECHA_EVENTO DATE,
+   NAP_FECHA_NOTIFICACION DATE,
+   NAP_ESTADO VARCHAR2(10 CHAR),
+   NAP_MENSAJE_ERROR VARCHAR2(4000 CHAR)
+);
+
+COMMENT ON TABLE OBD_NAP_NOTIF_ACTIVIDAD_PRG IS 'Tabla que almacena los registros de las notificaciones generadas de la actividad del programa';
+
+COMMENT ON COLUMN OBD_NAP_NOTIF_ACTIVIDAD_PRG.NAP_CODIGO IS 'Código del registro de la notificación de la actividad del programa';
+COMMENT ON COLUMN OBD_NAP_NOTIF_ACTIVIDAD_PRG.NAP_CODACP IS 'Código de la Actividad';
+COMMENT ON COLUMN OBD_NAP_NOTIF_ACTIVIDAD_PRG.NAP_CODENO IS 'Tipo de Evento Notificable';
+COMMENT ON COLUMN OBD_NAP_NOTIF_ACTIVIDAD_PRG.NAP_OFFSET_DIAS IS 'Desplazamiento en días de la fecha en que ocurre el evento para el envio de la notificación';
+COMMENT ON COLUMN OBD_NAP_NOTIF_ACTIVIDAD_PRG.NAP_TIPO_DESTINATARIO IS 'Destinatario de la notificación: Participante | JefeInmediato | ResponsableActividad | ResponsableRRHH';
+COMMENT ON COLUMN OBD_NAP_NOTIF_ACTIVIDAD_PRG.NAP_CODEMP_DESTINATARIO IS 'Código del empleo del destinatario, puede ser NULL cuando el empleado nuevo no ha sido contratado';
+COMMENT ON COLUMN OBD_NAP_NOTIF_ACTIVIDAD_PRG.NAP_CODEXP_DESTINATARIO IS 'Código del expediente del destinatario';
+COMMENT ON COLUMN OBD_NAP_NOTIF_ACTIVIDAD_PRG.NAP_EMAILS_DESTINATARIO IS 'Lista de correos electrónicos separadas por comas';
+COMMENT ON COLUMN OBD_NAP_NOTIF_ACTIVIDAD_PRG.NAP_ONESIGNAL_IDS_DESTINATARIO IS 'Lista de ids de onesignal separadas por comas';
+COMMENT ON COLUMN OBD_NAP_NOTIF_ACTIVIDAD_PRG.NAP_SUBJECT IS 'Asunto de la notificación';
+COMMENT ON COLUMN OBD_NAP_NOTIF_ACTIVIDAD_PRG.NAP_BODY IS 'Cuerpo Markdown de la notificación';
+COMMENT ON COLUMN OBD_NAP_NOTIF_ACTIVIDAD_PRG.NAP_FECHA_EVENTO IS 'Fecha en que sucedió el evento notificable (está null mientras no se ha dado)';
+COMMENT ON COLUMN OBD_NAP_NOTIF_ACTIVIDAD_PRG.NAP_FECHA_NOTIFICACION IS 'Fecha y hora de cuando se notificó';
+COMMENT ON COLUMN OBD_NAP_NOTIF_ACTIVIDAD_PRG.NAP_ESTADO IS 'Estado de la notificación (NULL | ''Pendiente'' | ''Enviada'' | ''Error'')';
+COMMENT ON COLUMN OBD_NAP_NOTIF_ACTIVIDAD_PRG.NAP_MENSAJE_ERROR IS 'Mensaje o excepción cuando el estado es ''Error''';

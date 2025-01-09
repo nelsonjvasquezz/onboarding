@@ -1,0 +1,41 @@
+CREATE TABLE OBD_PAP_PARTICIPANTES_PRG (
+   PAP_CODIGO INT NOT NULL,
+   PAP_CODPRO INT NOT NULL,
+   PAP_CODEMP_RESP_RRHH INT NOT NULL,
+   PAP_CODPUE INT NOT NULL,
+   PAP_CODEXP INT NOT NULL,
+   PAP_CODEMP INT,
+   PAP_CODPLZ INT,
+   PAP_CODEMP_JEFE INT NOT NULL,
+   PAP_CODCDT INT NOT NULL,
+   PAP_CODUNI INT NOT NULL,
+   PAP_FECHA_CONTRATACION DATE NOT NULL,
+   PAP_FECHA_INICIO DATE NOT NULL,
+   PAP_FECHA_FIN DATE NOT NULL,
+   PAP_PROPERTY_BAG_DATA CLOB,
+   PAP_USUARIO_GRABACION VARCHAR2(50 CHAR),
+   PAP_FECHA_GRABACION DATE,
+   PAP_USUARIO_MODIFICACION VARCHAR2(50 CHAR),
+   PAP_FECHA_MODIFICACION DATE
+);
+
+COMMENT ON TABLE OBD_PAP_PARTICIPANTES_PRG IS 'Tabla con el detalle de nuevas contrataciones que participan de un programa de onboarding';
+
+COMMENT ON COLUMN OBD_PAP_PARTICIPANTES_PRG.PAP_CODIGO IS 'Código de registro de contratación de cada programa';
+COMMENT ON COLUMN OBD_PAP_PARTICIPANTES_PRG.PAP_CODPRO IS 'Código del programa de onboarding';
+COMMENT ON COLUMN OBD_PAP_PARTICIPANTES_PRG.PAP_CODEMP_RESP_RRHH IS 'Código del responsable en RRHH de la nueva contratación';
+COMMENT ON COLUMN OBD_PAP_PARTICIPANTES_PRG.PAP_CODPUE IS 'Código del puesto a donde será contratado el nuevo empleado';
+COMMENT ON COLUMN OBD_PAP_PARTICIPANTES_PRG.PAP_CODEXP IS 'Código de expediente de la nueva contratación';
+COMMENT ON COLUMN OBD_PAP_PARTICIPANTES_PRG.PAP_CODEMP IS 'Código de empleo, cuando la nueva contratación ya se realizó';
+COMMENT ON COLUMN OBD_PAP_PARTICIPANTES_PRG.PAP_CODPLZ IS 'Código de plaza, cuando la nueva contratación ya se realizó';
+COMMENT ON COLUMN OBD_PAP_PARTICIPANTES_PRG.PAP_CODEMP_JEFE IS 'Código del empleo del jefe inmeditato superior o supervisor responsable de la nueva contratación';
+COMMENT ON COLUMN OBD_PAP_PARTICIPANTES_PRG.PAP_CODCDT IS 'Código del centro de trabajo donde será ubicado el nuevo empleado';
+COMMENT ON COLUMN OBD_PAP_PARTICIPANTES_PRG.PAP_CODUNI IS 'Código de la unidad organizativa donde será ubicado el nuevo empleado';
+COMMENT ON COLUMN OBD_PAP_PARTICIPANTES_PRG.PAP_FECHA_CONTRATACION IS 'Fecha efectiva de contratación';
+COMMENT ON COLUMN OBD_PAP_PARTICIPANTES_PRG.PAP_FECHA_INICIO IS 'Fecha esperada de inicio del programa';
+COMMENT ON COLUMN OBD_PAP_PARTICIPANTES_PRG.PAP_FECHA_FIN IS 'Fecha esperada de finalización del programa';
+COMMENT ON COLUMN OBD_PAP_PARTICIPANTES_PRG.PAP_PROPERTY_BAG_DATA IS 'Data de los campos adicionales';
+COMMENT ON COLUMN OBD_PAP_PARTICIPANTES_PRG.PAP_USUARIO_GRABACION IS 'Usuario que creo el registro';
+COMMENT ON COLUMN OBD_PAP_PARTICIPANTES_PRG.PAP_FECHA_GRABACION IS 'Fecha en que se creo el registro';
+COMMENT ON COLUMN OBD_PAP_PARTICIPANTES_PRG.PAP_USUARIO_MODIFICACION IS 'Usuario que modificó por última vez el registro';
+COMMENT ON COLUMN OBD_PAP_PARTICIPANTES_PRG.PAP_FECHA_MODIFICACION IS 'Fecha de la última modificacion del registro';

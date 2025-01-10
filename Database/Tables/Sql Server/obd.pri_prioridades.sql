@@ -11,7 +11,8 @@ CREATE TABLE [obd].[pri_prioridades]
 	[pri_usuario_modificacion] VARCHAR(50) NULL,
 	[pri_fecha_modificacion] DATETIME NULL,
 
- 	CONSTRAINT [PK_pri_prioridades] PRIMARY KEY CLUSTERED ([pri_codigo] ASC)
+ 	CONSTRAINT [PK_pri_prioridades] PRIMARY KEY CLUSTERED ([pri_codigo] ASC),
+    CONSTRAINT [FK_eorgrc_obdpri] FOREIGN KEY ([pri_codgrc]) REFERENCES [eor].[grc_grupos_corporativos] ([grc_codigo])
 )
 
 GO

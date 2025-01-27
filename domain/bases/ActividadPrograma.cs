@@ -82,9 +82,9 @@ public partial class ActividadPrograma
     public int Orden { get; set; } // acp_orden
 
     /// <summary>
-    /// Código de Tipo de Responsable de la actividad, NULL cuando el participante es el responsable
+    /// Código de Tipo de Responsable de la actividad
     /// </summary>
-    public int? TipoResponsableActividadCodigo { get; set; } // acp_codtra
+    public int TipoResponsableActividadCodigo { get; set; } // acp_codtra
 
     /// <summary>
     /// Codigo de Tipo de Evaluación de la actividad (NULL cuando no requiere evaluación)

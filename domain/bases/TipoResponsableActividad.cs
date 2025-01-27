@@ -32,6 +32,11 @@ public partial class TipoResponsableActividad
     public string Descripcion { get; set; } // tra_descripcion
 
     /// <summary>
+    /// ¿El participante es el responsable?
+    /// </summary>
+    public bool EsParticipante { get; set; } // tra_es_participante
+
+    /// <summary>
     /// ¿Requiere la selección de un empleado?
     /// </summary>
     public bool RequiereEmpleo { get; set; } // tra_requiere_empleo

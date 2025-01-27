@@ -77,9 +77,9 @@ public partial class ActividadPlantilla
     public int Orden { get; set; } // pac_orden
 
     /// <summary>
-    /// Código de Tipo de Responsable de la actividad, cuando es NULL el responsable es el nuevo empleado
+    /// Código de Tipo de Responsable de la actividad
     /// </summary>
-    public int? TipoResponsableActividadCodigo { get; set; } // pac_codtra
+    public int TipoResponsableActividadCodigo { get; set; } // pac_codtra
 
     /// <summary>
     /// Codigo de Tipo de Evaluación de la actividad

@@ -14,7 +14,7 @@ CREATE TABLE [obd].[acp_actividades_prg]
 	[acp_unidad_duracion] VARCHAR(50) CONSTRAINT [DF_obd_acp_unidad_duracion] DEFAULT ('Dias') NOT NULL,
 	[acp_codpri] INT NOT NULL,
 	[acp_orden] INT CONSTRAINT [DF_obd_acp_orden] DEFAULT ((0)) NOT NULL,
-	[acp_codtra] INT NULL,
+	[acp_codtra] INT NOT NULL,
 
 	[acp_codtev] INT NULL,
 
@@ -202,7 +202,7 @@ EXEC sp_addextendedproperty @name = N'MS_Description',
     @level2name = N'acp_orden'
 GO
 EXEC sp_addextendedproperty @name = N'MS_Description',
-    @value = N'Código de Tipo de Responsable de la actividad, NULL cuando el participante es el responsable',
+    @value = N'Código de Tipo de Responsable de la actividad',
     @level0type = N'SCHEMA',
     @level0name = N'obd',
     @level1type = N'TABLE',

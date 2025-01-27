@@ -45,7 +45,7 @@ COMMENT ON COLUMN OBD_ACP_ACTIVIDADES_PRG.ACP_DURACION IS 'Duración de la activ
 COMMENT ON COLUMN OBD_ACP_ACTIVIDADES_PRG.ACP_UNIDAD_DURACION IS 'Unidad de medida de la duración de la actividad';
 COMMENT ON COLUMN OBD_ACP_ACTIVIDADES_PRG.ACP_CODPRI IS 'Código de Prioridad de la actividad';
 COMMENT ON COLUMN OBD_ACP_ACTIVIDADES_PRG.ACP_ORDEN IS 'Orden de esta actividad respecto de las mismas que tienen los mismos requisitos';
-COMMENT ON COLUMN OBD_ACP_ACTIVIDADES_PRG.ACP_CODTRA IS 'Código de Tipo de Responsable de la actividad, NULL cuando el participante es el responsable';
+COMMENT ON COLUMN OBD_ACP_ACTIVIDADES_PRG.ACP_CODTRA IS 'Código de Tipo de Responsable de la actividad';
 COMMENT ON COLUMN OBD_ACP_ACTIVIDADES_PRG.ACP_CODTEV IS 'Codigo de Tipo de Evaluación de la activdidad (NULL cuando no requiere evaluación)';
 COMMENT ON COLUMN OBD_ACP_ACTIVIDADES_PRG.ACP_FECHA_EVALUACION IS 'Fecha de evaluación de la actividad';
 COMMENT ON COLUMN OBD_ACP_ACTIVIDADES_PRG.ACP_NOTA_EVALUACION IS 'Nota de la evaluación dada por el responsable de la actividad';

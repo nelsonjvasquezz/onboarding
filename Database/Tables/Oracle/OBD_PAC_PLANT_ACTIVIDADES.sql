@@ -37,7 +37,7 @@ COMMENT ON COLUMN OBD_PAC_PLANT_ACTIVIDADES.PAC_DURACION_ESTIMADA IS 'Duración 
 COMMENT ON COLUMN OBD_PAC_PLANT_ACTIVIDADES.PAC_UNIDAD_DURACION IS 'Unidad de medida de la duración estimada de la actividad';
 COMMENT ON COLUMN OBD_PAC_PLANT_ACTIVIDADES.PAC_CODPRI IS 'Código de Prioridad de la actividad';
 COMMENT ON COLUMN OBD_PAC_PLANT_ACTIVIDADES.PAC_ORDEN IS 'Orden de esta actividad respecto de las mismas que tienen los mismos requisitos';
-COMMENT ON COLUMN OBD_PAC_PLANT_ACTIVIDADES.PAC_CODTRA IS 'Código de Tipo de Responsable de la actividad, cuando es NULL el responsable es el nuevo empleado';
+COMMENT ON COLUMN OBD_PAC_PLANT_ACTIVIDADES.PAC_CODTRA IS 'Código de Tipo de Responsable de la actividad';
 COMMENT ON COLUMN OBD_PAC_PLANT_ACTIVIDADES.PAC_CODTEV IS 'Codigo de Tipo de Evaluación de la activdidad';
 COMMENT ON COLUMN OBD_PAC_PLANT_ACTIVIDADES.PAC_NOTA_EVAL_ESPERADA IS 'Nota de evaluación esperada para determinar si aprobo o no la evaluación';
 COMMENT ON COLUMN OBD_PAC_PLANT_ACTIVIDADES.PAC_PROPERTY_BAG_DATA IS 'Data de los campos adicionales';

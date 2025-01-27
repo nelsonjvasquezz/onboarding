@@ -4,6 +4,7 @@ CREATE TABLE [obd].[tra_tipos_respon_actividad]
 	[tra_codgrc] INT NOT NULL,
 	[tra_nombre] VARCHAR(50) NOT NULL,
 	[tra_descripcion] VARCHAR(500) NULL,
+    [tra_es_participante] BIT CONSTRAINT [DF_obd_tra_es_participante] DEFAULT ((0)) NOT NULL,
 	[tra_requiere_empleo] BIT CONSTRAINT [DF_obd_tra_requiere_empleo] DEFAULT ((1)) NOT NULL,
 	[tra_codvli_empleo] VARCHAR(50) NULL,
 	[tra_es_inst_externa] BIT CONSTRAINT [DF_obd_tra_es_inst_externa] DEFAULT ((0)) NOT NULL,
@@ -112,6 +113,15 @@ EXEC sp_addextendedproperty @name = N'MS_Description',
     @level1name = N'tra_tipos_respon_actividad',
     @level2type = N'COLUMN',
     @level2name = N'tra_codvli_empleo'
+GO
+EXEC sp_addextendedproperty @name = N'MS_Description',
+    @value = N'¿El participante es el responsable?',
+    @level0type = N'SCHEMA',
+    @level0name = N'obd',
+    @level1type = N'TABLE',
+    @level1name = N'tra_tipos_respon_actividad',
+    @level2type = N'COLUMN',
+    @level2name = N'tra_es_participante'
 GO
 EXEC sp_addextendedproperty @name = N'MS_Description',
     @value = N'¿Corresponde con una persona externa?',

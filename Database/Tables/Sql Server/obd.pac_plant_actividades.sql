@@ -13,7 +13,7 @@ CREATE TABLE [obd].[pac_plant_actividades]
 	[pac_unidad_duracion] VARCHAR(50) CONSTRAINT [DF_obd_pac_unidad_duracion] DEFAULT ('Dias') NOT NULL,
 	[pac_codpri] INT NOT NULL,
 	[pac_orden] INT CONSTRAINT [DF_obd_pac_orden] DEFAULT ((0)) NOT NULL,
-	[pac_codtra] INT NULL,
+	[pac_codtra] INT NOT NULL,
 	[pac_codtev] INT NULL,
 	[pac_nota_eval_esperada] DECIMAL(5, 2) NULL,
 
@@ -189,7 +189,7 @@ EXEC sp_addextendedproperty @name = N'MS_Description',
     @level2name = N'pac_orden'
 GO
 EXEC sp_addextendedproperty @name = N'MS_Description',
-    @value = N'Código de Tipo de Responsable de la actividad, cuando es NULL el responsable es el nuevo empleado',
+    @value = N'Código de Tipo de Responsable de la actividad',
     @level0type = N'SCHEMA',
     @level0name = N'obd',
     @level1type = N'TABLE',

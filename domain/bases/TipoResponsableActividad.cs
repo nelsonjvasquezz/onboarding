@@ -37,6 +37,11 @@ public partial class TipoResponsableActividad
     public bool EsParticipante { get; set; } // tra_es_participante
 
     /// <summary>
+    /// ¿El jefe inmediato es el responsable?
+    /// </summary>
+    public bool EsJefe { get; set; } // tra_es_jefe
+
+    /// <summary>
     /// ¿Requiere la selección de un empleado?
     /// </summary>
     public bool RequiereEmpleo { get; set; } // tra_requiere_empleo
